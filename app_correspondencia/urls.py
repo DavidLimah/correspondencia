@@ -20,6 +20,12 @@ from django.urls import path
 from django.urls import path, include
 
 urlpatterns = [
+    # Django admin
     path('admin/', admin.site.urls),
+
+    # User 
+    path('accounts/', include('django.contrib.auth.urls')),
+
+    # Para URLs
     path('', include('pages.urls')),
 ]
