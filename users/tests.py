@@ -3,7 +3,10 @@ from django.test import TestCase
 # Prueba unitaria Users
 from django.contrib.auth import get_user_model
 from django.test import TestCase
-from django.urls import reverse
+from django.urls import reverse, resolve
+
+from .forms import CustomUserCreationForm
+from .views import SignupPageView
 
 
 class CustomUserTests(TestCase):
