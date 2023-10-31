@@ -1,18 +1,18 @@
 {% extends '_base.html' %}
+{% load static %}
 
-{% block title %}Home{% endblock title %}
+{% block title %}SGC{% endblock title %}
 
 {% block content %}
-
 <h1>Homepage</h1>
+<img class="cover" src="{% static 'images/godzilla03.png' %}">
 
 {% if user.is_authenticated %}
-    Hi {{ user.email }}!
-    <p><a href="{% url 'logout' %}">Log Out</a></p>
+    <p>Bienvenido {{ user.email }}!</p>
+    <p><a href="{% url 'logout' %}">Cerrar sesión</a></p>
 {% else %}
-    <p>You are not logged in</p>
-    <a href="{% url 'login' %}">Log In</a>
-    <a href="{% url 'signup' %}">Sign up</a>
+    <p>No has iniciado sesión</p>
+    <p><a href="{% url 'login' %}">Iniciar sesión</a> | <a href="{% url 'signup' %}">Registrarse</a></p>
 {% endif %}
 
 {% endblock content %}
