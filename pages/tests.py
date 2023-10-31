@@ -39,7 +39,7 @@ class HomepageTests(SimpleTestCase):
         self.assertEqual(
             view.func.__name__,
             HomePageView.as_view().__name__)
-"""
+
 class AboutPageTests(SimpleTestCase):
     def setUp(self):
         url = reverse('about')
@@ -62,4 +62,3 @@ class AboutPageTests(SimpleTestCase):
         self.assertEqual(
             view.func.__name__,
             AboutPageView.as_view().__name__)
-"""
