@@ -28,7 +28,7 @@ class HomepageTests(SimpleTestCase):
     
     def test_homepage_contains_correct_html(self):
         response = self.client.get('/')
-        self.assertContains(response, 'Homepage')
+        self.assertContains(response, 'SGC')
     
     def test_homepage_does_not_contain_incorrect_html(self):
         response = self.client.get('/')

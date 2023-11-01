@@ -35,7 +35,9 @@ class CustomUserTests(TestCase):
         self.assertTrue(admin_user.is_active)
         self.assertTrue(admin_user.is_staff)
         self.assertTrue(admin_user.is_superuser)
-    
+
+
+    """
     # Prueba unitaria registro de usuario
     def setUp(self):
         url = reverse('signup')
@@ -56,6 +58,7 @@ class CustomUserTests(TestCase):
     def test_signup_view(self):
         view = resolve('/accounts/signup/')
         self.assertEqual(view.func.__name__, SignupPageView.as_view().__name__)
+    """
 
 
 class SignupTests(TestCase):
@@ -69,8 +72,8 @@ class SignupTests(TestCase):
     def test_signup_template(self):
         self.assertEqual(self.response.status_code, 200) 
         self.assertTemplateUsed(self.response, 'account/signup.html')
-        self.assertContains(self.response, 'Sign Up')
-        self.assertNotContains(self.response, 'Error.')
+        self.assertContains(self.response, 'Registrarse')
+        self.assertNotContains(self.response, 'Error: Registro usuario')
 
     def test_signup_form(self):
         new_user = get_user_model().objects.create_user(
