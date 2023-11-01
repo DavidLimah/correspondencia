@@ -31,3 +31,5 @@ urlpatterns = [
     # path('accounts/', include('users.urls')),
     path('', include('pages.urls')),
 ]
+
+admin.site.site_header = "SGC"
