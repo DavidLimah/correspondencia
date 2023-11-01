@@ -58,6 +58,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    # Autenticación de usuario
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'app_correspondencia.urls'
@@ -149,7 +152,7 @@ AUTH_USER_MODEL = 'users.CustomUser'
 # Configuración para autenticación de usuario
 LOGIN_REDIRECT_URL = 'home'
 
-ACCOUNT_LOGOUT_REDIRECT = 'home'
+LOGOUT_REDIRECT_URL = 'home'
 
 # LOGOUT_REDIRECT_URL = 'home'
 
