@@ -6,12 +6,12 @@
 
 {% block content %}
 <div class="container">
-	<h1>Log Out</h1>
-	<p>Are you sure you want to log out?</p>
+	<h1>Cerrar sesión</h1>
+	<p>¿Está seguro que desea cerrar sesión?</p>
 	<form method="post" action="{% url 'account_logout' %}">
 		{% csrf_token %}
 		{{ form.as_p }}
-		<button class="btn btn-danger" type="submit">Log Out</button>
+		<button class="btn btn-danger" type="submit">Aceptar</button>
 	</form>
 </div>
 {% endblock content %}
