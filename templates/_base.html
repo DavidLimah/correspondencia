@@ -19,6 +19,7 @@
             <a href="{% url 'home' %}" class="navbar-brand my-0 mr-md-auto font-weight-normal">SGC</a>
             {% if user.is_authenticated %}
             <a class="p-2 text-dark" href="{% url 'account_logout' %}">Cerrar sesión</a>
+            <a class="p-2 text-dark" href="{% url 'hoja_ruta' %}">Crear hoja de ruta</a>
             {% else %}
             <a class="p-2 text-dark" href="{% url 'account_login' %}">Iniciar sesión</a>
             <a class="p-2 text-dark" href="{% url 'account_signup' %}">Registrarse</a>

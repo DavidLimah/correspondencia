@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     # Módulos
     'users.apps.UsersConfig',
     'pages.apps.PagesConfig',
+    'correspondencia.apps.CorrespondenciaConfig',
 ]
 
 MIDDLEWARE = [
