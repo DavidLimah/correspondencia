@@ -5,15 +5,17 @@
 {% block title %}SGC{% endblock title %}
 
 {% block content %}
-<h1>SGC</h1>
-<img class="cover" src="{% static 'images/godzilla03.png' %}">
+<div class="text-center">
+    <br><br>
+    <h1>Sistema Gestión de Correspondencia</h1>
+<img class="cover" src="{% static 'images/files.png' %}">
 {% if user.is_authenticated %}
     <p>Bienvenido {{ user.email }}!</p>
     <p><a href="{% url 'account_logout' %}">Cerrar sesión</a></p>
 {% else %}
-<p>No está registrado</p>
-<p><a href="{% url 'account_login' %}">Iniciar sesión</a> |
-    <a href="{% url 'account_signup' %}">Registrarse</a>
+
+<p><a href="{% url 'account_login' %}">Iniciar sesión</a> | <a href="{% url 'account_signup' %}">Registrarse</a>
 </p>
+</div>
 {% endif %}
 {% endblock content %}
