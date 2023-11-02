@@ -175,7 +175,7 @@ ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
 
-DEFAULT_FROM_EMAIL = 'admin@correspondencia.com'
+# DEFAULT_FROM_EMAIL = 'admin@correspondencia.com'
 
 # SECRET_KEY = os.environ.get('SECRET_KEY')
 
