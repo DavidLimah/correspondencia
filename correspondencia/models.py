@@ -1,6 +1,28 @@
 from django.db import models
 
 # Modelos
+class Oficina(models.Model):
+	nombre_oficina = models.CharField(max_length=200)
+
+	class Meta:
+		verbose_name = 'oficina'
+		verbose_name_plural = 'oficinas'
+	
+	def __str__(self):
+		return self.nombre_oficina
+
+class Cargo(models.Model):
+	nombre_cargo = models.CharField(max_length=200)
+	oficina = models.ForeignKey(Oficina, related_name='oficina',on_delete = models.CASCADE)
+
+	class Meta:
+		verbose_name = 'cargo'
+		verbose_name_plural = 'cargos'
+	
+	def __str__(self):
+		return self.nombre_cargo
+
+"""
 class Correspondencia(models.Model):
 	id_correspondencia = models.CharField(max_length=50)
 	codigo_hoja_ruta = models.CharField(max_length=200)
@@ -15,21 +37,11 @@ class Correspondencia(models.Model):
 	fecha_envio = models.DateTimeField()
 	fecha_recepcion = models.DateTimeField()
 	fecha_devolucion = models.DateTimeField()
+
+	class Meta:
+		verbose_name = 'correspondencia'
+		verbose_name_plural = 'correspondencias'
 	
 	def __str__(self):
 		return self.codigo
-
-
-class Oficina(models.Model):
-	nombre_oficina = models.CharField(max_length=200)
-	
-	def __str__(self):
-		return self.nombre_oficina
-
-
-class Cargo(models.Model):
-	nombre_cargo = models.CharField(max_length=200)
-	
-	def __str__(self):
-		return self.nombre_cargo
-
+"""
