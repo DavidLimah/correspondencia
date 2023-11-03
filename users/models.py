@@ -3,5 +3,6 @@ from django.db import models
 
 # Módulo USERS
 class CustomUser(AbstractUser):
-    pass
+    oficina = models.CharField(max_length=200)
+    cargo = models.CharField(max_length=200)
 

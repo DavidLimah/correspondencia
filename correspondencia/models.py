@@ -1,8 +1,11 @@
 from django.db import models
 
+# from simple_history.models import HistoricalRecords
+
 # Modelos
 class Oficina(models.Model):
 	nombre_oficina = models.CharField(max_length=200)
+	# history = HistoricalRecords()
 
 	class Meta:
 		verbose_name = 'oficina'
@@ -13,7 +16,7 @@ class Oficina(models.Model):
 
 class Cargo(models.Model):
 	nombre_cargo = models.CharField(max_length=200)
-	oficina = models.ForeignKey(Oficina, related_name='oficina',on_delete = models.CASCADE)
+	# history = HistoricalRecords()
 
 	class Meta:
 		verbose_name = 'cargo'
@@ -21,6 +24,18 @@ class Cargo(models.Model):
 	
 	def __str__(self):
 		return self.nombre_cargo
+
+class TipoDocumento(models.Model):
+	tipo_documento = models.CharField(max_length=200)
+	# history = HistoricalRecords()
+
+	class Meta:
+		verbose_name = 'cargo'
+		verbose_name_plural = 'cargos'
+
+	def __str__(self):
+		return self.tipo_documento
+
 
 """
 class Correspondencia(models.Model):
