@@ -20,6 +20,9 @@
             {% if user.is_authenticated %}
             <a class="p-2 text-dark" href="{% url 'account_logout' %}">Cerrar sesión</a>
             <a class="p-2 text-dark" href="{% url 'hoja_ruta' %}">Crear hoja de ruta</a>
+            <a class="p-2 text-dark" href="#">Recibidos</a>
+            <a class="p-2 text-dark" href="#">Enviados</a>
+            <a class="p-2 text-dark" href="#">Listar todo</a>
             {% else %}
             <a class="p-2 text-dark" href="{% url 'account_login' %}">Iniciar sesión</a>
             <a class="p-2 text-dark" href="{% url 'account_signup' %}">Registrarse</a>
