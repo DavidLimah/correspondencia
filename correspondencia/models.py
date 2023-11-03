@@ -11,10 +11,10 @@ class Correspondencia(models.Model):
 	devolver = models.BooleanField()
 	recibido = models.BooleanField()
 	comentario = models.CharField(max_length=200)
-	fecha_creacion = models.DateTime(default=datetime.now())
-	fecha_envio = models.DateTime(default=datetime.now())
-	fecha_recepcion = models.DateTime(default=datetime.now())
-	fecha_devolucion = models.DateTime(default=datetime.now())
+	fecha_creacion = models.DateTimeField()
+	fecha_envio = models.DateTimeField()
+	fecha_recepcion = models.DateTimeField()
+	fecha_devolucion = models.DateTimeField()
 	
 	def __str__(self):
 		return self.codigo
