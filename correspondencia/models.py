@@ -30,8 +30,8 @@ class TipoDocumento(models.Model):
 	# history = HistoricalRecords()
 
 	class Meta:
-		verbose_name = 'cargo'
-		verbose_name_plural = 'cargos'
+		verbose_name = 'tipo documento'
+		verbose_name_plural = 'tipos documento'
 
 	def __str__(self):
 		return self.tipo_documento
