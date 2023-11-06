@@ -1,6 +1,8 @@
 from django.db import models
 
-from django.contrib.auth.models import User
+# from django.contrib.auth.models import User
+
+from .models import CustomUser
 
 from django.db.models.signals import post_save
 
@@ -26,12 +28,21 @@ class Cargo(models.Model):
 
 
 class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, relates_name = 'profile')
-    oficina = models.OneToOneField(Oficina, verbose_name='Oficina')
-    Cargo = models.OneToOneField(Cargo, verbose_name='Cargo')
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name = 'profile')
+    oficina = models.OneToOneField(Oficina, verbose_name='Oficina', on_delete = models.CASCADE)
+    Cargo = models.OneToOneField(Cargo, verbose_name='Cargo', on_delete=models.CASCADE)
 
     class Meta:
         verbose_name = 'Perfil'
         verbose_name_plural = 'Perfiles'
     
     
+def create_user_profile(sender, instance, created, **kwargs):
+    if created:
+        Profile.objects.create(user=instance)
+
+def save_user_profile(sender, instance, **kwargs):
+    instance.profile.save()
+
+post_save.connect(create_user_profile, sender=User)
+post_save.connect(save_user_profile, sender=User)
