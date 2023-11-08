@@ -5,8 +5,7 @@ name = "pypi"
 
 [packages]
 django = "==4.2"
-django-crispy-forms = "==2.1"
-django-allauth = "==0.58.1"
+pillow = "==10.1.0"
 
 [dev-packages]
 
