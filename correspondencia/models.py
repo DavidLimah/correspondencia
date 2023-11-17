@@ -75,16 +75,6 @@ class UsuarioOficina(models.Model):
 		return self.fk_usuario
 
 # Modelo CORRESPONDENCIA
-class Correspondencia(models.Model):
-	fk_gestion = models.ForeignKey(Gestion, related_name='fk_gestion', on_delete=models.CASCADE)
-	fk_usuario_oficina = models.ForeignKey(UsuarioOficina, related_name='fk_usuario_oficina',on_delete=models.CASCADE)
-	fk_oficina = models.ForeignKey(Oficina, related_name='fk_oficina',on_delete=models.CASCADE)
-	
-
-#####################################################################
-# MODELOS PARA RECICLAR
-
-# Modelos
 
 
 class Cargo(models.Model):
@@ -109,22 +99,26 @@ class TipoDocumento(models.Model):
 	def __str__(self):
 		return self.tipo_documento
 
-
-
 class Correspondencia(models.Model):
-	id_correspondencia = models.CharField(max_length=50)
 	codigo_hoja_ruta = models.CharField(max_length=200)
-	remitente = models.CharField(max_length=200)
-	destinatario = models.CharField(max_length = 200)
-	pendiente = models.BooleanField()
-	archivado = models.BooleanField()
-	devolver = models.BooleanField()
-	recibido = models.BooleanField()
-	comentario = models.CharField(max_length=200)
+	fk_gestion = models.ForeignKey(Gestion, related_name='fk_gestion', on_delete=models.CASCADE)
+	fk_usuario_oficina = models.ForeignKey(UsuarioOficina, related_name='fk_usuario_oficina',on_delete=models.CASCADE)
+	numero = models.IntegerField()
+	numero_oficina = models.IntegerField()
+	fecha = models.DateTimeField()
+	nombre = models.CharField(max_length=100)
+	asunto = models.CharField(max_length=500)
+	cite = models.CharField(max_length=30)
 	fecha_creacion = models.DateTimeField()
-	fecha_envio = models.DateTimeField()
+	estado = models.IntegerField()
 	fecha_recepcion = models.DateTimeField()
 	fecha_devolucion = models.DateTimeField()
+	fecha_envio = models.DateTimeField()
+	enviado = models.BooleanField()
+	pendiente = models.BooleanField()
+	archivado = models.BooleanField()
+	devuelto = models.BooleanField()
+	recibido = models.BooleanField()
 
 	class Meta:
 		verbose_name = 'correspondencia'
@@ -132,3 +126,26 @@ class Correspondencia(models.Model):
 	
 	def __str__(self):
 		return self.codigo
+
+# Modelo DERIVACIOONES
+class Derivaciones(models.Model):
+	fk_correspondencia = models.ForeignKey(Correspondencia, related_name='fk_correspondencia',on_delete=models.CASCADE)
+	fecha = models.DateTimeField()
+	asunto = models.CharField(max_length=500)
+	remitente = models.Model(Usuarios, related_name='remitente',on_delete=models.CASCADE)
+	destinatario = models.Model(Usuarios, related_name='destinatario',on_delete=models.CASCADE)
+	oficina_remitente = models.ForeignKey(oficina, related_name='oficina_remitenten',on_delete=models.CASCADE)
+	oficina_destino = models.ForeignKey(oficina, related_name='oficina_destino',on_delete=models.CASCADE)
+	fecha_sistema = models.DateTimeField()
+
+	class Meta:
+		verbose_name = 'correspondencia'
+		verbose_name_plural = 'correspondencias'
+	
+	def __str__(self):
+		return self.fk_correspondencia
+
+
+
+
+
