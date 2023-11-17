@@ -1,45 +1,55 @@
 from django.db import models
-from django.contrib.auth.models import User
+
+# from django.contrib.auth.models import User
+
+
+"""
+
+from app_correspondencia.models import CustomUser
+
 from django.db.models.signals import post_save
-# 
+
+from django.dispatch import receiver
 
 class Oficina(models.Model):
-	nombre_oficina = models.CharField(max_length=150)
+    nombre_oficina = models.CharField(max_length=100)
 
-	class Meta:
-		verbose_name = 'Oficina'
-		verbose_name_plural = 'Oficina'
-
-	def __str__(self):
-		return self.nombre_oficina
+    class Meta:
+        verbose_name = 'Oficina'
+        verbose_name_plural = 'Oficinas'
+    
+    def __str__(self):
+        return nombre_oficina
 
 class Cargo(models.Model):
-	nombre_cargo = models.CharField(max_length=150)
+    nombre_cargo = models.CharField(max_length=100)
 
-	class Meta:
-		verbose_name = 'Oficina'
-		verbose_name_plural = 'Oficina'
-		
-	def __str__(self):
-		return self.nombre_cargo
+    class Meta:
+        verbose_name = 'Oficina'
+        verbose_name_plural = 'Oficinas'
+    
+    def __str__(self):
+        return nombre_cargo
+
 
 class Profile(models.Model):
-	user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
-	image = models.ImageField(default='users/image_user.png',upload_to='users/')
-	oficina = models.OneToOneField(Oficina, on_delete=models.CASCADE, related_name='oficina')
-	cargo = models.OneToOneField(Cargo, on_delete=models.CASCADE, related_name='cargo')
+    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE, related_name = 'profile')
+    oficina = models.OneToOneField(Oficina, verbose_name='Oficina', on_delete = models.CASCADE)
+    Cargo = models.OneToOneField(Cargo, verbose_name='Cargo', on_delete=models.CASCADE)
 
-	class Meta:
-		verbose_name = 'Perfil'
-		verbose_name_plural = 'Perfiles'
-		ordering = ['id']
-
+    class Meta:
+        verbose_name = 'Perfil'
+        verbose_name_plural = 'Perfiles'
+    
+    
 def create_user_profile(sender, instance, created, **kwargs):
-	if created:
-		Profile.objects.create(user=instance)
+    if created:
+        Profile.objects.create(user=instance)
 
 def save_user_profile(sender, instance, **kwargs):
-	instance.profile.save()
+    instance.profile.save()
 
-post_save.connect(create_user_profile, sender=User)
-post_save.connect(save_user_profile, sender=User)
+post_save.connect(create_user_profile, sender=CustomUser)
+post_save.connect(save_user_profile, sender=CustomUser)
+
+"""

@@ -1,0 +1,21 @@
+{% extends '_base.html' %}
+
+{% block title %}Log In{% endblock title %}
+
+{% block content %}
+
+
+<br>
+
+<div class="text-center">
+    <h2>Iniciar sesión</h2>
+    <form method="post">
+        {% csrf_token %}
+        {% for field in form %}
+        <p>{{ field }}</p>
+        {% endfor %}
+        <button class="btn btn-primary" type="submit">Ingresar</button>
+    </form>
+</div>
+
+{% endblock content %}

@@ -1,1 +1,0 @@
-Se revisa alternativa Yii2 Framework para el proyecto
