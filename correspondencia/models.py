@@ -132,10 +132,10 @@ class Derivaciones(models.Model):
 	fk_correspondencia = models.ForeignKey(Correspondencia, related_name='fk_correspondencia',on_delete=models.CASCADE)
 	fecha = models.DateTimeField()
 	asunto = models.CharField(max_length=500)
-	remitente = models.Model(Usuarios, related_name='remitente',on_delete=models.CASCADE)
-	destinatario = models.Model(Usuarios, related_name='destinatario',on_delete=models.CASCADE)
-	oficina_remitente = models.ForeignKey(oficina, related_name='oficina_remitenten',on_delete=models.CASCADE)
-	oficina_destino = models.ForeignKey(oficina, related_name='oficina_destino',on_delete=models.CASCADE)
+	remitente = models.ForeignKey(Usuarios, related_name='remitente',on_delete=models.CASCADE)
+	destinatario = models.ForeignKey(Usuarios, related_name='destinatario',on_delete=models.CASCADE)
+	oficina_remitente = models.ForeignKey(Oficina, related_name='oficina_remitenten',on_delete=models.CASCADE)
+	oficina_destino = models.ForeignKey(Oficina, related_name='oficina_destino',on_delete=models.CASCADE)
 	fecha_sistema = models.DateTimeField()
 
 	class Meta:
