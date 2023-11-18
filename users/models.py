@@ -4,3 +4,5 @@ from django.db import models
 # Módulo USERS
 class CustomUser(AbstractUser):
     pass
+
+

@@ -153,6 +153,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'users.CustomUser'
 
+# AUTH_PROFILE_MODULE = 'accounts.UserProfile'
 
 # Configuración para autenticación de usuario
 LOGIN_REDIRECT_URL = 'home'
@@ -186,3 +187,6 @@ ACCOUNT_UNIQUE_EMAIL = True
 
 # django-crispy-forms
 # CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+
+
