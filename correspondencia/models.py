@@ -1,6 +1,6 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser
-from .models import users
+from users.models import AbstractUser
+# from .models import users
 
 # from simple_history.models import HistoricalRecords
 
@@ -45,10 +45,10 @@ class Oficina(models.Model):
 
 # Modelo USUARIOS
 class Usuarios(models.Model):
-	username = models.OneToOneField(users, on_delete=models.CASCADE)
-	nombres = models.OneToOneField(users, on_delete=models.CASCADE)
-	apellidos = models.OneToOneField(users, on_delete=models.CASCADE)
-	email = models.OneToOneField(users, on_delete=models.CASCADE)
+	username = models.OneToOneField(AbstractUser, on_delete=models.CASCADE)
+	# nombres = models.OneToOneField(AbstractUser, on_delete=models.CASCADE)
+	# apellidos = models.OneToOneField(AbstractUser, on_delete=models.CASCADE)
+	# email = models.OneToOneField(AbstractUser, on_delete=models.CASCADE)
 	fecha_nacimiento = models.DateTimeField()
 	fk_profesion = models.ForeignKey(Profesiones, related_name='fk_profesion', on_delete=models.CASCADE)
 	estado = models.IntegerField()
