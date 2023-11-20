@@ -1,0 +1,12 @@
+{% extends 'core/base.html' %}
+
+
+{% block content %}
+<h2>Inicio</h2>
+
+{% if request.user.is_authenticated %}
+	<p>Usuario: {{ user.username | upper }} </p>		
+{% endif %}
+
+
+{% endblock %}
