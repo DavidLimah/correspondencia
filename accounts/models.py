@@ -4,31 +4,6 @@ from django.db.models.signals import post_save
 from correspondencia.models import Oficina, Cargo
  
 
-"""
-
-class Oficina(models.Model):
-	nombre_oficina = models.CharField(max_length=150, unique=True, verbose_name='Oficina')
-
-	class Meta:
-		verbose_name = 'Oficina'
-		verbose_name_plural = 'Oficina'
-
-	def __str__(self):
-		return self.nombre_oficina
-
-class Cargo(models.Model):
-	nombre_cargo = models.CharField(max_length=150, unique=True, verbose_name='Cargo')
-
-	class Meta:
-		verbose_name = 'Cargo'
-		verbose_name_plural = 'Cargo'
-		
-	def __str__(self):
-		return self.nombre_cargo
-
-"""
-
-
 class Profile(models.Model):
 	user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
 	image = models.ImageField(default='users/image_user.png',upload_to='users/')

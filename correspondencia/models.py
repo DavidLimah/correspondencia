@@ -22,3 +22,9 @@ class Cargo(models.Model):
     
     def __str__(self):
         return self.nombre_cargo
+
+class Derivacion(models.Model):
+    pass
+
+class Correspondencia(models.Model):
+    pass
