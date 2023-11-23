@@ -50,8 +50,8 @@ class Bandeja(models.Model):
     observacion_cancelado = models.CharField(max_length=200, null=True, blank=True)
 
     class Meta:
-        verbose_name = 'derivado'
-        verbose_name_plural = 'derivados'
+        verbose_name = 'correspondencia'
+        verbose_name_plural = 'correspondencias'
     
     def __str__(self):
         return self.usuario_remitente, usuario_destino
