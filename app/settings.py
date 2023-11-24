@@ -40,6 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # Externo
+    'autocomplete_all',
+
     # Local
     'core',
     'accounts',
