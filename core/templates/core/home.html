@@ -4,31 +4,39 @@
 
 
 {% block content %}
-
+<br>
 {% if request.user.is_authenticated %}
 <div class="row">
 	<div class="col-md-3">
 		<div class="card">
 			<img src="{{ user.profile.image.url }}" class="" alt="...">
 			<div class="card-body">
-				
-				<h3 class="card-title text-primary">{{ user.first_name }} {{ user.last_name }}</h3>
-				<h5 class="card-title">{{ user.username | upper }}</h5>
-				<small><i class="bi bi-geo-alt"></i>Oficina: {{ user.profile.oficina }}</small>
-				<p class="card-text mt-3">Cargo: {{ user.profile.cargo }}</p>
-				<a href="{% url 'logout' %}" class="btn btn-sm btn-success">Cerrar sesión</a>
+				<h4 class="card-title text-primary">{{ user.first_name }} {{ user.last_name }}</h4>
+				<p><b>User: </b>{{ user.username | upper }}</p>
+				<p><b>Oficina: </b>{{ user.profile.oficina }}</p>
+				<p><b>Cargo: </b>{{ user.profile.cargo }}</p>
+				<a href="{% url 'logout' %}" class="btn btn-info">Cerrar sesión</a>
 			</div>
 		</div>
 		<div class="col-md-8">
 			
 		</div>
 	</div>
+	<div class="col-md-9 text-center">
+		<div>
+			<h3>Sistema gestión de correspondencia</h3>
+		</div>
+		<div class="">
+      		<img src="media/files.png">
+    	</div>
+	</div>
 </div>
 
 
 {% else %}
-	<h4>TItulo cualquiera</h4>
-	<p>{% lorem %}</p>
+	<div class="text-center">
+      <img src="media/files.png">
+    </div>
 {% endif %}
 
 

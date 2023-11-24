@@ -2,15 +2,23 @@
 
 
 {% block content %}
-<h2>Login</h2>
+<br>
+<div class="text-center">
+	<div>
+		<h2>Login</h2>
+	<form action="" method="post">
+		{% csrf_token %}
+		
+		<input type="text" name="username" id="" placeholder="Nombre de usuario" style="border-style: rounded;">
+		<br><br>
+		<input type="password" name="password" id="" placeholder="Contraseña">
+		<br><br>
+		<input type="submit" name="" class="btn btn-primary" value="Iniciar sesión">
+	</form>
 
-<form action="" method="post">
-	{% csrf_token %}
-	<input type="text" name="username" id="" placeholder="Nombre de usuario">
+	</div>
 	<br>
-	<input type="password" name="password" id="" placeholder="Contraseña">
-	<br>
-	<input type="submit" name="Iniciar sesión">
-</form>
+</div>
+
 
 {% endblock %}
