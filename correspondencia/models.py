@@ -1,6 +1,7 @@
 from django.db import models
 
 
+
 # Modelo Oficina
 class Oficina(models.Model):
     nombre_oficina = models.CharField(max_length=200)
@@ -54,6 +55,6 @@ class Bandeja(models.Model):
         verbose_name_plural = 'bandeja'
     
     def __str__(self):
-        return self.usuario_remitente, usuario_destino
+        return self.usuario_remitente
     
 

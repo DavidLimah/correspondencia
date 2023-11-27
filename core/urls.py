@@ -18,10 +18,13 @@ Including another URLconf
 # from django.urls import path, include
 
 from django.urls import path
-from .views import home, bandeja, exit
+from .views import home, bandeja, hoja_ruta, enviado, observado, exit
 
 urlpatterns = [
     path('', home, name='home'),
     path('bandeja/', bandeja, name='bandeja'),
+    path('hoja_ruta/', hoja_ruta, name='hoja_ruta'),
+    path('enviado/', enviado, name='enviado'),
+    path('observado/', observado, name='observado'),
     path('logout/', exit, name='exit'),
 ]

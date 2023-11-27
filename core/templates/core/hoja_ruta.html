@@ -1,0 +1,44 @@
+{% extends 'core/base.html' %}
+
+
+
+
+{% block content %}
+<br>
+{% if request.user.is_authenticated %}
+
+<div class="col-md-9">
+    <div class="form-control">
+        <p><b>Remitente: </b>{{user.first_name}} {{user.last_name}}</p>
+        <p><b>Oficina: </b> {{user.profile.oficina}}</p>
+        <p><b>Cargo: </b>{{user.profile.cargo}}</p>	
+    </div>
+    <form action="" class="form-control">
+        <label for="">Destinatario</label>
+        <input type="text" class="form-control">
+        <label for="">Asunto</label>
+        <textarea name="" id="" cols="30" rows="2" class="form-control"></textarea>
+        
+        <label for="">Adjuntar</label>
+        <input type="file">
+        <label for="">Numero fojas</label>
+        <input type="number">
+        <br><br>
+        <input type="submit" class="btn btn-primary" value="Crear y enviar">
+        
+    </form>
+</div>
+
+{% else %}
+	<div class="col-md-12 text-center">
+		<div>
+			<h3>Sistema Gestión de Correspondencia</h3>
+		</div>
+		<div class="">
+      		<img src="media/files.png">
+    	</div>
+	</div>
+{% endif %}
+
+
+{% endblock %}

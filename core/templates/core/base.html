@@ -16,21 +16,34 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="{% url 'home' %}">Inicio</a>
-        </li>
+        
         
         {% if request.user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link" href="#" style="color: dodgerblue;">{{user.first_name }} {{ user.last_name }}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'home' %}">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'hoja_ruta' %}">Crear hoja de ruta</a>
+        </li>
         <li class="nav-item">
           <a class="nav-link" href="{% url 'bandeja' %}">Bandeja de entrada</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Enviados</a>
+          <a class="nav-link" href="{% url 'enviado' %}">Enviados</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'observado' %}">Observados</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{% url 'exit' %}">Cerrar sesión</a>
         </li>
         {% else %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'home' %}">Inicio</a>
+        </li>
         <li class="nav-item">
           <a class="nav-link" href="{% url 'login' %}">Iniciar sesión</a>
         </li>

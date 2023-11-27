@@ -10,6 +10,18 @@ def home(request):
 def bandeja(request):
 	return render(request, 'core/bandeja.html')
 
+@login_required
+def hoja_ruta(request):
+	return render(request, 'core/hoja_ruta.html')
+
+@login_required
+def enviado(request):
+	return render(request, 'core/enviado.html')
+
+@login_required
+def observado(request):
+	return render(request, 'core/observado.html')
+
 def exit(request):
 	logout(request)
 	return redirect('home')
