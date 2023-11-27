@@ -14,13 +14,13 @@
 				<h4 class="card-title text-primary">{{ user.first_name }} {{ user.last_name }}</h4>
 				<p><b>User: </b>{{ user.username | upper }}</p>
 				<p><b>Oficina: </b>{{ user.profile.oficina }}</p>
-				<p><b>Cargo:</b>{{ user.profile.cargo }}</p>
+				<p><b>Cargo: </b>{{ user.profile.cargo }}</p>
 				<a href="{% url 'logout' %}" class="btn btn-info">Cerrar sesión</a>
 			</div>
 		</div>
 	</div>
 
-	<div class="col-md-9 text-center">
+	<div class="col-md-12 text-center">
 		<div>
 			<h3>Sistema Gestión de Correspondencia</h3>
 		</div>
