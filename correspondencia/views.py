@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 # Por definir
 from django.http.response import HttpResponseRedirect
 from django.contrib.auth import authenticate, login
-from django.views.generic import ListView, TemplateView, UpdateView, DeleteView
+# from django.views.generic import HojarutaView
 from django.contrib.auth.models import Group
 # from .forms import RegisterForm, UserForm, ProfileForm
 from .models import Oficina, Cargo, Bandeja
@@ -14,7 +14,12 @@ from django.contrib.auth.mixins import UserPassesTestMixin
 import os
 from django.conf import settings
 from datetime import date
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
+from django.forms.models import BaseModelForm
+from django.views import View
+from django.utils.decorators import method_decorator
+from typing import Any, Dict
+
 
 
 # Vistas
@@ -31,7 +36,7 @@ def add_group_name_to_context(view_class):
 
     def dispatch(self, request, *args, **kwargs):
         user = self.request.User
-        group = user.groups.find()
+        group = user.groups.first()
         group_name = None
         group_name_singular = None
         color = None
@@ -39,8 +44,8 @@ def add_group_name_to_context(view_class):
             if group.name == 'funcionarios':
                 color = 'bg-primary'
             
-            group_name = group_name
-            group_name_singular = plural_to_singular(group_name)
+            group_name = group.name
+            group_name_singular = plural_to_singular(group.name)
         
         context = {
             'group_name': group_name,
@@ -52,6 +57,8 @@ def add_group_name_to_context(view_class):
         return original_dispatch(self, request, *args, **kwargs)
     
     view_class.dispatch = dispatch
+    return view_class
 
 
+    # Crear hoja de ruta
     

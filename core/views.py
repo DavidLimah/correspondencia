@@ -1,25 +1,114 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
-from correspondencia.views import add_group_name_to_context
+
+#NUEVO
+
+# Por definir
+from django.http.response import HttpResponseRedirect
+from django.contrib.auth import authenticate, login
+# from django.views.generic import HojarutaView
+from django.contrib.auth.models import Group
+# from .forms import RegisterForm, UserForm, ProfileForm
+from correspondencia.models import Oficina, Cargo, Bandeja
+from accounts.models import Profile
+from django.contrib.auth.models import User
+from django.urls import reverse_lazy
+from django.contrib import messages
+from django.contrib.auth.mixins import UserPassesTestMixin
+import os
+from django.conf import settings
+from datetime import date
+from django.http import JsonResponse, HttpResponse
+from django.forms.models import BaseModelForm
+from django.views import View
+from django.utils.decorators import method_decorator
+from typing import Any, Dict
+
+
+# AGREGADO
+
+# Vistas
+def plural_to_singular(plural):
+    plural_singular = {
+        "funcionarios":"funcionario",
+    }
+
+    return plural_singular.get(plural, "error")
+
+# Decorador personalizado
+def add_group_name_to_context(view_class):
+    original_dispatch = view_class.dispatch
+
+    def dispatch(self, request, *args, **kwargs):
+        user = self.request.User
+        group = user.groups.first()
+        group_name = None
+        group_name_singular = None
+        color = None
+        if group:
+            if group.name == 'funcionarios':
+                color = 'bg-primary'
+            
+            group_name = group.name
+            group_name_singular = plural_to_singular(group.name)
+        
+        context = {
+            'group_name': group_name,
+            'group_name_singular': group_name_singular,
+            'color':color
+        }
+
+        self.extra_context = context
+        return original_dispatch(self, request, *args, **kwargs)
+    
+    view_class.dispatch = dispatch
+    return view_class
+
+
+# Crear hoja de ruta
+
 
 # 
+
 def home(request):
 	return render(request, 'core/home.html')
 
+
 @login_required
+@add_group_name_to_context
 def bandeja(request):
 	return render(request, 'core/bandeja.html')
 
+
+"""
 @login_required
+@add_group_name_to_context
 def hoja_ruta(request):
 	return render(request, 'core/hoja_ruta.html')
 
+"""
 @login_required
+@add_group_name_to_context
+class HojarutaView(TempleteView):
+      def get_context_data(self, **kwargs):
+            context = super().get_context_data(**kwargs)
+            profiles = Profile.objects.all()
+            user = self.request.user if self.request.user.is_authenticated else None
+            
+			for item in profiles:
+                  if user:
+					
+
+   
+      
+@login_required
+@add_group_name_to_context
 def enviado(request):
 	return render(request, 'core/enviado.html')
 
 @login_required
+@add_group_name_to_context
 def observado(request):
 	return render(request, 'core/observado.html')
 
