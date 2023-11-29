@@ -3,26 +3,23 @@
 {% block content %}
 <br>
 {% if request.user.is_authenticated %}
-<div class="row">	
-
 	<div class="text-center">
 		<div>
-			<h3>Sistema Gestión de Correspondencia</h3>
-		</div>
-		<div class="">
-      		<img src="media/files.png" height="200">
-
-    	</div>
-		<div>
 			<img src="{{ user.profile.image.url }}" alt="hugenerd" class="rounded-circle">
+			<br><br>
 			<h4 class="card-title text-primary">{{ user.first_name }} {{ user.last_name }}</h4>
 			<p><b>User: </b>{{ user.username | upper }}</p>
 			<p><b>Oficina: </b>{{ user.profile.oficina }}</p>
 			<p><b>Cargo: </b>{{ user.profile.cargo }}</p>
 		</div>
+		<div class="">
+      		<img src="media/files.png" height="200">
+    	</div>
+	    <div>
+			<h3>Sistema de Gestión de Correspondencia</h3>
+			<br>
+		</div>
 	</div>
-	
-</div>
 
 {% else %}
 	<div class="col-md-12 text-center">

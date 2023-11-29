@@ -6,28 +6,28 @@
 {% if request.user.is_authenticated %}
 
 <div class="card">
-    <h5 class="card-header" style="background: #01a2c6; color: whitesmoke;">Hoja de ruta</h5>
+    <h5 class="card-header" style="background: #cdeefd;">Hoja de ruta</h5>
     <form action="" class="form-control">
         <label><b>Remitente: </b></label>
-        <input type="" name="" class="border-0" value="{{user.first_name}} {{user.last_name}}">
+        <input type="" name="" class="border-0 col-9" value="{{user.first_name}} {{user.last_name}}">
         <br>
         <label><b>Oficina:</b></label>
-        <input type="" name="" class="border-0" value="{{user.profile.oficina}}">
+        <input type="" name="" class="border-0 col-9" value="{{user.profile.oficina}}">
         <br>
         <label><b>Cargo: </b></label>
-        <input type="" name="" class="border-0" value="{{user.profile.cargo}}">
+        <input type="" name="" class="border-0 col-9" value="{{user.profile.cargo}}">
         <br><br>
-        <label for="">Destinatario</label>
+        <label for=""><b>Destinatario</b></label>
         <input type="text" class="form-control">
-        <label for="">Asunto</label>
+        <label for=""><b>Asunto</b></label>
         <textarea name="" id="" cols="30" rows="2" class="form-control"></textarea>
         
-        <label for="">Adjuntar</label>
+        <label for=""><b>Adjuntar</b></label>
         <input type="file" class="form-control">
-        <label for="">Numero fojas</label>
+        <label for=""><b>Numero fojas</b></label>
         <input type="number">
         <br><br>
-        <input type="submit" class="btn btn-primary" value="Crear y enviar">
+        <input type="submit" class="btn btn-primary" value="Crear y derivar">
         
     </form>
 
