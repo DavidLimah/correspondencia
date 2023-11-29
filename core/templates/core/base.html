@@ -19,7 +19,7 @@
                 <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
                     <a href="/"
                         class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                        <span class="fs-5 d-none d-sm-inline">SGC</span>
+                        <span class="fs-5 d-none d-sm-inline">Correspondencia</span>
                     </a>
                     <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
                         id="menu">
@@ -67,7 +67,7 @@
                     <div class="dropdown pb-4">
                         <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
                             id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="{{ user.profile.image.url }}" alt="hugenerd" width="30" height="30"
+                            <img src="{{ user.profile.image.url }}" alt="hugenerd" width="50" height="50"
                                 class="rounded-circle">
                             <span class="d-none d-sm-inline mx-1" style="color: gold;">{{ user.username}}</span>
                         </a>
@@ -82,12 +82,10 @@
                 </div>
             </div>
             <div class="col py-3">
-
-
+                <nav class="navbar" style="background:#87cefa;">
+                    <a class="navbar-brand" href="#" style="color:#333;">&nbsp; <b>Cuenta actual: </b> {{user.first_name}} {{user.last_name}}</a>
+                </nav>
             {% endif %}
-
-
-
 
             {% block content %}
             {% endblock %}
