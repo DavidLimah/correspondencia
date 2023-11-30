@@ -28,6 +28,7 @@ from typing import Any, Dict
 
 # AGREGADO
 
+
 # Vistas
 def plural_to_singular(plural):
     plural_singular = {
@@ -35,6 +36,7 @@ def plural_to_singular(plural):
     }
 
     return plural_singular.get(plural, "error")
+
 
 # Decorador personalizado
 def add_group_name_to_context(view_class):
@@ -76,39 +78,20 @@ def home(request):
 
 
 @login_required
-@add_group_name_to_context
 def bandeja(request):
 	return render(request, 'core/bandeja.html')
 
 
-"""
 @login_required
-@add_group_name_to_context
 def hoja_ruta(request):
 	return render(request, 'core/hoja_ruta.html')
-
-"""
-@login_required
-@add_group_name_to_context
-class HojarutaView(TempleteView):
-      def get_context_data(self, **kwargs):
-            context = super().get_context_data(**kwargs)
-            profiles = Profile.objects.all()
-            user = self.request.user if self.request.user.is_authenticated else None
-            
-			for item in profiles:
-                  if user:
-					
-
    
       
 @login_required
-@add_group_name_to_context
 def enviado(request):
 	return render(request, 'core/enviado.html')
 
 @login_required
-@add_group_name_to_context
 def observado(request):
 	return render(request, 'core/observado.html')
 
