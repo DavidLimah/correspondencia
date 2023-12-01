@@ -2,52 +2,18 @@
 
 
 {% block content %}
-<br>
-{% if request.user.is_authenticated %}
 
-<div class="card">
-    <h5 class="card-header" style="background: #FFCC1E; color: #333;">Hoja de ruta</h5>
-    <form action="" class="form-control">
-        <label><b>Remitente: </b></label>
-        <input type="" name="" class="border-0 col-9" value="{{user.first_name}} {{user.last_name}}">
-        <br>
-        <label><b>Oficina:</b></label>
-        <input type="" name="" class="border-0 col-9" value="{{user.profile.oficina}}">
-        <br>
-        <label><b>Cargo: </b></label>
-        <input type="" name="" class="border-0 col-9" value="{{user.profile.cargo}}">
-        <br><br>
-        
-        <label>Destinarario</label>
+<p>hola mundo</p>
 
-        {% for p in perfiles %}
-        <input type="" name="" value="{{ p.user.first_name }} {{ p.user.last_name}}">
-        {% endfor %}
-        <br>
-        <label for=""><b>Asunto</b></label>
-        <textarea name="" id="" cols="30" rows="2" class="form-control"></textarea>
-        
-        <label for=""><b>Adjuntar</b></label>
-        <input type="file" class="form-control">
-        <label for=""><b>Numero fojas</b></label>
-        <input type="number">
-        <br><br>
-        <input type="submit" class="btn btn-primary" value="Crear y derivar">
-        
-    </form>
-
+<div class="row">
+    <div class="col-12">
+        <h1>Hoja de ruta</h1>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
 </div>
-
-{% else %}
-	<div class="col-md-12 text-center">
-		<div>
-			<h3>Sistema Gestión de Correspondencia</h3>
-		</div>
-		<div class="">
-      		<img src="media/files.png">
-    	</div>
-	</div>
-{% endif %}
-
 
 {% endblock %}

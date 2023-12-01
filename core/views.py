@@ -2,7 +2,13 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 
+from django.contrib.auth.models import User
+from correspondencia.models import Oficina, Cargo, Bandeja
+from accounts.models import Profile
+from correspondencia.forms import BandejaForm
+
 #NUEVO
+"""
 
 # Por definir
 from django.http.response import HttpResponseRedirect
@@ -10,9 +16,7 @@ from django.contrib.auth import authenticate, login
 # from django.views.generic import HojarutaView
 from django.contrib.auth.models import Group
 # from .forms import RegisterForm, UserForm, ProfileForm
-from correspondencia.models import Oficina, Cargo, Bandeja
-from accounts.models import Profile
-from django.contrib.auth.models import User
+
 from django.urls import reverse_lazy
 from django.contrib import messages
 from django.contrib.auth.mixins import UserPassesTestMixin
@@ -75,8 +79,9 @@ def add_group_name_to_context(view_class):
 
 # Crear hoja de ruta
 
+"""
 
-# 
+# PÁGINAS
 
 def home(request):
 	return render(request, 'core/home.html')
@@ -89,6 +94,7 @@ def bandeja(request):
 
 @login_required
 def hoja_ruta(request):
+    """
     oficinas = Oficina.objects.all()
     oficina_uno = Oficina.objects.get(pk=1)
     cargos = Cargo.objects.all()
@@ -109,7 +115,12 @@ def hoja_ruta(request):
         'perfil_uno':perfile_uno,
     }
 
-    return render(request, 'core/hoja_ruta.html', context_perfil)
+    """
+
+    form = BandejaForm
+    context_bandeja = {'form':form}
+
+    return render(request, 'core/hoja_ruta.html', context_bandeja)
    
       
 @login_required

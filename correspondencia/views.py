@@ -60,10 +60,3 @@ def add_group_name_to_context(view_class):
 
 """
 
-from django.shortcuts import render
-
-from correspondencia.models import Oficina, Cargo
-
-def oficina(request):
-    oficinas = Oficina.objects.all()
-    return render(request, 'core/enviado.html',{'oficinas':oficinas})
