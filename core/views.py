@@ -25,6 +25,11 @@ from django.views import View
 from django.utils.decorators import method_decorator
 from typing import Any, Dict
 
+from django.core.signals import request_finished
+from django.dispatch import receiver
+
+# from core.forms import ProfileForm
+
 
 # AGREGADO
 
@@ -84,12 +89,32 @@ def bandeja(request):
 
 @login_required
 def hoja_ruta(request):
-	return render(request, 'core/hoja_ruta.html')
+    oficinas = Oficina.objects.all()
+    oficina_uno = Oficina.objects.get(pk=1)
+    cargos = Cargo.objects.all()
+    cargo_uno = Cargo.objects.get(pk=1)
+    perfiles = Profile.objects.all()
+    perfile_uno = Profile.objects.get(pk=1)
+    context_oficina = {
+        'oficinas':oficinas,
+        'oficina_uno':oficina_uno,
+        }
+    context_cargo = {
+        'cargos' : cargos,
+        'cargo_uno' : cargo_uno,
+    }
+
+    context_perfil = {
+        'perfiles':perfiles,
+        'perfil_uno':perfile_uno,
+    }
+
+    return render(request, 'core/hoja_ruta.html', context_perfil)
    
       
 @login_required
 def enviado(request):
-	return render(request, 'core/enviado.html')
+    return render(request, 'core/enviado.html')
 
 @login_required
 def observado(request):

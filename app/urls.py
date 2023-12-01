@@ -19,9 +19,10 @@ from django.urls import path, include
 from django.conf import settings
 
 urlpatterns = [
-    path('', include('core.urls')),
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('', include('core.urls')),
+    #path('correspondencia/', include(correspondencia.urls)),
 ]
 
 if settings.DEBUG:
@@ -29,8 +30,6 @@ if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
-
-
-admin.site.site_header = 'Sistema Gestión de Correspondencia'
-admin.site.site_title = 'Sistema Gestión de Correspondencia'
+admin.site.site_header = 'Sistema de Gestión de Correspondencia'
+admin.site.site_title = 'Sistema de Gestión de Correspondencia'
 

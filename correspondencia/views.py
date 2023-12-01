@@ -1,11 +1,11 @@
-from django.shortcuts import render, redirect, get_object_or_404
+"""
 
-# Por definir
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http.response import HttpResponseRedirect
 from django.contrib.auth import authenticate, login
-# from django.views.generic import HojarutaView
+from django.views.generic import HojarutaView
 from django.contrib.auth.models import Group
-# from .forms import RegisterForm, UserForm, ProfileForm
+from .forms import RegisterForm, UserForm, ProfileForm
 from .models import Oficina, Cargo, Bandeja
 from django.contrib.auth.models import User
 from django.urls import reverse_lazy
@@ -19,7 +19,6 @@ from django.forms.models import BaseModelForm
 from django.views import View
 from django.utils.decorators import method_decorator
 from typing import Any, Dict
-
 
 
 # Vistas
@@ -59,6 +58,12 @@ def add_group_name_to_context(view_class):
     view_class.dispatch = dispatch
     return view_class
 
+"""
 
-    # Crear hoja de ruta
-    
+from django.shortcuts import render
+
+from correspondencia.models import Oficina, Cargo
+
+def oficina(request):
+    oficinas = Oficina.objects.all()
+    return render(request, 'core/enviado.html',{'oficinas':oficinas})

@@ -18,11 +18,12 @@
         <input type="" name="" class="border-0 col-9" value="{{user.profile.cargo}}">
         <br><br>
         
-        {% for funcionario in funcionarios %}
-        <p class="card-text">  {{ profile.first_name }}</p>
-        <label for=""><b>Destinatario</b></label>
-        <input type="text" class="form-control">
+        <label>Destinarario</label>
+
+        {% for p in perfiles %}
+        <input type="" name="" value="{{ p.user.first_name }} {{ p.user.last_name}}">
         {% endfor %}
+        <br>
         <label for=""><b>Asunto</b></label>
         <textarea name="" id="" cols="30" rows="2" class="form-control"></textarea>
         
