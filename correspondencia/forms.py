@@ -1,6 +1,6 @@
 from django.forms import ModelForm
 from accounts.models import Profile
-from correspondencia.models import Bandeja
+from correspondencia.models import Bandeja, Enviado
 
 
 class BandejaForm(ModelForm):
@@ -8,6 +8,12 @@ class BandejaForm(ModelForm):
 		model = Bandeja
 		# fields = ['usuario_remitente','oficina_remitente','cargo_remitente','numero_fojas','tipo_hoja_ruta','usuario_destino','oficina_destino','cargo_destino','fecha_derivado','asunto_hoja_ruta']
 		fields = '__all__'
+
+
+class EnviadoForm(ModelForm):
+    class Meta:
+        model = Enviado
+        fields = '__all__'
 
 
 """

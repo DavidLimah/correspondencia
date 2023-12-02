@@ -58,5 +58,21 @@ class Bandeja(models.Model):
     
     def __str__(self):
         return self.usuario_remitente
+
+
+class Enviado(models.Model):
+    user_remitente = models.CharField(max_length=200)
+    of_remitente = models.CharField(max_length=200)
+    car_remitente = models.CharField(max_length=200)
+    user_destinatario = models.CharField(max_length=200)
+    asunto_hr = models.CharField(max_length=200)
+    num_fojas = models.IntegerField()
+
+    class Meta:
+        verbose_name = 'enviado'
+        verbose_name_plural = 'enviados'
+    
+    def __str__(self):
+        return self.user_remitente
     
 

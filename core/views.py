@@ -5,7 +5,7 @@ from django.contrib.auth import logout
 from django.contrib.auth.models import User
 from correspondencia.models import Oficina, Cargo, Bandeja
 from accounts.models import Profile
-from correspondencia.forms import BandejaForm
+from correspondencia.forms import BandejaForm, EnviadoForm
 
 #NUEVO
 """
@@ -115,12 +115,16 @@ def hoja_ruta(request):
         'perfil_uno':perfile_uno,
     }
 
-    """
-
     form = BandejaForm
     context_bandeja = {'form':form}
 
-    return render(request, 'core/hoja_ruta.html', context_bandeja)
+    """
+
+    form_hr = EnviadoForm
+    context_hoja_ruta = {'form_hr':form_hr}
+    
+
+    return render(request, 'core/hoja_ruta.html', context_hoja_ruta)
    
       
 @login_required
