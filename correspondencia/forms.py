@@ -8,15 +8,34 @@ class BandejaForm(ModelForm):
 		model = Bandeja
 		# fields = ['usuario_remitente','oficina_remitente','cargo_remitente','numero_fojas','tipo_hoja_ruta','usuario_destino','oficina_destino','cargo_destino','fecha_derivado','asunto_hoja_ruta']
 		fields = '__all__'
+class EnviadoForm(ModelForm):
+    class Meta:
+        model = Enviado
+        fields = ['user_remitente','of_remitente','car_remitente','user_destinatario','asunto_hr','num_fojas',]
+        labels = {"user_remitente":"Remitente","of_remitente":"Oficina","car_remitente":"Cargo","user_destinatario":"Destinatario","asunto_hr":"Asunto","num_fojas":"Numero fojas",}
 
 
+"""
+# CODIGO QUE FUNCIONA
 class EnviadoForm(ModelForm):
     class Meta:
         model = Enviado
         fields = '__all__'
 
+from django.shortcuts import render
+from .models import MyModel
+from .forms import MyForm
 
-"""
+def my_form(request):
+  if request.method == "POST":
+    form = MyForm(request.POST)
+    if form.is_valid():
+      form.save()
+  else:
+      form = MyForm()
+  return render(request, 'cv-form.html', {'form': form})
+
+
 
 codigo_hoja_ruta = models.CharField(max_length=20, null=True, blank=True, default='S/C')
     usuario_remitente = models.CharField(max_length=200)

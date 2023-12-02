@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 
 from django.contrib.auth.models import User
-from correspondencia.models import Oficina, Cargo, Bandeja
+from correspondencia.models import Oficina, Cargo, Bandeja, Enviado
 from accounts.models import Profile
 from correspondencia.forms import BandejaForm, EnviadoForm
 
@@ -94,37 +94,17 @@ def bandeja(request):
 
 @login_required
 def hoja_ruta(request):
-    """
-    oficinas = Oficina.objects.all()
-    oficina_uno = Oficina.objects.get(pk=1)
-    cargos = Cargo.objects.all()
-    cargo_uno = Cargo.objects.get(pk=1)
-    perfiles = Profile.objects.all()
-    perfile_uno = Profile.objects.get(pk=1)
-    context_oficina = {
-        'oficinas':oficinas,
-        'oficina_uno':oficina_uno,
-        }
-    context_cargo = {
-        'cargos' : cargos,
-        'cargo_uno' : cargo_uno,
-    }
-
-    context_perfil = {
-        'perfiles':perfiles,
-        'perfil_uno':perfile_uno,
-    }
-
-    form = BandejaForm
-    context_bandeja = {'form':form}
-
-    """
-
-    form_hr = EnviadoForm
-    context_hoja_ruta = {'form_hr':form_hr}
+	if request.method == "POST":
+		form = EnviadoForm(request.POST)
+		if form.is_valid():
+			form.save()
+	else:
+		form = EnviadoForm()
+	return render(request, 'core/hoja_ruta.html', {'form':form})
+	
+   
+	
     
-
-    return render(request, 'core/hoja_ruta.html', context_hoja_ruta)
    
       
 @login_required
