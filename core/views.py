@@ -7,6 +7,8 @@ from correspondencia.models import Oficina, Cargo, Bandeja, Enviado
 from accounts.models import Profile
 from correspondencia.forms import BandejaForm, EnviadoForm
 
+from django.contrib import messages
+
 #NUEVO
 """
 
@@ -98,15 +100,14 @@ def hoja_ruta(request):
 		form = EnviadoForm(request.POST)
 		if form.is_valid():
 			form.save()
+			messages.success(request, 'Form submission successful')
+			return redirect('enviado')
 	else:
 		form = EnviadoForm()
-	return render(request, 'core/hoja_ruta.html', {'form':form})
-	
-   
-	
-    
-   
-      
+	context_hoja_ruta = {'form':form}
+	return render(request, 'core/hoja_ruta.html', context_hoja_ruta)
+
+
 @login_required
 def enviado(request):
     return render(request, 'core/enviado.html')
