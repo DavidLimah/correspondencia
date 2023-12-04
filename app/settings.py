@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 
     # Externo
     'autocomplete_all',
+    # 'django-clean-fields',
 
     # Local
     'core',

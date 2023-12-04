@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404,  HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 
@@ -101,8 +101,7 @@ def hoja_ruta(request):
 		form = EnviadoForm(request.POST)
 		if form.is_valid():
 			form.save()
-            
-			messages.success(request, 'Form submission successful')
+			return HttpResponseRedirect('/enviado/')
 	else:
 		form = EnviadoForm()
 	context_hoja_ruta = {'form':form}
