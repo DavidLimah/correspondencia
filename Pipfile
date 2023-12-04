@@ -5,7 +5,7 @@ name = "pypi"
 
 [packages]
 django-admin-autocomplete-all = "*"
-django-clean-fields = "*"
+django-flashcookie = "*"
 
 [dev-packages]
 

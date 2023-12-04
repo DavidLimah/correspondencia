@@ -10,6 +10,8 @@ from correspondencia.forms import BandejaForm, EnviadoForm
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 
+#from django.contrib.messages.views import SuccessMessageMixin
+
 #NUEVO
 """
 
@@ -101,7 +103,7 @@ def hoja_ruta(request):
 		form = EnviadoForm(request.POST)
 		if form.is_valid():
 			form.save()
-			return HttpResponseRedirect('/enviado/')
+			return HttpResponseRedirect("/enviado/")
 	else:
 		form = EnviadoForm()
 	context_hoja_ruta = {'form':form}
