@@ -103,6 +103,7 @@ def hoja_ruta(request):
 		form = EnviadoForm(request.POST)
 		if form.is_valid():
 			form.save()
+            messages.add_message(request, CRITITAL, "Mensaje")
 			return HttpResponseRedirect("/enviado/")
 	else:
 		form = EnviadoForm()
