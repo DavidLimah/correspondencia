@@ -18,8 +18,35 @@
         
         
     </thead>
+    {% for d in obj %}
+    <tr>
+        <td>
+            {{ d.id }}    
+        </td>
+        <td>
+            {{ d.user_remitente }}
+        </td>
+        <td>
+            {{ d.of_remitente }}
+        </td>
+        <td>
+            {{ d.car_remitente }}
+        </td>
+        <td>
+            {{ d.user_destinatario }}
+        </td>
+        <td>
+            {{ d.asunto_hr }}
+        </td>
+        <td>
+            {{ d.num_fojas }}
+        </td>
 
-    {{ objs.user_remitente}}
+    </tr>
+    {% endfor %}
+    
+        
+    
 </table>
 
 

@@ -115,7 +115,7 @@ def hoja_ruta(request):
 
 @login_required
 def enviado(request):
-    obj = Enviado.objects.get('user_remitente')
+    obj = Enviado.objects.all()
     context = {
         'obj':obj,
     }
