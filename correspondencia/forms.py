@@ -6,6 +6,7 @@ from accounts.models import Profile
 
 from django.contrib.auth.models import User
 
+from django import forms
 
 from django.contrib import messages
 
@@ -29,7 +30,7 @@ class SuccessMessageMixin:
 
 
 
-class BandejaForm(ModelForm):
+class BandejaForm(forms.Form, ModelForm):
 	class Meta:
 		model = Bandeja
 		fields = ["codigo","usuario_rtte","nombre_rtte","oficina_rtte","cargo_rtte","numero_fojas","tipo_hoja_ruta","usuario_destino","nombre_destino",]

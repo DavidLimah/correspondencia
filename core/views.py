@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, get_object_or_404,  HttpResponseRedirect
+from django.shortcuts import render, redirect, get_object_or_404, get_list_or_404,HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 
@@ -9,6 +9,8 @@ from correspondencia.forms import BandejaForm, EnviadoForm
 
 from django.contrib import messages
 from django.http import HttpResponseRedirect
+
+from django.views.generic import ListView
 
 #from django.contrib.messages.views import SuccessMessageMixin
 
@@ -113,7 +115,11 @@ def hoja_ruta(request):
 
 @login_required
 def enviado(request):
-    return render(request, 'core/enviado.html')
+    obj = Enviado.objects.get('user_remitente')
+    context = {
+        'obj':obj,
+    }
+    return render(request, 'core/enviado.html', context)
 
 @login_required
 def observado(request):

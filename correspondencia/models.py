@@ -69,6 +69,7 @@ class Enviado(models.Model):
     user_destinatario = models.CharField(max_length=200, null=True, blank=True)
     asunto_hr = models.CharField(max_length=200, null=True, blank=True)
     num_fojas = models.IntegerField(null=True, blank=True)
+    estado = models.BooleanField(default=True, null=True, blank=True)
 
     class Meta:
         verbose_name = 'enviado'
