@@ -2,6 +2,10 @@ from django.forms import ModelForm
 from accounts.models import Profile
 from correspondencia.models import Bandeja, Enviado
 
+from accounts.models import Profile
+
+from django.contrib.auth.models import User
+
 
 from django.contrib import messages
 
@@ -9,8 +13,8 @@ from django.contrib import messages
 class SuccessMessageMixin:
     """
     Add a success message on successful form submission.
-    """
     success_message = 'Exitoso'
+    """
 
     def form_valid(self, form):
         response = super().form_valid(form)
@@ -28,8 +32,9 @@ class SuccessMessageMixin:
 class BandejaForm(ModelForm):
 	class Meta:
 		model = Bandeja
-		# fields = ['usuario_remitente','oficina_remitente','cargo_remitente','numero_fojas','tipo_hoja_ruta','usuario_destino','oficina_destino','cargo_destino','fecha_derivado','asunto_hoja_ruta']
-		fields = '__all__'
+		fields = ["codigo","usuario_rtte","nombre_rtte","oficina_rtte","cargo_rtte","numero_fojas","tipo_hoja_ruta","usuario_destino","nombre_destino",]
+
+        
 class EnviadoForm(ModelForm):
     class Meta:
         model = Enviado

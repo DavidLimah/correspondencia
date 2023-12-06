@@ -10,8 +10,8 @@
             <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}" role="alert">{{ message }}</div>
         {% endfor %}
     {% endif %}
-        <h1>Hoja de ruta</h1>
-        <form action="" method="POST">
+        <h3>Hoja de ruta</h3>
+        <form action="" method="POST" class="form-control">
             {% csrf_token %}
             {{ form.as_p }}
             <input type="submit" name="" value="Enviar">

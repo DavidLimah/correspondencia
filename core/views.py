@@ -100,13 +100,13 @@ def bandeja(request):
 @login_required
 def hoja_ruta(request):
 	if request.method == "POST":
-		form = EnviadoForm(request.POST)
+		form = BandejaForm(request.POST)
 		if form.is_valid():
 			form.save()
-            messages.add_message(request, CRITITAL, "Mensaje")
+            # messages.add_message(request, CRITITAL, "Mensaje")
 			return HttpResponseRedirect("/enviado/")
 	else:
-		form = EnviadoForm()
+		form = BandejaForm()
 	context_hoja_ruta = {'form':form}
 	return render(request, 'core/hoja_ruta.html', context_hoja_ruta)
 
