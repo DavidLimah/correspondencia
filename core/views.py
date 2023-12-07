@@ -101,8 +101,13 @@ def bandeja(request):
 
 @login_required
 def hoja_ruta(request):
+    data = {
+        'user_remitente':'John Doe',
+        'of_remitente':'Matrix',
+        'car_remitente':'The one',
+    }
 	if request.method == "POST":
-		form = BandejaForm(request.POST)
+		form = BandejaForm(request.POST, initial=data)
 		if form.is_valid():
 			form.save()
             # messages.add_message(request, CRITITAL, "Mensaje")
@@ -116,14 +121,18 @@ def hoja_ruta(request):
 @login_required
 def enviado(request):
     obj = Enviado.objects.all()
-    context = {
+    context_enviado = {
         'obj':obj,
     }
-    return render(request, 'core/enviado.html', context)
+    return render(request, 'core/enviado.html', context_enviado)
 
 @login_required
 def observado(request):
-	return render(request, 'core/observado.html')
+    obj = Bandeja.objects.all()
+    context_observado = {
+        'obj':obj,
+    }
+    return render(request, 'core/observado.html',context_observado)
 
 def exit(request):
 	logout(request)
