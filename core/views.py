@@ -101,13 +101,8 @@ def bandeja(request):
 
 @login_required
 def hoja_ruta(request):
-    data = {
-        'user_remitente':'John Doe',
-        'of_remitente':'Matrix',
-        'car_remitente':'The one',
-    }
 	if request.method == "POST":
-		form = BandejaForm(request.POST, initial=data)
+		form = BandejaForm(request.POST)
 		if form.is_valid():
 			form.save()
             # messages.add_message(request, CRITITAL, "Mensaje")

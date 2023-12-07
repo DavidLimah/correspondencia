@@ -27,6 +27,12 @@ class Cargo(models.Model):
     def __str__(self):
         return self.nombre_cargo
 
+options_tipo = [
+    [0, 'Informe'],
+    [1, 'Nota interna'],
+    [2, 'Nota externa']
+]
+
 class Bandeja(models.Model):
     codigo = models.CharField(max_length=20, default='S/C', null=True, blank=True)
     usuario_rtte = models.CharField(max_length=20, null=True, blank=True)
@@ -34,7 +40,7 @@ class Bandeja(models.Model):
     oficina_rtte = models.CharField(max_length=200, null=True, blank=True)
     cargo_rtte = models.CharField(max_length=200, null=True, blank=True)
     numero_fojas = models.IntegerField(null=True, blank=True)
-    tipo_hoja_ruta = models.CharField(max_length=20, null=True, blank=True)
+    tipo_hoja_ruta = models.IntegerField(choices=options_tipo)
     usuario_destino = models.CharField(max_length=200, null=True, blank=True)
     nombre_destino = models.CharField(max_length=200, null=True, blank=True)
     oficina_destino = models.CharField(max_length=200, null=True, blank=True)
