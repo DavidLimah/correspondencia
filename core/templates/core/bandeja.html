@@ -15,6 +15,15 @@
 			
 		</tr>
 	</thead>
+	{% for d in obj_bandeja %}
+		<tr>
+			<td>{{ d.usuario_rtte }}</td>
+			<td>{{ d.nombre_rtte }}</td>
+			<td>{{ d.oficina_rtte }}</td>
+			<td>{{ d.cargo_rtte }}</td>
+		</tr>
+	{% endfor %}
 </table>
+
 
 {% endblock %}

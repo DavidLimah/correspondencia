@@ -96,7 +96,11 @@ def home(request):
 
 @login_required
 def bandeja(request):
-	return render(request, 'core/bandeja.html')
+    obj_bandeja = Bandeja.objects.all()
+    context_bandeja = {
+        'obj_bandeja':obj_bandeja,
+    }
+    return render(request, 'core/bandeja.html', context_bandeja)
 
 
 @login_required
@@ -115,9 +119,9 @@ def hoja_ruta(request):
 
 @login_required
 def enviado(request):
-    obj = Enviado.objects.all()
+    obj_enviado = Enviado.objects.all()
     context_enviado = {
-        'obj':obj,
+        'obj_enviado':obj_enviado,
     }
     return render(request, 'core/enviado.html', context_enviado)
 
