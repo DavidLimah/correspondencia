@@ -6,6 +6,8 @@ name = "pypi"
 [packages]
 django-admin-autocomplete-all = "*"
 django-flashcookie = "*"
+crispy-bootstrap5 = "*"
+django-crispy-forms = "*"
 
 [dev-packages]
 

@@ -44,6 +44,8 @@ INSTALLED_APPS = [
 
     # Externo
     'autocomplete_all',
+    'crispy_forms',
+    'crispy_bootstrap5',
     # 'django-clean-fields',
     # 'django-flashcookie',
 
@@ -53,6 +55,12 @@ INSTALLED_APPS = [
     #'users.apps.UserConfig',
     'correspondencia',
 ]
+
+
+# Crispy
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
