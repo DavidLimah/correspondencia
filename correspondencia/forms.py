@@ -3,6 +3,7 @@ from accounts.models import Profile
 from correspondencia.models import Bandeja, Enviado
 
 from accounts.models import Profile
+from correspondencia.models import Bandeja, Enviado, Oficina, Cargo
 
 from django.contrib.auth.models import User
 
@@ -28,13 +29,11 @@ class SuccessMessageMixin:
         return self.success_message % cleaned_data
 
 
-
-
-class BandejaForm(forms.Form, ModelForm):
-	class Meta:
-		model = Bandeja
-		fields = ["codigo","usuario_rtte","nombre_rtte","oficina_rtte","cargo_rtte","numero_fojas","tipo_hoja_ruta","usuario_destino","nombre_destino",]
-
+class BandejaForm(forms.Form):
+    user_rtte = forms.ModelChoiceField(label="Remitente",queryset=Profile.objects.all())
+    user_destino = forms.Model
+    
+    
         
 class EnviadoForm(ModelForm):
     class Meta:

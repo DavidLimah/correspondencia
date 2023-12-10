@@ -110,7 +110,7 @@ def hoja_ruta(request):
 		if form.is_valid():
 			form.save()
             # messages.add_message(request, CRITITAL, "Mensaje")
-			return HttpResponseRedirect("/enviado/")
+		return HttpResponseRedirect("/enviado/")
 	else:
 		form = BandejaForm()
 	context_hoja_ruta = {'form':form}
