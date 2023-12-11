@@ -29,9 +29,9 @@ class SuccessMessageMixin:
         return self.success_message % cleaned_data
 
 
-class BandejaForm(forms.Form):
+class BandejaForm(forms.ModelForm):
     user_rtte = forms.ModelChoiceField(label="Remitente",queryset=Profile.objects.all())
-    user_destino = forms.Model
+    user_te = forms.ModelMultipleChoiceField(queryset=User.objects.all())
     
     
         
