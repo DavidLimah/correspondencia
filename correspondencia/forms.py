@@ -29,9 +29,15 @@ class SuccessMessageMixin:
         return self.success_message % cleaned_data
 
 
-class BandejaForm(forms.ModelForm):
-    user_rtte = forms.ModelChoiceField(label="Remitente",queryset=Profile.objects.all())
-    user_te = forms.ModelMultipleChoiceField(queryset=User.objects.all())
+class BandejaForm(forms.Form):
+    remitente = User.objects.get(pk=1)
+    remitente = forms.CharField(initial=remitente)
+    user_remitente = forms.ModelChoiceField(label="Remitente",queryset=Profile.objects.all())
+    user_destino = forms.ModelMultipleChoiceField(label="Destinatario",queryset=User.objects.all())
+    
+    
+    
+    #remitente = forms.ChoiceField(label="Remitente",queryset=User.objects.get(pk=1))
     
     
         
@@ -42,50 +48,4 @@ class EnviadoForm(ModelForm):
         labels = {"user_remitente":"Remitente","of_remitente":"Oficina","car_remitente":"Cargo","user_destinatario":"Destinatario","asunto_hr":"Asunto","num_fojas":"Numero fojas",}
 
 
-"""
-# CODIGO QUE FUNCIONA
-class EnviadoForm(ModelForm):
-    class Meta:
-        model = Enviado
-        fields = '__all__'
 
-from django.shortcuts import render
-from .models import MyModel
-from .forms import MyForm
-
-def my_form(request):
-  if request.method == "POST":
-    form = MyForm(request.POST)
-    if form.is_valid():
-      form.save()
-  else:
-      form = MyForm()
-  return render(request, 'cv-form.html', {'form': form})
-
-
-
-codigo_hoja_ruta = models.CharField(max_length=20, null=True, blank=True, default='S/C')
-    usuario_remitente = models.CharField(max_length=200)
-    oficina_remitente = models.CharField(max_length=200)
-    cargo_remitente = models.CharField(max_length=200)
-    numero_fojas = models.IntegerField()
-    tipo_hoja_ruta = models.CharField(max_length=20)
-    usuario_destino = models.CharField(max_length=200)
-    oficina_destino = models.CharField(max_length=200)
-    cargo_destino = models.CharField(max_length=200)
-    correspondencia_derivada = models.BooleanField(default=False)
-    correspondencia_devuelta = models.BooleanField(default=False)
-    correspondencia_cancelada = models.BooleanField(default=False)
-    correspondencia_recibido = models.BooleanField(default=False)
-    correspondencia_devuelto = models.BooleanField(default=False)
-    correspondencia_archivado = models.BooleanField(default=False)
-    fecha_derivado = models.DateTimeField()
-    fecha_recibido = models.DateTimeField(null=True, blank=True)
-    fecha_devuelto = models.DateTimeField(null=True, blank=True)
-    fecha_archivado = models.DateTimeField(null=True, blank=True)
-    fecha_cancelado = models.DateTimeField(null=True, blank=True)
-    asunto_hoja_ruta = models.CharField(max_length=300)
-    observacion_devuelto = models.CharField(max_length=200, null=True, blank=True)
-    observacion_cancelado = models.CharField(max_length=200, null=True, blank=True)
-
-"""
