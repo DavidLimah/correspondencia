@@ -1,6 +1,8 @@
 from django.db import models
 
 from django.contrib.auth.models import User
+#from accounts.models import Profile
+
 
 
 
@@ -28,31 +30,31 @@ class Cargo(models.Model):
         return self.nombre_cargo
 
 options_tipo = [
-    [0, 'Informe'],
-    [1, 'Nota interna'],
-    [2, 'Nota externa']
+    ['INFORME', 'Informe'],
+    ['NOTA_INTERNA', 'Nota interna'],
+    ['NOTA_EXTERNA', 'Nota externa']
 ]
 
 class Bandeja(models.Model):
     codigo = models.CharField(max_length=20, default='S/C', null=True, blank=True)
-    usuario_rtte = models.CharField(max_length=20, null=True, blank=True)
-    nombre_rtte = models.CharField(max_length=200, null=True, blank=True)
-    oficina_rtte = models.CharField(max_length=200, null=True, blank=True)
-    cargo_rtte = models.CharField(max_length=200, null=True, blank=True)
+    usuario_rtte = models.OneToOneField(User, on_delete=models.CASCADE,related_name='usuario')
+    #nombre_rtte = models.OneToOneField(Profile, on_delete=models.CASCADE, related_name='nombre_rtte')
+    #oficina_rtte = models.OneToOneField(Oficina, on_delete=models.CASCADE, related_name='oficina')
+    #cargo_rtte = models.OneToOneField(Cargo, on_delete=models.CASCADE, related_name='cargo')
     numero_fojas = models.IntegerField(null=True, blank=True)
-    tipo_hoja_ruta = models.IntegerField(choices=options_tipo)
-    usuario_destino = models.CharField(max_length=200, null=True, blank=True)
-    nombre_destino = models.CharField(max_length=200, null=True, blank=True)
-    oficina_destino = models.CharField(max_length=200, null=True, blank=True)
-    cargo_destino = models.CharField(max_length=200, null=True, blank=True)
-    derivado = models.BooleanField(default=False, null=True, blank=True)
+    tipo_hoja_ruta = models.CharField(choices=options_tipo,max_length=200)
+    usuario_destino = models.OneToOneField(User, on_delete=models.CASCADE, related_name='usuario_destino')
+    #nombre_destino = models.OneToOneField(Profile, on_delete=models.CASCADE, related_name='usuario_destino')
+    #oficina_destino = models.OneToOneField(Oficina, on_delete=models.CASCADE, related_name='oficina')
+    #cargo_destino = models.OneToOneField(Cargo, on_delete=models.CASCADE, related_name='cargo')
+    derivado = models.BooleanField(default=True, null=True, blank=True)
     recibido = models.BooleanField(default=False, null=True, blank=True)
     devuelto = models.BooleanField(default=False, null=True, blank=True)
     cancelado = models.BooleanField(default=False, null=True, blank=True)
     archivado = models.BooleanField(default=False, null=True, blank=True)
     pendiente = models.BooleanField(default=False, null=True, blank=True)
     fecha_derivado = models.DateTimeField(auto_now_add=True,null=True, blank=True)
-    fecha_recibido = models.DateTimeField(null=True, blank=True)
+    fecha_recibido = models.DateTimeField(auto_now_add=True,null=True, blank=True)
     fecha_devuelto = models.DateTimeField(null=True, blank=True)
     fecha_cancelado = models.DateTimeField(null=True, blank=True)
     fecha_archivado = models.DateTimeField(null=True, blank=True)

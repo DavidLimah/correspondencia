@@ -29,12 +29,15 @@ class SuccessMessageMixin:
         return self.success_message % cleaned_data
 
 
-class BandejaForm(forms.Form):
-    remitente = User.objects.get(pk=1)
+class BandejaForm(ModelForm):
+    class Meta:
+        model = Bandeja
+        fields = ['codigo', 'usuario_rtte', 'numero_fojas', 'tipo_hoja_ruta', 'usuario_destino', 'asunto_hoja_ruta', ]
+    #remitente = User.objects.get(pk=1)
     #remitente = User.objects.filter(User=self.request.user)
-    remitente = forms.CharField(initial=remitente)
-    user_remitente = forms.ModelChoiceField(label="Remitente",queryset=Profile.objects.all())
-    user_destino = forms.ModelMultipleChoiceField(label="Destinatario",queryset=User.objects.all())
+    #remitente = forms.CharField(initial=remitente)
+    #user_remitente = forms.ModelChoiceField(label="Remitente",queryset=Profile.objects.all())
+    #user_destino = forms.ModelMultipleChoiceField(label="Destinatario",queryset=User.objects.all())
     
     
     
@@ -44,9 +47,9 @@ class BandejaForm(forms.Form):
         
 class EnviadoForm(ModelForm):
     class Meta:
-        model = Enviado
-        fields = ['user_remitente','of_remitente','car_remitente','user_destinatario','asunto_hr','num_fojas',]
-        labels = {"user_remitente":"Remitente","of_remitente":"Oficina","car_remitente":"Cargo","user_destinatario":"Destinatario","asunto_hr":"Asunto","num_fojas":"Numero fojas",}
+        model = Bandeja
+        fields = '__all__'
+        
 
 
 

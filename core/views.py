@@ -104,33 +104,22 @@ def bandeja(request):
 
 
 @login_required
-def hoja_ruta(request):
-	user = request.user
-	if user.is_authenticated:
-		initial_data = {'username':user.username}
-		form = BandejaForm(request.POST or None, initial=initial_data)
+def hoja_ruta(request):    
+	if request.method == "POST":
+		form = BandejaForm(request.POST)
 		if form.is_valid():
 			form.save()
-			return HttpResponseRedirect("/enviado/")
-	else:
-		form = BandejaForm(request.POST or None)
-	context_hoja_ruta = {'form':form}
-    
-	#if request.method == "POST":
-	#	form = BandejaForm(request.POST)
-	#	if form.is_valid():
-	#		form.save()
             # messages.add_message(request, CRITITAL, "Mensaje")
-	#	return HttpResponseRedirect("/enviado/")
-	#else:
-	#	form = BandejaForm()
-	#context_hoja_ruta = {'form':form}
+		return HttpResponseRedirect("/enviado/")
+	else:
+		form = BandejaForm()
+	context_hoja_ruta = {'form':form}
 	return render(request, 'core/hoja_ruta.html', context_hoja_ruta)
 
 
 @login_required
 def enviado(request):
-    obj_enviado = Enviado.objects.all()
+    obj_enviado = Bandeja.objects.all()
     context_enviado = {
         'obj_enviado':obj_enviado,
     }

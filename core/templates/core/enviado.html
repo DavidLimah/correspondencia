@@ -6,45 +6,24 @@
     <thead>
         <tr>
             <th scope="col">Id</th>
+            <th scope="col">Remitente</th>
             <th scope="col">Destinatario</th>
-            <th scope="col">Codigo</th>
-            <th scope="col">Fecha envio</th>
+            <th scope="col">Número fojas</th>
             <th scope="col">Tipo</th>
             <th scope="col">Asunto</th>
             <th scope="col">Acciones</th>
         </tr>
-
-
-        
-        
     </thead>
-    {% for d in obj_enviado %}
     <tr>
-        <td>
-            {{ d.id }}    
-        </td>
-        <td>
-            {{ d.user_remitente }}
-        </td>
-        <td>
-            {{ d.of_remitente }}
-        </td>
-        <td>
-            {{ d.car_remitente }}
-        </td>
-        <td>
-            {{ d.user_destinatario }}
-        </td>
-        <td>
-            {{ d.asunto_hr }}
-        </td>
-        <td>
-            {{ d.num_fojas }}
-        </td>
-
-    </tr>
+    {% for d in obj_enviado %}
+        <td>{{ d.id }}</td>
+        <td>{{ d.usuario_rtte }}</td>
+        <td>{{ d.usuario_destino }}</td>
+        <td>{{ d.numero_fojas }}</td>
+        <td>{{ d.tipo_hoja_ruta }}</td>
+        <td>{{ d.fecha_derivado}}</td>
     {% endfor %}
-    
+    </tr>
         
     
 </table>
