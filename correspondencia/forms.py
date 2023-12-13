@@ -30,8 +30,8 @@ class SuccessMessageMixin:
 
 
 class BandejaForm(forms.Form):
-    #remitente = User.objects.get(pk=1)
-    remitente = User.objects.filter(User=self.request.user)
+    remitente = User.objects.get(pk=1)
+    #remitente = User.objects.filter(User=self.request.user)
     remitente = forms.CharField(initial=remitente)
     user_remitente = forms.ModelChoiceField(label="Remitente",queryset=Profile.objects.all())
     user_destino = forms.ModelMultipleChoiceField(label="Destinatario",queryset=User.objects.all())
