@@ -35,15 +35,18 @@ options_tipo = [
     ['NOTA_EXTERNA', 'Nota externa']
 ]
 
+usuario_rtte_opts = User.objects.all()
+usuario_destino_opts = User.objects.all()
+
 class Bandeja(models.Model):
     codigo = models.CharField(max_length=20, default='S/C', null=True, blank=True)
-    usuario_rtte = models.OneToOneField(User, on_delete=models.CASCADE,related_name='usuario')
+    usuario_rtte = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usuario_rtte')
     #nombre_rtte = models.OneToOneField(Profile, on_delete=models.CASCADE, related_name='nombre_rtte')
     #oficina_rtte = models.OneToOneField(Oficina, on_delete=models.CASCADE, related_name='oficina')
     #cargo_rtte = models.OneToOneField(Cargo, on_delete=models.CASCADE, related_name='cargo')
     numero_fojas = models.IntegerField(null=True, blank=True)
     tipo_hoja_ruta = models.CharField(choices=options_tipo,max_length=200)
-    usuario_destino = models.OneToOneField(User, on_delete=models.CASCADE, related_name='usuario_destino')
+    usuario_destino = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usuario_destino')
     #nombre_destino = models.OneToOneField(Profile, on_delete=models.CASCADE, related_name='usuario_destino')
     #oficina_destino = models.OneToOneField(Oficina, on_delete=models.CASCADE, related_name='oficina')
     #cargo_destino = models.OneToOneField(Cargo, on_delete=models.CASCADE, related_name='cargo')

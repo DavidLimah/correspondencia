@@ -14,16 +14,24 @@
             <th scope="col">Acciones</th>
         </tr>
     </thead>
-    <tr>
     {% for d in obj_enviado %}
+    <tr>
+    
         <td>{{ d.id }}</td>
         <td>{{ d.usuario_rtte }}</td>
         <td>{{ d.usuario_destino }}</td>
         <td>{{ d.numero_fojas }}</td>
         <td>{{ d.tipo_hoja_ruta }}</td>
         <td>{{ d.fecha_derivado}}</td>
-    {% endfor %}
+        <td><button type="button" class="btn btn-primary">Primary</button>
+            <button type="button" class="btn btn-secondary">Secondary</button>
+            <button type="button" class="btn btn-success">Success</button>
+            <button type="button" class="btn btn-danger">Danger</button>
+            <button type="button" class="btn btn-warning">Warning</button>
+            <button type="button" class="btn btn-info">Info</button></td>
+    
     </tr>
+    {% endfor %}
         
     
 </table>

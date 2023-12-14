@@ -8,20 +8,10 @@
 
 <div class="row">
     <div class="col-12">
-    {% if messages %}
-        {% for message in messages %}
-            <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}" role="alert">{{ message }}</div>
-        {% endfor %}
-    {% endif %}
         <h3>Hoja de ruta</h3>
         <form action="" method="POST" class="form-control">
             {% csrf_token %}
-            {{ form.codigo }}
-            {{ form.usuario_rtte }}
-            {{ form.numero_fojas }}
-            {{ form.tipo_hoja_ruta }}
-            {{ form.usuario_destino }}
-            {{ form.asunto_hoja_ruta}}
+            {{ form|crispy}}
             <input type="submit" name="" value="Enviar">
             
         </form>

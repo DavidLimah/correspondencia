@@ -1,8 +1,6 @@
 from django.forms import ModelForm
 from accounts.models import Profile
-from correspondencia.models import Bandeja, Enviado
 
-from accounts.models import Profile
 from correspondencia.models import Bandeja, Enviado, Oficina, Cargo
 
 from django.contrib.auth.models import User
