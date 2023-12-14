@@ -2,40 +2,46 @@
 
 
 {% block content %}
+
+
+
 <table class="table">
     <thead>
         <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Remitente</th>
-            <th scope="col">Destinatario</th>
-            <th scope="col">Número fojas</th>
-            <th scope="col">Tipo</th>
-            <th scope="col">Asunto</th>
-            <th scope="col">Acciones</th>
+            <th scope="col" class="text-center">Id</th>
+            <th scope="col" class="text-center">Remitente</th>
+            <th scope="col" class="text-center">Destinatario</th>
+            <th scope="col" class="text-center">Número fojas</th>
+            <th scope="col" class="text-center">Tipo</th>
+            <th scope="col" class="text-center">Asunto</th>
+            <th scope="col" class="text-center">Acciones</th>
         </tr>
     </thead>
     {% for d in obj_enviado %}
+    {% if user.username %}
+    {% if d.usuario_rtte %}
+    <p>hola mundo</p>
+    
     <tr>
     
-        <td>{{ d.id }}</td>
-        <td>{{ d.usuario_rtte }}</td>
-        <td>{{ d.usuario_destino }}</td>
-        <td>{{ d.numero_fojas }}</td>
-        <td>{{ d.tipo_hoja_ruta }}</td>
-        <td>{{ d.fecha_derivado}}</td>
-        <td><button type="button" class="btn btn-primary">Primary</button>
-            <button type="button" class="btn btn-secondary">Secondary</button>
-            <button type="button" class="btn btn-success">Success</button>
-            <button type="button" class="btn btn-danger">Danger</button>
-            <button type="button" class="btn btn-warning">Warning</button>
-            <button type="button" class="btn btn-info">Info</button></td>
-    
+        <td class="text-center">{{ d.id }}</td>
+        <td class="text-center">{{ d.usuario_rtte }}</td>
+        <td class="text-center">{{ d.usuario_destino }}</td>
+        <td class="text-center">{{ d.numero_fojas }}</td>
+        <td class="text-center">{{ d.tipo_hoja_ruta }}</td>
+        <td class="text-center">{{ d.fecha_derivado}}</td>
+        <td class="text-center">
+            <button type="button" class="btn btn-primary text-wrap">Ver archivo</button>
+            <button type="button" class="btn btn-danger">Cancelar</button>
+        </td>
     </tr>
+    {% endif %}
+    
+    {% endif %}
     {% endfor %}
         
     
 </table>
-
 
 
 {% endblock %}

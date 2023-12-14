@@ -5,22 +5,30 @@
 <table class="table">
 	<thead>
 		<tr>
-			<th scope="col">Id</th>
-			<th scope="col">Remitente</th>
-			<th scope="col">Codigo</th>
-			<th scope="col">Fecha envio</th>
-			<th scope="col">Tipo</th>
-			<th scope="col">Asunto</th>
-			<th scope="col">Acciones</th>
+			<th scope="col" class="text-center">Código</th>
+			<th scope="col" class="text-center">Usuario remitente</th>
+			<th scope="col" class="text-center">Número fojas</th>
+			<th scope="col" class="text-center">Tipo hoja ruta</th>
+			<th scope="col" class="text-center">Usuario destino</th>
+			<th scope="col" class="text-center">Asunto</th>
+			<th scope="col" class="text-center">Acciones</th>
 			
 		</tr>
 	</thead>
 	{% for d in obj_bandeja %}
 		<tr>
-			<td>{{ d.usuario_rtte }}</td>
-			<td>{{ d.nombre_rtte }}</td>
-			<td>{{ d.oficina_rtte }}</td>
-			<td>{{ d.cargo_rtte }}</td>
+			<td class="text-center">{{ d.codigo }}</td>
+			<td class="text-center">{{ d.usuario_rtte }}</td>
+			<td class="text-center">{{ d.numero_fojas }}</td>
+			<td class="text-center">{{ d.tipo_hoja_ruta }}</td>
+			<td class="text-center">{{ d.usuario_destino}}</td>
+			<td class="text-center">{{ d.asunto_hoja_ruta}}</td>
+			<td class="text-center">
+				<button type="button" class="btn btn-primary">Recibir</button>
+				<button type="button" class="btn btn-info">Devolver</button><br>
+				<button type="button" class="btn btn-warning">Archivar</button>
+				<button type="button" class="btn btn-danger">Cancelar</button>
+			</td>
 		</tr>
 	{% endfor %}
 </table>

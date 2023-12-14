@@ -51,7 +51,7 @@ class Bandeja(models.Model):
     #oficina_destino = models.OneToOneField(Oficina, on_delete=models.CASCADE, related_name='oficina')
     #cargo_destino = models.OneToOneField(Cargo, on_delete=models.CASCADE, related_name='cargo')
     derivado = models.BooleanField(default=True, null=True, blank=True)
-    recibido = models.BooleanField(default=False, null=True, blank=True)
+    recibido = models.BooleanField(default=True, null=True, blank=True)
     devuelto = models.BooleanField(default=False, null=True, blank=True)
     cancelado = models.BooleanField(default=False, null=True, blank=True)
     archivado = models.BooleanField(default=False, null=True, blank=True)
