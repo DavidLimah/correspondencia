@@ -11,12 +11,7 @@
         <h3>Hoja de ruta</h3>
         <form action="" method="POST" class="form-control">
             {% csrf_token %}
-            {{ form.codigo }}
-            {{ form.usuario_rtte }}
-            {{ form.numero_fojas }}
-            {{ form.tipo_hoja_ruta }}
-            {{ form.usuario_destino }}
-            {{ form.asunto_hoja_ruta }}
+            {{ form|crispy }}
             <input type="submit" name="" value="Enviar">
             
         </form>

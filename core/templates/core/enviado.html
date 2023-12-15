@@ -4,7 +4,6 @@
 {% block content %}
 
 
-
 <table class="table">
     <thead>
         <tr>
@@ -17,27 +16,25 @@
             <th scope="col" class="text-center">Acciones</th>
         </tr>
     </thead>
+
     {% for d in obj_enviado %}
-    {% if user.username %}
-    {% if d.usuario_rtte %}
+        {% if user.id == obj_enviado.id %}
+    
     <p>hola mundo</p>
-    
     <tr>
-    
         <td class="text-center">{{ d.id }}</td>
         <td class="text-center">{{ d.usuario_rtte }}</td>
         <td class="text-center">{{ d.usuario_destino }}</td>
         <td class="text-center">{{ d.numero_fojas }}</td>
         <td class="text-center">{{ d.tipo_hoja_ruta }}</td>
-        <td class="text-center">{{ d.fecha_derivado}}</td>
+        <td class="text-center">{{ d.fecha_derivado }}</td>
         <td class="text-center">
             <button type="button" class="btn btn-primary text-wrap">Ver archivo</button>
             <button type="button" class="btn btn-danger">Cancelar</button>
         </td>
     </tr>
-    {% endif %}
     
-    {% endif %}
+        {% endif %}
     {% endfor %}
         
     
