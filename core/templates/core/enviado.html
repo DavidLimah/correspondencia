@@ -18,9 +18,8 @@
     </thead>
 
     {% for d in obj_enviado %}
-        {% if user.id == obj_enviado.id %}
+        {% if user.pk == d.usuario_rtte.pk %}
     
-    <p>hola mundo</p>
     <tr>
         <td class="text-center">{{ d.id }}</td>
         <td class="text-center">{{ d.usuario_rtte }}</td>
