@@ -1,7 +1,7 @@
 from django.forms import ModelForm
 from accounts.models import Profile
 
-from correspondencia.models import Bandeja, Enviado, Oficina, Cargo
+from correspondencia.models import Correspondencia, Enviado, Oficina, Cargo
 
 from django.contrib.auth.models import User
 
@@ -27,9 +27,9 @@ class SuccessMessageMixin:
         return self.success_message % cleaned_data
 
 
-class BandejaForm(ModelForm):
+class CorrespondenciaForm(ModelForm):
     class Meta:
-        model = Bandeja
+        model = Correspondencia
         fields = ['codigo', 'usuario_rtte', 'numero_fojas', 'tipo_hoja_ruta', 'usuario_destino', 'asunto_hoja_ruta', ]
     #remitente = User.objects.get(pk=1)
     #remitente = User.objects.filter(User=self.request.user)
@@ -45,9 +45,13 @@ class BandejaForm(ModelForm):
         
 class EnviadoForm(ModelForm):
     class Meta:
-        model = Bandeja
+        model = Correspondencia
         fields = '__all__'
         
 
+class ObservadoForm(ModelForm):
+    class Meta:
+        model = Correspondencia
+        fields = '__all__'
 
 

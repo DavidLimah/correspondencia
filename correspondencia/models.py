@@ -38,7 +38,7 @@ options_tipo = [
 usuario_rtte_opts = User.objects.all()
 usuario_destino_opts = User.objects.all()
 
-class Bandeja(models.Model):
+class Correspondencia(models.Model):
     codigo = models.CharField(max_length=20, default='S/C', null=True, blank=True)
     usuario_rtte = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usuario_rtte')
     #nombre_rtte = models.OneToOneField(Profile, on_delete=models.CASCADE, related_name='nombre_rtte')
@@ -66,8 +66,8 @@ class Bandeja(models.Model):
     asunto_cancelado = models.CharField(max_length=200, null=True, blank=True)
 
     class Meta:
-        verbose_name = 'bandeja'
-        verbose_name_plural = 'bandeja'
+        verbose_name = 'correspondencia'
+        verbose_name_plural = 'correspondencias'
     
     def __str__(self):
         return self.usuario_remitente

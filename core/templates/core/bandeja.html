@@ -6,21 +6,20 @@
 	<thead>
 		<tr>
 			<th scope="col" class="text-center">Código</th>
-			<th scope="col" class="text-center">Usuario remitente</th>
+			<th scope="col" class="text-center">Remitente</th>
 			<th scope="col" class="text-center">Número fojas</th>
 			<th scope="col" class="text-center">Tipo hoja ruta</th>
-			<th scope="col" class="text-center">Usuario destino</th>
 			<th scope="col" class="text-center">Asunto</th>
 			<th scope="col" class="text-center">Acciones</th>
 		</tr>
 	</thead>
 	{% for d in obj_bandeja %}
+		{% if user.pk == d.usuario_destino.pk and not d.devuelto %}
 		<tr>
 			<td class="text-center">{{ d.codigo }}</td>
 			<td class="text-center">{{ d.usuario_rtte }}</td>
 			<td class="text-center">{{ d.numero_fojas }}</td>
 			<td class="text-center">{{ d.tipo_hoja_ruta }}</td>
-			<td class="text-center">{{ d.usuario_destino}}</td>
 			<td class="text-center">{{ d.asunto_hoja_ruta}}</td>
 			<td class="text-center">
 				<button type="button" class="btn btn-primary">Recibir</button>
@@ -29,6 +28,7 @@
 				<button type="button" class="btn btn-danger">Cancelar</button>
 			</td>
 		</tr>
+		{% endif %}
 	{% endfor %}
 </table>
 

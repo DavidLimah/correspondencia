@@ -5,24 +5,32 @@
 <table class="table">
 	<thead>
 		<tr>
-			<th scope="col">Id</th>
-			<th scope="col">Remitente</th>
-			<th scope="col">Codigo</th>
-			<th scope="col">Fecha envio</th>
-			<th scope="col">Tipo</th>
-			<th scope="col">Asunto</th>
-			<th scope="col">Acciones</th>
-		</tr>
-		<tr>
-			<td>
-				<button type="button" class="btn btn-primary text-wrap">Recibir</button>
-				<button type="button" class="btn btn-success">Success</button><br>
-				<button type="button" class="btn btn-danger">Danger</button>
-				<button type="button" class="btn btn-warning">Warning</button><br>
-				<button type="button" class="btn btn-info">Info</button>
-			</td>
+			<th scope="col" class="text-center">Código</th>
+			<th scope="col" class="text-center">Remitente</th>
+			<th scope="col" class="text-center">Número fojas</th>
+			<th scope="col" class="text-center">Tipo hoja ruta</th>
+			<th scope="col" class="text-center">Asunto</th>
+			<th scope="col" class="text-center">Acciones</th>
 		</tr>
 	</thead>
+	{% for d in obj_observado %}
+		{% if user.pk == d.usuario_destino.pk and d.devuelto %}
+		<tr>
+			<td class="text-center">{{ d.codigo }}</td>
+			<td class="text-center">{{ d.usuario_rtte }}</td>
+			<td class="text-center">{{ d.numero_fojas }}</td>
+			<td class="text-center">{{ d.tipo_hoja_ruta }}</td>
+			<td class="text-center">{{ d.asunto_hoja_ruta}}</td>
+			<td class="text-center">
+				<button type="button" class="btn btn-primary">Recibir</button>
+				<button type="button" class="btn btn-info">Devolver</button><br>
+				<button type="button" class="btn btn-warning">Archivar</button>
+				<button type="button" class="btn btn-danger">Cancelar</button>
+			</td>
+		</tr>
+		{% endif %}
+	{% endfor %}
 </table>
+
 
 {% endblock %}
