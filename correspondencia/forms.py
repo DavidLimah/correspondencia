@@ -49,9 +49,13 @@ class EnviadoForm(ModelForm):
         fields = '__all__'
         
 
-class ObservadoForm(ModelForm):
+class DevueltoForm(ModelForm):
     class Meta:
         model = Correspondencia
         fields = '__all__'
 
 
+class CanceladoForm(ModelForm):
+    class Meta:
+        model = Correspondencia
+        fields = '__all__'

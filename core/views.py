@@ -21,12 +21,12 @@ def home(request):
 
 
 @login_required
-def bandeja(request):
-    obj_bandeja = Correspondencia.objects.all()
-    context_bandeja = {
-        'obj_bandeja':obj_bandeja,
+def recibido(request):
+    obj_recibido = Correspondencia.objects.all()
+    context_recibido = {
+        'obj_recibido':obj_recibido,
     }
-    return render(request, 'core/bandeja.html', context_bandeja)
+    return render(request, 'core/recibido.html', context_recibido)
 
 
 @login_required
@@ -52,12 +52,20 @@ def enviado(request):
     return render(request, 'core/enviado.html', context_enviado)
 
 @login_required
-def observado(request):
-    obj_observado = Correspondencia.objects.all()
-    context_observado = {
-        'obj_observado':obj_observado,
+def devuelto(request):
+    obj_devuelto = Correspondencia.objects.all()
+    context_devuelto = {
+        'obj_devuelto':obj_devuelto,
     }
-    return render(request, 'core/observado.html',context_observado)
+    return render(request, 'core/devuelto.html',context_devuelto)
+
+@login_required
+def cancelado(request):
+	obj_cancelado = Correspondencia.objects.all()
+	context_cancelado = {
+		'obj_cancelado':obj_cancelado,
+    }
+	return render(request, 'core/cancelado.html', context_cancelado)
 
 def exit(request):
 	logout(request)
