@@ -30,6 +30,22 @@ def recibido(request):
 
 
 @login_required
+def recibir(request, pk):
+    archivado = Correspondencia.objects.get(pk=pk)
+    archivado.archivado = True
+    archivado.save()
+    return reverse("archivado")
+
+@login_required
+def archivado(request):
+    obj_archivado = Correspondencia.objects.all()
+    context_archivado = {
+        'obj_archivado':obj_archivado,
+    }
+    return render(request, 'core/archivado.html', context_archivado)
+
+
+@login_required
 def hoja_ruta(request):    
 	if request.method == "POST":
 		form = CorrespondenciaForm(request.POST)
