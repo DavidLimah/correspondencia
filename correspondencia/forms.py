@@ -31,23 +31,13 @@ class CorrespondenciaForm(ModelForm):
     class Meta:
         model = Correspondencia
         fields = ['codigo', 'usuario_rtte', 'numero_fojas', 'tipo_hoja_ruta', 'usuario_destino', 'asunto_hoja_ruta', ]
-    #remitente = User.objects.get(pk=1)
-    #remitente = User.objects.filter(User=self.request.user)
-    #remitente = forms.CharField(initial=remitente)
-    #user_remitente = forms.ModelChoiceField(label="Remitente",queryset=Profile.objects.all())
-    #user_destino = forms.ModelMultipleChoiceField(label="Destinatario",queryset=User.objects.all())
-    
-    
-    
-    #remitente = forms.ChoiceField(label="Remitente",queryset=User.objects.get(pk=1))
-    
-    
-        
+
+
 class EnviadoForm(ModelForm):
     class Meta:
         model = Correspondencia
         fields = '__all__'
-        
+
 
 class DevueltoForm(ModelForm):
     class Meta:

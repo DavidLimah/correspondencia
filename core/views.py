@@ -34,7 +34,7 @@ def recibir(request, pk):
     archivado = Correspondencia.objects.get(pk=pk)
     archivado.archivado = True
     archivado.save()
-    return reverse("archivado")
+    return reverse(request, 'recibir')
 
 @login_required
 def archivado(request):
