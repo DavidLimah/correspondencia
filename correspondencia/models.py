@@ -1,9 +1,10 @@
 from django.db import models
 
 from django.contrib.auth.models import User
+
+from django.urls import reverse
+
 #from accounts.models import Profile
-
-
 
 
 # Modelo Oficina
@@ -63,14 +64,18 @@ class Correspondencia(models.Model):
     fecha_archivado = models.DateTimeField(null=True, blank=True)
     asunto_hoja_ruta = models.CharField(max_length=300, null=True, blank=True)
     asunto_devuelto = models.CharField(max_length=200, null=True, blank=True)
+    asunto_archivado = models.CharField(max_length=200, null=True, blank=True)
     asunto_cancelado = models.CharField(max_length=200, null=True, blank=True)
 
     class Meta:
         verbose_name = 'correspondencia'
         verbose_name_plural = 'correspondencias'
-    
+
     def __str__(self):
         return self.usuario_remitente
+
+    def get_absolute_url(self):
+        return reverse('codigo', kwargs={'pk': self.pk})
 
 
 class Enviado(models.Model):

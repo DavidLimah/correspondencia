@@ -5,12 +5,16 @@ from django.contrib.auth import logout
 from django.contrib.auth.models import User
 from correspondencia.models import Oficina, Cargo, Correspondencia, Enviado
 from accounts.models import Profile
-from correspondencia.forms import CorrespondenciaForm, EnviadoForm
+from correspondencia.forms import CorrespondenciaForm, ArchivarForm
 
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 
 from django.views.generic import ListView
+
+from django.views.generic.edit import FormView
+
+from django import db
 
 #from django.contrib.messages.views import SuccessMessageMixin
 
@@ -30,11 +34,16 @@ def recibido(request):
 
 
 @login_required
-def recibir(request, pk):
-    archivado = Correspondencia.objects.get(pk=pk)
-    archivado.archivado = True
-    archivado.save()
-    return reverse(request, 'recibir')
+def archivar(request, pk):
+	if request.method == 'POST':
+		if 'button_archivar' in request.POST:
+			instance = get_list_or_404(Correspondencia, pk=pk)
+			archivar_form = form = ArchivarForm(request.POST, instance=instance)
+			if archivar_form.is_valid():
+				correspondencia = archivar_form.save(commit=False)
+				correspondencia.save()
+	return render(request, 'core/archivar.html', context={'archivar_form':archivar_form,})
+
 
 @login_required
 def archivado(request):
