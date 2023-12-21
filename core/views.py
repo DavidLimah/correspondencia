@@ -34,28 +34,6 @@ def recibido(request):
 
 
 @login_required
-def archivar(request, id):
-	instance = get_list_or_404(Correspondencia, id=id)
-	archivar_form = ArchivarForm(request.POST, instance=instance)
-	correspondencia = archivar_form.save(commit=False)
-	if request.method == 'POST':
-		if 'button_archivar' in request.POST:
-			if archivar_form.is_valid():
-				
-				correspondencia.save()
-	return render(request, 'core/archivar.html', context={'archivar_form':archivar_form,})
-
-
-@login_required
-def archivado(request):
-    obj_archivado = Correspondencia.objects.all()
-    context_archivado = {
-        'obj_archivado':obj_archivado,
-    }
-    return render(request, 'core/archivado.html', context_archivado)
-
-
-@login_required
 def hoja_ruta(request):    
 	if request.method == "POST":
 		form = CorrespondenciaForm(request.POST)
@@ -67,6 +45,29 @@ def hoja_ruta(request):
 		form = CorrespondenciaForm()
 	context_hoja_ruta = {'form':form}
 	return render(request, 'core/hoja_ruta.html', context_hoja_ruta)
+
+
+@login_required
+def archivar(request, id):
+	asunto_archivar = Correspondencia.objects.get(id=id)
+	if request.method == 'POST':
+		form_archivar = ArchivarForm(request.POST, instance=asunto_archivar)
+		if form_archivar.is_valid():
+			form_archivar.save()
+		return HttpResponseRedirect('/archivado/')
+	else:
+		form_archivar = ArchivarForm(instance=asunto_archivar)
+	context_archivar = {'form_archivar':form_archivar,'archivar':True,}
+	return render(request, 'core/archivar.html', context_archivar)
+
+
+@login_required
+def archivado(request):
+    obj_archivado = Correspondencia.objects.all()
+    context_archivado = {
+        'obj_archivado':obj_archivado,
+    }
+    return render(request, 'core/archivado.html', context_archivado)
 
 
 @login_required

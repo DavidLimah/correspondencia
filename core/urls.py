@@ -23,7 +23,7 @@ from .views import home, hoja_ruta, recibido, enviado, devuelto,  archivado, arc
 urlpatterns = [
     path('', home, name='home'),
     path('recibido/', recibido, name='recibido'),
-    path('archivar/<int:id>', archivar, name='archivar'),
+    path('archivar/<int:id>/change', archivar, name='archivar'),
     path('hoja_ruta/', hoja_ruta, name='hoja_ruta'),
     path('enviado/', enviado, name='enviado'),
     path('devuelto/', devuelto, name='devuelto'),

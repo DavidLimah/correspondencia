@@ -57,14 +57,8 @@ class ArchivarForm(ModelForm):
         fields = ['asunto_hoja_ruta']
         labels = {'asunto_hoja_ruta':'Asunto',}
 """
-class ArchivarForm(forms.ModelForm):
-    asunto_archivado = forms.CharField()
+class ArchivarForm(ModelForm):
     class Meta:
         model = Correspondencia
-        fields = ['asunto_archivado',]
-    
-    def save(self, commit=True):
-        send = super(ArchivarForm, self).save(commit=False)
-
-    def asunto_archivar(self):
-        pass
+        fields = '__all__'
+        #fields = ['asunto_archivado',]
