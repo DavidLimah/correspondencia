@@ -34,13 +34,14 @@ def recibido(request):
 
 
 @login_required
-def archivar(request, pk):
+def archivar(request, id):
+	instance = get_list_or_404(Correspondencia, id=id)
+	archivar_form = ArchivarForm(request.POST, instance=instance)
+	correspondencia = archivar_form.save(commit=False)
 	if request.method == 'POST':
 		if 'button_archivar' in request.POST:
-			instance = get_list_or_404(Correspondencia, pk=pk)
-			archivar_form = form = ArchivarForm(request.POST, instance=instance)
 			if archivar_form.is_valid():
-				correspondencia = archivar_form.save(commit=False)
+				
 				correspondencia.save()
 	return render(request, 'core/archivar.html', context={'archivar_form':archivar_form,})
 
