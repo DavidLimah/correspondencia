@@ -14,7 +14,17 @@
 			<th scope="col" class="text-center">Acciones</th>
 		</tr>
 	</thead>
-	
+	{% for d in obj_cancelado %}
+		{% if user.pk == d.usuario_destino.pk and d.cancelado %}
+		<tr>
+			<td class="text-center">{{ d.codigo }}</td>
+			<td class="text-center">{{ d.usuario_rtte }}</td>
+			<td class="text-center">{{ d.numero_fojas }}</td>
+			<td class="text-center">{{ d.tipo_hoja_ruta }}</td>
+			<td class="text-center">{{ d.asunto_hoja_ruta}}</td>
+		</tr>
+		{% endif %}
+	{% endfor %}
 </table>
 
 

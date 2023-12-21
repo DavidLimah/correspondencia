@@ -15,7 +15,7 @@
 		</tr>
 	</thead>
 	{% for d in obj_recibido %}
-		{% if user.pk == d.usuario_destino.pk and not d.devuelto %}
+		{% if user.pk == d.usuario_destino.pk and not d.devuelto and not d.archivado and not d.devuelto and not cancelado %}
 		<tr>
 			<td class="text-center">{{ d.codigo }}</td>
 			<td class="text-center">{{ d.usuario_rtte }}</td>
@@ -23,9 +23,9 @@
 			<td class="text-center">{{ d.tipo_hoja_ruta }}</td>
 			<td class="text-center">{{ d.asunto_hoja_ruta}}</td>
 			<td class="text-center">
-				<a href="{% url 'archivar' d.id %}">Archivar</a>
-				<a href="#" class="btn btn-info">Devolver</a><br>
-				<a href="#" class="btn btn-danger">Cancelar</a>
+				<a href="{% url 'archivar' d.id %}" class="btn btn-primary">Archivar</a>
+				<a href="{% url 'devolver' d.id %}" class="btn btn-info">Devolver</a><br>
+				<a href="{% url 'cancelar' d.id %}" class="btn btn-danger">Cancelar</a>
 			</td>
 		</tr>
 		{% endif %}

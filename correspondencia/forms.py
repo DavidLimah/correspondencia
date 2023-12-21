@@ -11,10 +11,6 @@ from django.contrib import messages
 
 
 class SuccessMessageMixin:
-    """
-    Add a success message on successful form submission.
-    success_message = 'Exitoso'
-    """
 
     def form_valid(self, form):
         response = super().form_valid(form)
@@ -39,26 +35,25 @@ class EnviadoForm(ModelForm):
         fields = '__all__'
 
 
-class DevueltoForm(ModelForm):
-    class Meta:
-        model = Correspondencia
-        fields = '__all__'
+# Acciones
 
-
-class CanceladoForm(ModelForm):
-    class Meta:
-        model = Correspondencia
-        fields = '__all__'
-
-"""
-class ArchivarForm(ModelForm):
-    class Meta:
-        model = Correspondencia
-        fields = ['asunto_hoja_ruta']
-        labels = {'asunto_hoja_ruta':'Asunto',}
-"""
+# Archivar
 class ArchivarForm(ModelForm):
     class Meta:
         model = Correspondencia
         fields = '__all__'
-        #fields = ['asunto_archivado',]
+
+
+# Devolver
+class DevolverForm(ModelForm):
+    class Meta:
+        model = Correspondencia
+        fields = '__all__'
+
+
+# Cancelar
+class CancelarForm(ModelForm):
+    class Meta:
+        model = Correspondencia
+        fields = '__all__'
+

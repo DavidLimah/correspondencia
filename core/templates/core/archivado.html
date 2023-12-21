@@ -1,6 +1,6 @@
 {% extends 'core/base.html' %}
 
-{% block title %} SGC | Archivado {% endblock title %}
+{% block title %} SGC | Devuelto {% endblock title %}
 
 {% block content %}
 <table class="table">
@@ -14,7 +14,20 @@
 			<th scope="col" class="text-center">Acciones</th>
 		</tr>
 	</thead>
-	
+	{% for d in obj_archivado %}
+		{% if user.pk == d.usuario_destino.pk and d.archivado %}
+		<tr>
+			<td class="text-center">{{ d.codigo }}</td>
+			<td class="text-center">{{ d.usuario_rtte }}</td>
+			<td class="text-center">{{ d.numero_fojas }}</td>
+			<td class="text-center">{{ d.tipo_hoja_ruta }}</td>
+			<td class="text-center">{{ d.asunto_hoja_ruta }}</td>
+			<td class="text-center">
+				<button type="button" class="btn btn-danger">Cancelar</button>
+			</td>
+		</tr>
+		{% endif %}
+	{% endfor %}
 </table>
 
 

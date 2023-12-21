@@ -1,6 +1,6 @@
 {% extends 'core/base.html' %}
 
-{% block title %} SGC | Archivar {% endblock title %}
+{% block title %} SGC | Cancelar hoja de ruta {% endblock title %}
 
 {% load static %}
 {% load crispy_forms_tags %}
@@ -10,10 +10,9 @@
 
     <form action="" method="POST">
         {% csrf_token %}
-        {{  form_archivar|crispy }}
+        {{  form_cancelar|crispy }}
         <button type="submit" class="btn btn-primary">Guardar</button>
     </form>
-
 
 
 {% endblock %}
