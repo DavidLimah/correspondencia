@@ -14,20 +14,141 @@ options_tipo = [
 ]
 
 
-# Modelo Unidades
+# Unidades
 class Unidad(models.Model):
     nombre_unidad = models.CharField(max_length=200)
     sigla_unidad = models.CharField(max_length=50)
 
     class Meta:
         verbose_name = 'unidad'
-        verbose_name_plural = 'unidades'
+        verbose_name_plural = 'unidad'
 
     def __str__(self):
         return self.nombre_unidad
 
     def get_absolute_url(self):
-        return reverse('unidad', kwargs={'pk': self.pk})
+        return reverse('Unidad', kwargs={'pk': self.pk})
+
+
+# Unidad Consejo Municipal
+class UConsejoMunicipal(models.Model):
+    sigla_unidad = models.CharField(max_length=50)
+
+    class Meta:
+        verbose_name = 'consejo municipal'
+        verbose_name_plural = 'consejo municipal'
+
+    def __str__(self):
+        return self.nombre_cargo
+
+    def get_absolute_url(self):
+        return reverse('Consejo', kwargs={'pk': self.pk})
+
+
+# Unidad DEspacho Alcalde
+class UDespachoAlcalde(models.Model):
+    nombre_cargo = models.CharField(max_length=200)
+
+    class Meta:
+        verbose_name = 'despacho alcalde'
+        verbose_name_plural = 'despacho alcalde'
+
+    def __str__(self):
+        return self.nombre_cargo
+
+    def get_absolute_url(self):
+        return reverse('despacho-alcalde', kwargs={'pk': self.pk})
+
+
+# Unidad Secretaría general
+class USecretariaGeneral(models.Model):
+    nombre_cargo = models.CharField(max_length=200)
+
+    class Meta:
+        verbose_name = 'secretaria general'
+        verbose_name_plural = 'secretaria general'
+
+    def __str__(self):
+        return self.nombre_cargo
+
+    def get_absolute_url(self):
+        return reverse('secretaria-general', kwargs={'pk': self.pk})
+
+
+# Unidad Secretaría Administrativa Financiera
+class UnidadSecretariaAdmFinanciera(models.Model):
+    nombre_cargo = models.CharField(max_length=200)
+
+    class Meta:
+        verbose_name = 'secretaria administrativa financiera'
+        verbose_name_plural = 'secretaria administrativa financiera'
+
+    def __str__(self):
+        return self.nombre_cargo
+
+    def get_absolute_url(self):
+        return reverse('secretaria-general', kwargs={'pk': self.pk})
+
+
+# Secretaría Técnica
+class UnidadSecretariaTecnico(models.Model):
+    nombre_cargo = models.CharField(max_length=200)
+
+    class Meta:
+        verbose_name = 'secretaria tecnica'
+        verbose_name_plural = 'secretaria tecnica'
+
+    def __str__(self):
+        return self.nombre_cargo
+
+    def get_absolute_url(self):
+        return reverse('secretaria-general', kwargs={'pk': self.pk})
+
+
+# Secretaría Planificación
+class UnidadSecretariaPlanificacion(models.Model):
+    nombre_cargo = models.CharField(max_length=200)
+
+    class Meta:
+        verbose_name = 'secretaria planificacion'
+        verbose_name_plural = 'secretaria planificacion'
+
+    def __str__(self):
+        return self.nombre_cargo
+
+    def get_absolute_url(self):
+        return reverse('secretaria-general', kwargs={'pk': self.pk})
+
+
+# Unidad Secretaría Fortalecimiento Institucional Social
+class UnidadFortalecimientoInSocial(models.Model):
+    nombre_cargo = models.CharField(max_length=200)
+
+    class Meta:
+        verbose_name = 'fortalecimiento institucional social'
+        verbose_name_plural = 'fortalecimiento institucional social'
+
+    def __str__(self):
+        return self.nombre_cargo
+
+    def get_absolute_url(self):
+        return reverse('secretaria-general', kwargs={'pk': self.pk})
+
+
+
+class UnidadAsesoriaLegal(models.Model):
+    nombre_cargo = models.CharField(max_length=200)
+
+    class Meta:
+        verbose_name = 'fortalecimiento institucional social'
+        verbose_name_plural = 'fortalecimiento institucional social'
+
+    def __str__(self):
+        return self.nombre_cargo
+
+    def get_absolute_url(self):
+        return reverse('secretaria-general', kwargs={'pk': self.pk})
+
 
 
 # Modelo Correspondencia
