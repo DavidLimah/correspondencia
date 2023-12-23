@@ -13,4 +13,4 @@ from .models import Profile
 @admin.register(Profile)
 class ProfileAdmin(admin.ModelAdmin):
 	search_fields = ('user',)
-	list_display = ["user", "oficina", "cargo"]
+	list_display = ["user"]

@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 
 from django.contrib.auth.models import User
-from correspondencia.models import Oficina, Cargo, Correspondencia, Enviado
+from correspondencia.models import Correspondencia
 from accounts.models import Profile
 from correspondencia.forms import CorrespondenciaForm, ArchivarForm, DevolverForm, CancelarForm
 
@@ -26,7 +26,7 @@ def home(request):
 
 # HOJA DE RUTA
 @login_required
-def hoja_ruta(request):    
+def derivar(request):    
 	if request.method == "POST":
 		form = CorrespondenciaForm(request.POST)
 		if form.is_valid():
@@ -36,7 +36,7 @@ def hoja_ruta(request):
 	else:
 		form = CorrespondenciaForm()
 	context_hoja_ruta = {'form':form}
-	return render(request, 'core/hoja_ruta.html', context_hoja_ruta)
+	return render(request, 'core/derivar.html', context_hoja_ruta)
 
 
 # RECIBIDO

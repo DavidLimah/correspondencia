@@ -31,7 +31,7 @@ class Unidad(models.Model):
 
 
 # Unidad Consejo Municipal
-class UConsejoMunicipal(models.Model):
+class ConsejoMunicipal(models.Model):
     sigla_unidad = models.CharField(max_length=50)
 
     class Meta:
@@ -39,14 +39,14 @@ class UConsejoMunicipal(models.Model):
         verbose_name_plural = 'consejo municipal'
 
     def __str__(self):
-        return self.nombre_cargo
+        return "Consejo Municipal"
 
     def get_absolute_url(self):
-        return reverse('Consejo', kwargs={'pk': self.pk})
+        return reverse('consejo municipal', kwargs={'pk': self.pk})
 
 
 # Unidad DEspacho Alcalde
-class UDespachoAlcalde(models.Model):
+class DespachoAlcalde(models.Model):
     nombre_cargo = models.CharField(max_length=200)
 
     class Meta:
@@ -54,14 +54,14 @@ class UDespachoAlcalde(models.Model):
         verbose_name_plural = 'despacho alcalde'
 
     def __str__(self):
-        return self.nombre_cargo
+        return "Despacho Alcalde"
 
     def get_absolute_url(self):
         return reverse('despacho-alcalde', kwargs={'pk': self.pk})
 
 
 # Unidad Secretaría general
-class USecretariaGeneral(models.Model):
+class SecretariaGeneral(models.Model):
     nombre_cargo = models.CharField(max_length=200)
 
     class Meta:
@@ -69,29 +69,29 @@ class USecretariaGeneral(models.Model):
         verbose_name_plural = 'secretaria general'
 
     def __str__(self):
-        return self.nombre_cargo
+        return "Secretaria General"
 
     def get_absolute_url(self):
         return reverse('secretaria-general', kwargs={'pk': self.pk})
 
 
 # Unidad Secretaría Administrativa Financiera
-class UnidadSecretariaAdmFinanciera(models.Model):
+class SecAdmFinanciera(models.Model):
     nombre_cargo = models.CharField(max_length=200)
 
     class Meta:
-        verbose_name = 'secretaria administrativa financiera'
-        verbose_name_plural = 'secretaria administrativa financiera'
+        verbose_name = 'administracion financiera'
+        verbose_name_plural = 'administracion financiera'
 
     def __str__(self):
-        return self.nombre_cargo
+        return "Secretaria Administrativa Financiera"
 
     def get_absolute_url(self):
-        return reverse('secretaria-general', kwargs={'pk': self.pk})
+        return reverse('administracion-financiera', kwargs={'pk': self.pk})
 
 
 # Secretaría Técnica
-class UnidadSecretariaTecnico(models.Model):
+class SecretariaTecnica(models.Model):
     nombre_cargo = models.CharField(max_length=200)
 
     class Meta:
@@ -99,56 +99,235 @@ class UnidadSecretariaTecnico(models.Model):
         verbose_name_plural = 'secretaria tecnica'
 
     def __str__(self):
-        return self.nombre_cargo
+        return "Secretaria Tecnica"
 
     def get_absolute_url(self):
-        return reverse('secretaria-general', kwargs={'pk': self.pk})
+        return reverse('secretaria-tecnica', kwargs={'pk': self.pk})
 
 
 # Secretaría Planificación
-class UnidadSecretariaPlanificacion(models.Model):
+class SecretariaPlanificacion(models.Model):
     nombre_cargo = models.CharField(max_length=200)
 
     class Meta:
-        verbose_name = 'secretaria planificacion'
-        verbose_name_plural = 'secretaria planificacion'
+        verbose_name = 'planificacion'
+        verbose_name_plural = 'planificacion'
 
     def __str__(self):
-        return self.nombre_cargo
+        return "Secretaria Planificacion"
 
     def get_absolute_url(self):
-        return reverse('secretaria-general', kwargs={'pk': self.pk})
+        return reverse('planificacion', kwargs={'pk': self.pk})
 
 
 # Unidad Secretaría Fortalecimiento Institucional Social
-class UnidadFortalecimientoInSocial(models.Model):
+class SecFortalecimientoInSocial(models.Model):
     nombre_cargo = models.CharField(max_length=200)
 
     class Meta:
-        verbose_name = 'fortalecimiento institucional social'
-        verbose_name_plural = 'fortalecimiento institucional social'
+        verbose_name = 'fortalecimiento social'
+        verbose_name_plural = 'fortalecimiento social'
 
     def __str__(self):
-        return self.nombre_cargo
+        return "Secretaria Fortalecimiento Institucional Social"
 
     def get_absolute_url(self):
-        return reverse('secretaria-general', kwargs={'pk': self.pk})
+        return reverse('fortalecimiento-social', kwargs={'pk': self.pk})
 
 
-
-class UnidadAsesoriaLegal(models.Model):
+# Unidad Asesoria Legal
+class DirAsesoriaLegal(models.Model):
     nombre_cargo = models.CharField(max_length=200)
 
     class Meta:
-        verbose_name = 'fortalecimiento institucional social'
-        verbose_name_plural = 'fortalecimiento institucional social'
+        verbose_name = 'asesoria legal'
+        verbose_name_plural = 'asesoria legal'
 
     def __str__(self):
-        return self.nombre_cargo
+        return "Direccion Asesoria Legal"
 
     def get_absolute_url(self):
-        return reverse('secretaria-general', kwargs={'pk': self.pk})
+        return reverse('asesoria-legal', kwargs={'pk': self.pk})
 
+
+# Unidad Direccion Finanzas
+class DireccionFinanzas(models.Model):
+    nombre_cargo = models.CharField(max_length=200)
+
+    class Meta:
+        verbose_name = 'asesoria legal'
+        verbose_name_plural = 'asesoria legal'
+
+    def __str__(self):
+        return "Direccion Finanzas"
+
+    def get_absolute_url(self):
+        return reverse('direccion-finanzas', kwargs={'pk': self.pk})
+
+
+# Unidad Direccion de Finanzas
+class DirAuditoriaInterna(models.Model):
+    nombre_cargo = models.CharField(max_length=200)
+
+    class Meta:
+        verbose_name = 'auditoria financiera'
+        verbose_name_plural = 'auditoria financiera'
+
+    def __str__(self):
+        return "Direccion Auditoria Interna"
+
+    def get_absolute_url(self):
+        return reverse('auditoria-financiera', kwargs={'pk': self.pk})
+
+
+# Unidad Direccion Auditoria Interna
+class DirDesarrolloHumano(models.Model):
+    nombre_cargo = models.CharField(max_length=200)
+
+    class Meta:
+        verbose_name = 'desarrollo humano'
+        verbose_name_plural = 'desarrollo humano'
+
+    def __str__(self):
+        return "Direccion de Desarrollo Humano"
+
+    def get_absolute_url(self):
+        return reverse('desarrollo-humano', kwargs={'pk': self.pk})
+
+
+# Unidad Dirección Ingresos
+class DireccionIngresos(models.Model):
+    nombre_cargo = models.CharField(max_length=200)
+
+    class Meta:
+        verbose_name = 'direccion ingresos'
+        verbose_name_plural = 'direccion ingresos'
+
+    def __str__(self):
+        return "Direccion de Ingresos"
+
+    def get_absolute_url(self):
+        return reverse('direccion-ingresos', kwargs={'pk': self.pk})
+
+
+# Unidad Dirección de Desarrollo Productivo y Medio Ambiente
+class DirDesProdMedAmbiente(models.Model):
+    nombre_cargo = models.CharField(max_length=200)
+
+    class Meta:
+        verbose_name = 'desarollo productivo'
+        verbose_name_plural = 'desarollo productivo'
+
+    def __str__(self):
+        return "Direccion de Desarrollo Productivo y Medio Ambiente"
+
+    def get_absolute_url(self):
+        return reverse('desarollo-productivo', kwargs={'pk': self.pk})
+
+
+# Unidad Dirección Urbanismo y Catastro
+class DirUrbanismoCatastro(models.Model):
+    nombre_cargo = models.CharField(max_length=200)
+
+    class Meta:
+        verbose_name = 'urbanismo catastro'
+        verbose_name_plural = 'urbanismo catastro'
+
+    def __str__(self):
+        return "Direccion Urbanismo y Catastro"
+
+    def get_absolute_url(self):
+        return reverse('urbanismo-catastro', kwargs={'pk': self.pk})
+
+
+# Dirección Obras Públicas
+class DirObrasPublicas(models.Model):
+    nombre_cargo = models.CharField(max_length=200)
+
+    class Meta:
+        verbose_name = 'obras publicas'
+        verbose_name_plural = 'obras publicas'
+
+    def __str__(self):
+        return "Direccion Obras Publicas"
+
+    def get_absolute_url(self):
+        return reverse('obras-publicas', kwargs={'pk': self.pk})
+
+
+# Unidad Dirección Planificación
+class DireccionPlanificacion(models.Model):
+    nombre_cargo = models.CharField(max_length=200)
+
+    class Meta:
+        verbose_name = 'planificacion'
+        verbose_name_plural = 'planificacion'
+
+    def __str__(self):
+        return "Direccion de Planificacion"
+
+    def get_absolute_url(self):
+        return reverse('planificacion', kwargs={'pk': self.pk})
+
+
+# Unidad Dirección Saneamiento Básico
+class DirSaneamientoBasico(models.Model):
+    nombre_cargo = models.CharField(max_length=200)
+
+    class Meta:
+        verbose_name = 'saneamiento basico'
+        verbose_name_plural = 'saneamiento basico'
+
+    def __str__(self):
+        return "Direccion Saneamiento Basico"
+
+    def get_absolute_url(self):
+        return reverse('saneamiento-basico', kwargs={'pk': self.pk})
+
+
+# Unidad Dirección Administración Salud
+class DirAdministracionSalud(models.Model):
+    nombre_cargo = models.CharField(max_length=200)
+
+    class Meta:
+        verbose_name = 'administracion salud'
+        verbose_name_plural = 'administracion salud'
+
+    def __str__(self):
+        return "Direccion Administracion Salud"
+
+    def get_absolute_url(self):
+        return reverse('administracion-salud', kwargs={'pk': self.pk})
+
+
+# Direccion de Educación y Gestión Social
+class DirEduGestionSocial(models.Model):
+    nombre_cargo = models.CharField(max_length=200)
+
+    class Meta:
+        verbose_name = 'administracion salud'
+        verbose_name_plural = 'administracion salud'
+
+    def __str__(self):
+        return "Direccion de Educacion y Gestion Social"
+
+    def get_absolute_url(self):
+        return reverse('administracion-salud', kwargs={'pk': self.pk})
+
+
+# Unidad Asesores
+class AsesoresU(models.Model):
+    nombre_cargo = models.CharField(max_length=200)
+
+    class Meta:
+        verbose_name = 'asesor'
+        verbose_name_plural = 'asesor'
+
+    def __str__(self):
+        return "Asesores"
+
+    def get_absolute_url(self):
+        return reverse('asesores', kwargs={'pk': self.pk})
 
 
 # Modelo Correspondencia
@@ -170,14 +349,14 @@ class Correspondencia(models.Model):
     fecha_devuelto = models.DateTimeField(null=True, blank=True)
     fecha_cancelado = models.DateTimeField(null=True, blank=True)
     fecha_archivado = models.DateTimeField(null=True, blank=True)
-    asunto_hoja_ruta = models.CharField(max_length=300, null=True, blank=True)
+    asunto_derivado = models.CharField(max_length=300, null=True, blank=True)
     asunto_devuelto = models.CharField(max_length=200, null=True, blank=True)
     asunto_archivado = models.CharField(max_length=200, null=True, blank=True)
     asunto_cancelado = models.CharField(max_length=200, null=True, blank=True)
 
     class Meta:
         verbose_name = 'correspondencia'
-        verbose_name_plural = 'correspondencias'
+        verbose_name_plural = 'correspondencia'
 
     def __str__(self):
         return self.usuario_remitente
@@ -281,5 +460,5 @@ class dir_edu_gestion_social(models.Model):
 
 
 # Modelo Asesores
-class asesores(models.Model):
+class AsesoresC(models.Model):
     pass
