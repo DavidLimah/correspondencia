@@ -35,8 +35,8 @@ def derivar(request):
 		return HttpResponseRedirect("/enviado/")
 	else:
 		form = CorrespondenciaForm()
-	context_hoja_ruta = {'form':form}
-	return render(request, 'core/derivar.html', context_hoja_ruta)
+	context_derivar = {'form':form}
+	return render(request, 'core/derivar.html', context_derivar)
 
 
 # RECIBIDO

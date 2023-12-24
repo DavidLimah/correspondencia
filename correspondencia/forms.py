@@ -1,7 +1,7 @@
 from django.forms import ModelForm
 from accounts.models import Profile
 
-from correspondencia.models import Correspondencia
+from correspondencia.models import Correspondencia, Unidad, TbConsejoMunicipal, TbDespachoAlcalde, TbSecretariaGeneral, TbSecAdmFinanciera, TbSecretariaTecnica, TbSecretariaPlanificacion, TbSecFortalecimientoInSocial, TbDirAsesoriaLegal, TbDireccionFinanzas, TbDirAuditoriaInterna, TbDirDesarrolloHumano, TbDireccionIngresos, TbDirDesProdMedAmbiente, TbDirUrbanismoCatastro, TbDirObrasPublicas, TbDireccionPlanificacion, TbDirSaneamientoBasico, TbDirAdministracionSalud, TbDirEduGestionSocial, TbAsesores
 
 from django.contrib.auth.models import User
 
@@ -9,7 +9,7 @@ from django import forms
 
 from django.contrib import messages
 
-
+"""
 class SuccessMessageMixin:
 
     def form_valid(self, form):
@@ -21,12 +21,12 @@ class SuccessMessageMixin:
 
     def get_success_message(self, cleaned_data):
         return self.success_message % cleaned_data
-
+"""
 
 class CorrespondenciaForm(ModelForm):
     class Meta:
         model = Correspondencia
-        fields = ['codigo', 'usuario_rtte', 'numero_fojas', 'tipo_hoja_ruta', 'usuario_destino', 'asunto_hoja_ruta', ]
+        fields = ['codigo', 'usuario_rtte', 'numero_fojas', 'tipo_derivado', 'usuario_destino', 'asunto_derivado', ]
 
 
 class EnviadoForm(ModelForm):
@@ -34,8 +34,6 @@ class EnviadoForm(ModelForm):
         model = Correspondencia
         fields = '__all__'
 
-
-# Acciones
 
 # Archivar
 class ArchivarForm(ModelForm):

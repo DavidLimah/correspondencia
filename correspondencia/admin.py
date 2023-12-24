@@ -1,5 +1,5 @@
 from django.contrib import admin
-from correspondencia.models import Correspondencia, Unidad, ConsejoMunicipal, DespachoAlcalde, SecretariaGeneral, SecAdmFinanciera, SecretariaTecnica, SecretariaPlanificacion, SecFortalecimientoInSocial, DirAsesoriaLegal, DireccionFinanzas, DirAuditoriaInterna, DirDesarrolloHumano, DireccionIngresos, DirDesProdMedAmbiente, DirUrbanismoCatastro, DirObrasPublicas, DireccionPlanificacion, DirSaneamientoBasico, DirAdministracionSalud, DirEduGestionSocial, AsesoresU
+from correspondencia.models import Correspondencia, Unidad
 
 
 import autocomplete_all as admin

@@ -18,7 +18,7 @@ Including another URLconf
 # from django.urls import path, include
 
 from django.urls import path
-from .views import home, derivar, recibido, enviado, devuelto,  archivado,  cancelado, archivar, devolver, cancelar, exit
+from .views import home, derivar, recibido, enviado, devuelto,  archivado, cancelado, archivar, devolver, cancelar, exit
 
 urlpatterns = [
     path('', home, name='home'),

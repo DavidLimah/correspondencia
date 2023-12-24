@@ -31,7 +31,7 @@ class Unidad(models.Model):
 
 
 # Unidad Consejo Municipal
-class ConsejoMunicipal(models.Model):
+class TbConsejoMunicipal(models.Model):
     sigla_unidad = models.CharField(max_length=50)
 
     class Meta:
@@ -46,7 +46,7 @@ class ConsejoMunicipal(models.Model):
 
 
 # Unidad DEspacho Alcalde
-class DespachoAlcalde(models.Model):
+class TbDespachoAlcalde(models.Model):
     nombre_cargo = models.CharField(max_length=200)
 
     class Meta:
@@ -61,7 +61,7 @@ class DespachoAlcalde(models.Model):
 
 
 # Unidad Secretaría general
-class SecretariaGeneral(models.Model):
+class TbSecretariaGeneral(models.Model):
     nombre_cargo = models.CharField(max_length=200)
 
     class Meta:
@@ -76,7 +76,7 @@ class SecretariaGeneral(models.Model):
 
 
 # Unidad Secretaría Administrativa Financiera
-class SecAdmFinanciera(models.Model):
+class TbSecAdmFinanciera(models.Model):
     nombre_cargo = models.CharField(max_length=200)
 
     class Meta:
@@ -91,7 +91,7 @@ class SecAdmFinanciera(models.Model):
 
 
 # Secretaría Técnica
-class SecretariaTecnica(models.Model):
+class TbSecretariaTecnica(models.Model):
     nombre_cargo = models.CharField(max_length=200)
 
     class Meta:
@@ -106,7 +106,7 @@ class SecretariaTecnica(models.Model):
 
 
 # Secretaría Planificación
-class SecretariaPlanificacion(models.Model):
+class TbSecretariaPlanificacion(models.Model):
     nombre_cargo = models.CharField(max_length=200)
 
     class Meta:
@@ -121,7 +121,7 @@ class SecretariaPlanificacion(models.Model):
 
 
 # Unidad Secretaría Fortalecimiento Institucional Social
-class SecFortalecimientoInSocial(models.Model):
+class TbSecFortalecimientoInSocial(models.Model):
     nombre_cargo = models.CharField(max_length=200)
 
     class Meta:
@@ -136,7 +136,7 @@ class SecFortalecimientoInSocial(models.Model):
 
 
 # Unidad Asesoria Legal
-class DirAsesoriaLegal(models.Model):
+class TbDirAsesoriaLegal(models.Model):
     nombre_cargo = models.CharField(max_length=200)
 
     class Meta:
@@ -151,7 +151,7 @@ class DirAsesoriaLegal(models.Model):
 
 
 # Unidad Direccion Finanzas
-class DireccionFinanzas(models.Model):
+class TbDireccionFinanzas(models.Model):
     nombre_cargo = models.CharField(max_length=200)
 
     class Meta:
@@ -166,7 +166,7 @@ class DireccionFinanzas(models.Model):
 
 
 # Unidad Direccion de Finanzas
-class DirAuditoriaInterna(models.Model):
+class TbDirAuditoriaInterna(models.Model):
     nombre_cargo = models.CharField(max_length=200)
 
     class Meta:
@@ -181,7 +181,7 @@ class DirAuditoriaInterna(models.Model):
 
 
 # Unidad Direccion Auditoria Interna
-class DirDesarrolloHumano(models.Model):
+class TbDirDesarrolloHumano(models.Model):
     nombre_cargo = models.CharField(max_length=200)
 
     class Meta:
@@ -196,7 +196,7 @@ class DirDesarrolloHumano(models.Model):
 
 
 # Unidad Dirección Ingresos
-class DireccionIngresos(models.Model):
+class TbDireccionIngresos(models.Model):
     nombre_cargo = models.CharField(max_length=200)
 
     class Meta:
@@ -211,7 +211,7 @@ class DireccionIngresos(models.Model):
 
 
 # Unidad Dirección de Desarrollo Productivo y Medio Ambiente
-class DirDesProdMedAmbiente(models.Model):
+class TbDirDesProdMedAmbiente(models.Model):
     nombre_cargo = models.CharField(max_length=200)
 
     class Meta:
@@ -226,7 +226,7 @@ class DirDesProdMedAmbiente(models.Model):
 
 
 # Unidad Dirección Urbanismo y Catastro
-class DirUrbanismoCatastro(models.Model):
+class TbDirUrbanismoCatastro(models.Model):
     nombre_cargo = models.CharField(max_length=200)
 
     class Meta:
@@ -241,7 +241,7 @@ class DirUrbanismoCatastro(models.Model):
 
 
 # Dirección Obras Públicas
-class DirObrasPublicas(models.Model):
+class TbDirObrasPublicas(models.Model):
     nombre_cargo = models.CharField(max_length=200)
 
     class Meta:
@@ -256,7 +256,7 @@ class DirObrasPublicas(models.Model):
 
 
 # Unidad Dirección Planificación
-class DireccionPlanificacion(models.Model):
+class TbDireccionPlanificacion(models.Model):
     nombre_cargo = models.CharField(max_length=200)
 
     class Meta:
@@ -271,7 +271,7 @@ class DireccionPlanificacion(models.Model):
 
 
 # Unidad Dirección Saneamiento Básico
-class DirSaneamientoBasico(models.Model):
+class TbDirSaneamientoBasico(models.Model):
     nombre_cargo = models.CharField(max_length=200)
 
     class Meta:
@@ -286,7 +286,7 @@ class DirSaneamientoBasico(models.Model):
 
 
 # Unidad Dirección Administración Salud
-class DirAdministracionSalud(models.Model):
+class TbDirAdministracionSalud(models.Model):
     nombre_cargo = models.CharField(max_length=200)
 
     class Meta:
@@ -301,7 +301,7 @@ class DirAdministracionSalud(models.Model):
 
 
 # Direccion de Educación y Gestión Social
-class DirEduGestionSocial(models.Model):
+class TbDirEduGestionSocial(models.Model):
     nombre_cargo = models.CharField(max_length=200)
 
     class Meta:
@@ -316,7 +316,7 @@ class DirEduGestionSocial(models.Model):
 
 
 # Unidad Asesores
-class AsesoresU(models.Model):
+class TbAsesores(models.Model):
     nombre_cargo = models.CharField(max_length=200)
 
     class Meta:
@@ -332,11 +332,11 @@ class AsesoresU(models.Model):
 
 # Modelo Correspondencia
 class Correspondencia(models.Model):
-    nombre_unidad = models.CharField(max_length=200, default='UNIDAD 1')
+    nombre_unidad = models.CharField(max_length=200)
     codigo = models.CharField(max_length=20, default='S/C', null=True, blank=True)
     usuario_rtte = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usuario_rtte')
     numero_fojas = models.IntegerField(null=True, blank=True)
-    tipo_hoja_ruta = models.CharField(choices=options_tipo,max_length=200)
+    tipo_derivado = models.CharField(choices=options_tipo,max_length=200)
     unidad_destino = models.ForeignKey(Unidad, on_delete=models.CASCADE, related_name='unidad_destino')
     usuario_destino = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usuario_destino')
     derivado = models.BooleanField(default=True, null=True, blank=True)
@@ -366,99 +366,699 @@ class Correspondencia(models.Model):
 
 
 # Modelo Concejo Municipal 
-class consejo_municipal(models.Model):
-    pass
+class CrrConsejoMunicipal(models.Model):
+    nombre_unidad = models.CharField(max_length=200)
+    codigo = models.CharField(max_length=20, default='S/C', null=True, blank=True)
+    usuario_rtte = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usuario_rtte')
+    numero_fojas = models.IntegerField(null=True, blank=True)
+    tipo_derivado = models.CharField(choices=options_tipo,max_length=200)
+    unidad_destino = models.ForeignKey(Unidad, on_delete=models.CASCADE, related_name='unidad_destino')
+    usuario_destino = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usuario_destino')
+    derivado = models.BooleanField(default=True, null=True, blank=True)
+    recibido = models.BooleanField(default=True, null=True, blank=True)
+    devuelto = models.BooleanField(default=False, null=True, blank=True)
+    cancelado = models.BooleanField(default=False, null=True, blank=True)
+    archivado = models.BooleanField(default=False, null=True, blank=True)
+    fecha_derivado = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    fecha_recibido = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    fecha_devuelto = models.DateTimeField(null=True, blank=True)
+    fecha_cancelado = models.DateTimeField(null=True, blank=True)
+    fecha_archivado = models.DateTimeField(null=True, blank=True)
+    asunto_derivado = models.CharField(max_length=300, null=True, blank=True)
+    asunto_devuelto = models.CharField(max_length=200, null=True, blank=True)
+    asunto_archivado = models.CharField(max_length=200, null=True, blank=True)
+    asunto_cancelado = models.CharField(max_length=200, null=True, blank=True)
+
+    class Meta:
+        verbose_name = 'correspondencia'
+        verbose_name_plural = 'correspondencia'
+
+    def __str__(self):
+        return self.usuario_remitente
+
+    def get_absolute_url(self):
+        return reverse('codigo', kwargs={'pk': self.pk})
 
 
 # Modelo despacho alcalde
-class despacho_alcalde(models.Model):
-    pass
+class CrrDespachoAlcalde(models.Model):
+    nombre_unidad = models.CharField(max_length=200)
+    codigo = models.CharField(max_length=20, default='S/C', null=True, blank=True)
+    usuario_rtte = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usuario_rtte')
+    numero_fojas = models.IntegerField(null=True, blank=True)
+    tipo_derivado = models.CharField(choices=options_tipo,max_length=200)
+    unidad_destino = models.ForeignKey(Unidad, on_delete=models.CASCADE, related_name='unidad_destino')
+    usuario_destino = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usuario_destino')
+    derivado = models.BooleanField(default=True, null=True, blank=True)
+    recibido = models.BooleanField(default=True, null=True, blank=True)
+    devuelto = models.BooleanField(default=False, null=True, blank=True)
+    cancelado = models.BooleanField(default=False, null=True, blank=True)
+    archivado = models.BooleanField(default=False, null=True, blank=True)
+    fecha_derivado = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    fecha_recibido = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    fecha_devuelto = models.DateTimeField(null=True, blank=True)
+    fecha_cancelado = models.DateTimeField(null=True, blank=True)
+    fecha_archivado = models.DateTimeField(null=True, blank=True)
+    asunto_derivado = models.CharField(max_length=300, null=True, blank=True)
+    asunto_devuelto = models.CharField(max_length=200, null=True, blank=True)
+    asunto_archivado = models.CharField(max_length=200, null=True, blank=True)
+    asunto_cancelado = models.CharField(max_length=200, null=True, blank=True)
+
+    class Meta:
+        verbose_name = 'correspondencia'
+        verbose_name_plural = 'correspondencia'
+
+    def __str__(self):
+        return self.usuario_remitente
+
+    def get_absolute_url(self):
+        return reverse('codigo', kwargs={'pk': self.pk})
 
 
 # Modelo Secretaria Municipal General
-class sm_general(models.Model):
-    pass
+class CrrSecretariaGeneral(models.Model):
+    nombre_unidad = models.CharField(max_length=200)
+    codigo = models.CharField(max_length=20, default='S/C', null=True, blank=True)
+    usuario_rtte = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usuario_rtte')
+    numero_fojas = models.IntegerField(null=True, blank=True)
+    tipo_derivado = models.CharField(choices=options_tipo,max_length=200)
+    unidad_destino = models.ForeignKey(Unidad, on_delete=models.CASCADE, related_name='unidad_destino')
+    usuario_destino = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usuario_destino')
+    derivado = models.BooleanField(default=True, null=True, blank=True)
+    recibido = models.BooleanField(default=True, null=True, blank=True)
+    devuelto = models.BooleanField(default=False, null=True, blank=True)
+    cancelado = models.BooleanField(default=False, null=True, blank=True)
+    archivado = models.BooleanField(default=False, null=True, blank=True)
+    fecha_derivado = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    fecha_recibido = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    fecha_devuelto = models.DateTimeField(null=True, blank=True)
+    fecha_cancelado = models.DateTimeField(null=True, blank=True)
+    fecha_archivado = models.DateTimeField(null=True, blank=True)
+    asunto_derivado = models.CharField(max_length=300, null=True, blank=True)
+    asunto_devuelto = models.CharField(max_length=200, null=True, blank=True)
+    asunto_archivado = models.CharField(max_length=200, null=True, blank=True)
+    asunto_cancelado = models.CharField(max_length=200, null=True, blank=True)
+
+    class Meta:
+        verbose_name = 'correspondencia'
+        verbose_name_plural = 'correspondencia'
+
+    def __str__(self):
+        return self.usuario_remitente
+
+    def get_absolute_url(self):
+        return reverse('codigo', kwargs={'pk': self.pk})
 
 
 # Modelo Secretaría Administrativa financiera
-class sm_adm_financiero(models.Model):
-    pass
+class CrrSecAdmFinanciera(models.Model):
+    nombre_unidad = models.CharField(max_length=200)
+    codigo = models.CharField(max_length=20, default='S/C', null=True, blank=True)
+    usuario_rtte = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usuario_rtte')
+    numero_fojas = models.IntegerField(null=True, blank=True)
+    tipo_derivado = models.CharField(choices=options_tipo,max_length=200)
+    unidad_destino = models.ForeignKey(Unidad, on_delete=models.CASCADE, related_name='unidad_destino')
+    usuario_destino = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usuario_destino')
+    derivado = models.BooleanField(default=True, null=True, blank=True)
+    recibido = models.BooleanField(default=True, null=True, blank=True)
+    devuelto = models.BooleanField(default=False, null=True, blank=True)
+    cancelado = models.BooleanField(default=False, null=True, blank=True)
+    archivado = models.BooleanField(default=False, null=True, blank=True)
+    fecha_derivado = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    fecha_recibido = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    fecha_devuelto = models.DateTimeField(null=True, blank=True)
+    fecha_cancelado = models.DateTimeField(null=True, blank=True)
+    fecha_archivado = models.DateTimeField(null=True, blank=True)
+    asunto_derivado = models.CharField(max_length=300, null=True, blank=True)
+    asunto_devuelto = models.CharField(max_length=200, null=True, blank=True)
+    asunto_archivado = models.CharField(max_length=200, null=True, blank=True)
+    asunto_cancelado = models.CharField(max_length=200, null=True, blank=True)
+
+    class Meta:
+        verbose_name = 'correspondencia'
+        verbose_name_plural = 'correspondencia'
+
+    def __str__(self):
+        return self.usuario_remitente
+
+    def get_absolute_url(self):
+        return reverse('codigo', kwargs={'pk': self.pk})
 
 
 # Modelo Secretaría Municipal Técnico
-class sm_tecnico(models.Model):
-    pass
+class CrrSecretariaTecnica(models.Model):
+    nombre_unidad = models.CharField(max_length=200)
+    codigo = models.CharField(max_length=20, default='S/C', null=True, blank=True)
+    usuario_rtte = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usuario_rtte')
+    numero_fojas = models.IntegerField(null=True, blank=True)
+    tipo_derivado = models.CharField(choices=options_tipo,max_length=200)
+    unidad_destino = models.ForeignKey(Unidad, on_delete=models.CASCADE, related_name='unidad_destino')
+    usuario_destino = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usuario_destino')
+    derivado = models.BooleanField(default=True, null=True, blank=True)
+    recibido = models.BooleanField(default=True, null=True, blank=True)
+    devuelto = models.BooleanField(default=False, null=True, blank=True)
+    cancelado = models.BooleanField(default=False, null=True, blank=True)
+    archivado = models.BooleanField(default=False, null=True, blank=True)
+    fecha_derivado = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    fecha_recibido = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    fecha_devuelto = models.DateTimeField(null=True, blank=True)
+    fecha_cancelado = models.DateTimeField(null=True, blank=True)
+    fecha_archivado = models.DateTimeField(null=True, blank=True)
+    asunto_derivado = models.CharField(max_length=300, null=True, blank=True)
+    asunto_devuelto = models.CharField(max_length=200, null=True, blank=True)
+    asunto_archivado = models.CharField(max_length=200, null=True, blank=True)
+    asunto_cancelado = models.CharField(max_length=200, null=True, blank=True)
+
+    class Meta:
+        verbose_name = 'correspondencia'
+        verbose_name_plural = 'correspondencia'
+
+    def __str__(self):
+        return self.usuario_remitente
+
+    def get_absolute_url(self):
+        return reverse('codigo', kwargs={'pk': self.pk})
 
 
 # Modelo Secretaría Planificación
-class sm_planificacion(models.Model):
-    pass
+class CrrSecretariaPlanificacion(models.Model):
+    nombre_unidad = models.CharField(max_length=200)
+    codigo = models.CharField(max_length=20, default='S/C', null=True, blank=True)
+    usuario_rtte = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usuario_rtte')
+    numero_fojas = models.IntegerField(null=True, blank=True)
+    tipo_derivado = models.CharField(choices=options_tipo,max_length=200)
+    unidad_destino = models.ForeignKey(Unidad, on_delete=models.CASCADE, related_name='unidad_destino')
+    usuario_destino = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usuario_destino')
+    derivado = models.BooleanField(default=True, null=True, blank=True)
+    recibido = models.BooleanField(default=True, null=True, blank=True)
+    devuelto = models.BooleanField(default=False, null=True, blank=True)
+    cancelado = models.BooleanField(default=False, null=True, blank=True)
+    archivado = models.BooleanField(default=False, null=True, blank=True)
+    fecha_derivado = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    fecha_recibido = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    fecha_devuelto = models.DateTimeField(null=True, blank=True)
+    fecha_cancelado = models.DateTimeField(null=True, blank=True)
+    fecha_archivado = models.DateTimeField(null=True, blank=True)
+    asunto_derivado = models.CharField(max_length=300, null=True, blank=True)
+    asunto_devuelto = models.CharField(max_length=200, null=True, blank=True)
+    asunto_archivado = models.CharField(max_length=200, null=True, blank=True)
+    asunto_cancelado = models.CharField(max_length=200, null=True, blank=True)
+
+    class Meta:
+        verbose_name = 'correspondencia'
+        verbose_name_plural = 'correspondencia'
+
+    def __str__(self):
+        return self.usuario_remitente
+
+    def get_absolute_url(self):
+        return reverse('codigo', kwargs={'pk': self.pk})
 
 
 # Modelo Secretaría Municipal de Fortalecimiento Institucional
-class sm_fortalecimiento_ins_social(models.Model):
-    pass
+class CrrSecFortalecimientoInSocial(models.Model):
+    nombre_unidad = models.CharField(max_length=200)
+    codigo = models.CharField(max_length=20, default='S/C', null=True, blank=True)
+    usuario_rtte = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usuario_rtte')
+    numero_fojas = models.IntegerField(null=True, blank=True)
+    tipo_derivado = models.CharField(choices=options_tipo,max_length=200)
+    unidad_destino = models.ForeignKey(Unidad, on_delete=models.CASCADE, related_name='unidad_destino')
+    usuario_destino = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usuario_destino')
+    derivado = models.BooleanField(default=True, null=True, blank=True)
+    recibido = models.BooleanField(default=True, null=True, blank=True)
+    devuelto = models.BooleanField(default=False, null=True, blank=True)
+    cancelado = models.BooleanField(default=False, null=True, blank=True)
+    archivado = models.BooleanField(default=False, null=True, blank=True)
+    fecha_derivado = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    fecha_recibido = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    fecha_devuelto = models.DateTimeField(null=True, blank=True)
+    fecha_cancelado = models.DateTimeField(null=True, blank=True)
+    fecha_archivado = models.DateTimeField(null=True, blank=True)
+    asunto_derivado = models.CharField(max_length=300, null=True, blank=True)
+    asunto_devuelto = models.CharField(max_length=200, null=True, blank=True)
+    asunto_archivado = models.CharField(max_length=200, null=True, blank=True)
+    asunto_cancelado = models.CharField(max_length=200, null=True, blank=True)
+
+    class Meta:
+        verbose_name = 'correspondencia'
+        verbose_name_plural = 'correspondencia'
+
+    def __str__(self):
+        return self.usuario_remitente
+
+    def get_absolute_url(self):
+        return reverse('codigo', kwargs={'pk': self.pk})
 
 # Modelo Dirección de Asesoría legal
-class dir_asesoria_legal(models.Model):
-    pass
+class CrrDirAsesoriaLegal(models.Model):
+    nombre_unidad = models.CharField(max_length=200)
+    codigo = models.CharField(max_length=20, default='S/C', null=True, blank=True)
+    usuario_rtte = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usuario_rtte')
+    numero_fojas = models.IntegerField(null=True, blank=True)
+    tipo_derivado = models.CharField(choices=options_tipo,max_length=200)
+    unidad_destino = models.ForeignKey(Unidad, on_delete=models.CASCADE, related_name='unidad_destino')
+    usuario_destino = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usuario_destino')
+    derivado = models.BooleanField(default=True, null=True, blank=True)
+    recibido = models.BooleanField(default=True, null=True, blank=True)
+    devuelto = models.BooleanField(default=False, null=True, blank=True)
+    cancelado = models.BooleanField(default=False, null=True, blank=True)
+    archivado = models.BooleanField(default=False, null=True, blank=True)
+    fecha_derivado = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    fecha_recibido = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    fecha_devuelto = models.DateTimeField(null=True, blank=True)
+    fecha_cancelado = models.DateTimeField(null=True, blank=True)
+    fecha_archivado = models.DateTimeField(null=True, blank=True)
+    asunto_derivado = models.CharField(max_length=300, null=True, blank=True)
+    asunto_devuelto = models.CharField(max_length=200, null=True, blank=True)
+    asunto_archivado = models.CharField(max_length=200, null=True, blank=True)
+    asunto_cancelado = models.CharField(max_length=200, null=True, blank=True)
+
+    class Meta:
+        verbose_name = 'correspondencia'
+        verbose_name_plural = 'correspondencia'
+
+    def __str__(self):
+        return self.usuario_remitente
+
+    def get_absolute_url(self):
+        return reverse('codigo', kwargs={'pk': self.pk})
 
 
 # Modelo Dirección de Finanzas
-class dir_finanzas(models.Model):
-    pass
+class CrrDireccionFinanzas(models.Model):
+    nombre_unidad = models.CharField(max_length=200)
+    codigo = models.CharField(max_length=20, default='S/C', null=True, blank=True)
+    usuario_rtte = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usuario_rtte')
+    numero_fojas = models.IntegerField(null=True, blank=True)
+    tipo_derivado = models.CharField(choices=options_tipo,max_length=200)
+    unidad_destino = models.ForeignKey(Unidad, on_delete=models.CASCADE, related_name='unidad_destino')
+    usuario_destino = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usuario_destino')
+    derivado = models.BooleanField(default=True, null=True, blank=True)
+    recibido = models.BooleanField(default=True, null=True, blank=True)
+    devuelto = models.BooleanField(default=False, null=True, blank=True)
+    cancelado = models.BooleanField(default=False, null=True, blank=True)
+    archivado = models.BooleanField(default=False, null=True, blank=True)
+    fecha_derivado = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    fecha_recibido = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    fecha_devuelto = models.DateTimeField(null=True, blank=True)
+    fecha_cancelado = models.DateTimeField(null=True, blank=True)
+    fecha_archivado = models.DateTimeField(null=True, blank=True)
+    asunto_derivado = models.CharField(max_length=300, null=True, blank=True)
+    asunto_devuelto = models.CharField(max_length=200, null=True, blank=True)
+    asunto_archivado = models.CharField(max_length=200, null=True, blank=True)
+    asunto_cancelado = models.CharField(max_length=200, null=True, blank=True)
+
+    class Meta:
+        verbose_name = 'correspondencia'
+        verbose_name_plural = 'correspondencia'
+
+    def __str__(self):
+        return self.usuario_remitente
+
+    def get_absolute_url(self):
+        return reverse('codigo', kwargs={'pk': self.pk})
 
 
 # Modelo Dirección de Auditoría Interna
-class dir_auditoria_interna(models.Model):
-    pass
+class CrrDirAuditoriaInterna(models.Model):
+    nombre_unidad = models.CharField(max_length=200)
+    codigo = models.CharField(max_length=20, default='S/C', null=True, blank=True)
+    usuario_rtte = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usuario_rtte')
+    numero_fojas = models.IntegerField(null=True, blank=True)
+    tipo_derivado = models.CharField(choices=options_tipo,max_length=200)
+    unidad_destino = models.ForeignKey(Unidad, on_delete=models.CASCADE, related_name='unidad_destino')
+    usuario_destino = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usuario_destino')
+    derivado = models.BooleanField(default=True, null=True, blank=True)
+    recibido = models.BooleanField(default=True, null=True, blank=True)
+    devuelto = models.BooleanField(default=False, null=True, blank=True)
+    cancelado = models.BooleanField(default=False, null=True, blank=True)
+    archivado = models.BooleanField(default=False, null=True, blank=True)
+    fecha_derivado = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    fecha_recibido = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    fecha_devuelto = models.DateTimeField(null=True, blank=True)
+    fecha_cancelado = models.DateTimeField(null=True, blank=True)
+    fecha_archivado = models.DateTimeField(null=True, blank=True)
+    asunto_derivado = models.CharField(max_length=300, null=True, blank=True)
+    asunto_devuelto = models.CharField(max_length=200, null=True, blank=True)
+    asunto_archivado = models.CharField(max_length=200, null=True, blank=True)
+    asunto_cancelado = models.CharField(max_length=200, null=True, blank=True)
+
+    class Meta:
+        verbose_name = 'correspondencia'
+        verbose_name_plural = 'correspondencia'
+
+    def __str__(self):
+        return self.usuario_remitente
+
+    def get_absolute_url(self):
+        return reverse('codigo', kwargs={'pk': self.pk})
 
 
 # Modelo Dirección de Desarrollo Humano
-class dir_desarrollo_humano(models.Model):
-    pass
+class CrrDirDesarrolloHumano(models.Model):
+    nombre_unidad = models.CharField(max_length=200)
+    codigo = models.CharField(max_length=20, default='S/C', null=True, blank=True)
+    usuario_rtte = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usuario_rtte')
+    numero_fojas = models.IntegerField(null=True, blank=True)
+    tipo_derivado = models.CharField(choices=options_tipo,max_length=200)
+    unidad_destino = models.ForeignKey(Unidad, on_delete=models.CASCADE, related_name='unidad_destino')
+    usuario_destino = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usuario_destino')
+    derivado = models.BooleanField(default=True, null=True, blank=True)
+    recibido = models.BooleanField(default=True, null=True, blank=True)
+    devuelto = models.BooleanField(default=False, null=True, blank=True)
+    cancelado = models.BooleanField(default=False, null=True, blank=True)
+    archivado = models.BooleanField(default=False, null=True, blank=True)
+    fecha_derivado = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    fecha_recibido = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    fecha_devuelto = models.DateTimeField(null=True, blank=True)
+    fecha_cancelado = models.DateTimeField(null=True, blank=True)
+    fecha_archivado = models.DateTimeField(null=True, blank=True)
+    asunto_derivado = models.CharField(max_length=300, null=True, blank=True)
+    asunto_devuelto = models.CharField(max_length=200, null=True, blank=True)
+    asunto_archivado = models.CharField(max_length=200, null=True, blank=True)
+    asunto_cancelado = models.CharField(max_length=200, null=True, blank=True)
+
+    class Meta:
+        verbose_name = 'correspondencia'
+        verbose_name_plural = 'correspondencia'
+
+    def __str__(self):
+        return self.usuario_remitente
+
+    def get_absolute_url(self):
+        return reverse('codigo', kwargs={'pk': self.pk})
 
 
 # Modelo ´Dirección de Ingresos
-class dir_ingresos(models.Model):
-    pass
+class CrrDireccionIngresos(models.Model):
+    nombre_unidad = models.CharField(max_length=200)
+    codigo = models.CharField(max_length=20, default='S/C', null=True, blank=True)
+    usuario_rtte = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usuario_rtte')
+    numero_fojas = models.IntegerField(null=True, blank=True)
+    tipo_derivado = models.CharField(choices=options_tipo,max_length=200)
+    unidad_destino = models.ForeignKey(Unidad, on_delete=models.CASCADE, related_name='unidad_destino')
+    usuario_destino = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usuario_destino')
+    derivado = models.BooleanField(default=True, null=True, blank=True)
+    recibido = models.BooleanField(default=True, null=True, blank=True)
+    devuelto = models.BooleanField(default=False, null=True, blank=True)
+    cancelado = models.BooleanField(default=False, null=True, blank=True)
+    archivado = models.BooleanField(default=False, null=True, blank=True)
+    fecha_derivado = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    fecha_recibido = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    fecha_devuelto = models.DateTimeField(null=True, blank=True)
+    fecha_cancelado = models.DateTimeField(null=True, blank=True)
+    fecha_archivado = models.DateTimeField(null=True, blank=True)
+    asunto_derivado = models.CharField(max_length=300, null=True, blank=True)
+    asunto_devuelto = models.CharField(max_length=200, null=True, blank=True)
+    asunto_archivado = models.CharField(max_length=200, null=True, blank=True)
+    asunto_cancelado = models.CharField(max_length=200, null=True, blank=True)
+
+    class Meta:
+        verbose_name = 'correspondencia'
+        verbose_name_plural = 'correspondencia'
+
+    def __str__(self):
+        return self.usuario_remitente
+
+    def get_absolute_url(self):
+        return reverse('codigo', kwargs={'pk': self.pk})
 
 
 # Modelo Dirección de Desarrollo Productivo y Medio Ambiente
-class dir_des_prod_medio_ambiente(models.Model):
-    pass
+class CrrDirDesProdMedAmbiente(models.Model):
+    nombre_unidad = models.CharField(max_length=200)
+    codigo = models.CharField(max_length=20, default='S/C', null=True, blank=True)
+    usuario_rtte = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usuario_rtte')
+    numero_fojas = models.IntegerField(null=True, blank=True)
+    tipo_derivado = models.CharField(choices=options_tipo,max_length=200)
+    unidad_destino = models.ForeignKey(Unidad, on_delete=models.CASCADE, related_name='unidad_destino')
+    usuario_destino = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usuario_destino')
+    derivado = models.BooleanField(default=True, null=True, blank=True)
+    recibido = models.BooleanField(default=True, null=True, blank=True)
+    devuelto = models.BooleanField(default=False, null=True, blank=True)
+    cancelado = models.BooleanField(default=False, null=True, blank=True)
+    archivado = models.BooleanField(default=False, null=True, blank=True)
+    fecha_derivado = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    fecha_recibido = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    fecha_devuelto = models.DateTimeField(null=True, blank=True)
+    fecha_cancelado = models.DateTimeField(null=True, blank=True)
+    fecha_archivado = models.DateTimeField(null=True, blank=True)
+    asunto_derivado = models.CharField(max_length=300, null=True, blank=True)
+    asunto_devuelto = models.CharField(max_length=200, null=True, blank=True)
+    asunto_archivado = models.CharField(max_length=200, null=True, blank=True)
+    asunto_cancelado = models.CharField(max_length=200, null=True, blank=True)
+
+    class Meta:
+        verbose_name = 'correspondencia'
+        verbose_name_plural = 'correspondencia'
+
+    def __str__(self):
+        return self.usuario_remitente
+
+    def get_absolute_url(self):
+        return reverse('codigo', kwargs={'pk': self.pk})
 
 
 # Modelo Dirección de Urbanismo y Catastro
-class dir_urbanismo_catastro(models.Model):
-    pass
+class CrrDirUrbanismoCatastro(models.Model):
+    nombre_unidad = models.CharField(max_length=200)
+    codigo = models.CharField(max_length=20, default='S/C', null=True, blank=True)
+    usuario_rtte = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usuario_rtte')
+    numero_fojas = models.IntegerField(null=True, blank=True)
+    tipo_derivado = models.CharField(choices=options_tipo,max_length=200)
+    unidad_destino = models.ForeignKey(Unidad, on_delete=models.CASCADE, related_name='unidad_destino')
+    usuario_destino = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usuario_destino')
+    derivado = models.BooleanField(default=True, null=True, blank=True)
+    recibido = models.BooleanField(default=True, null=True, blank=True)
+    devuelto = models.BooleanField(default=False, null=True, blank=True)
+    cancelado = models.BooleanField(default=False, null=True, blank=True)
+    archivado = models.BooleanField(default=False, null=True, blank=True)
+    fecha_derivado = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    fecha_recibido = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    fecha_devuelto = models.DateTimeField(null=True, blank=True)
+    fecha_cancelado = models.DateTimeField(null=True, blank=True)
+    fecha_archivado = models.DateTimeField(null=True, blank=True)
+    asunto_derivado = models.CharField(max_length=300, null=True, blank=True)
+    asunto_devuelto = models.CharField(max_length=200, null=True, blank=True)
+    asunto_archivado = models.CharField(max_length=200, null=True, blank=True)
+    asunto_cancelado = models.CharField(max_length=200, null=True, blank=True)
+
+    class Meta:
+        verbose_name = 'correspondencia'
+        verbose_name_plural = 'correspondencia'
+
+    def __str__(self):
+        return self.usuario_remitente
+
+    def get_absolute_url(self):
+        return reverse('codigo', kwargs={'pk': self.pk})
 
 
 # Modelo Dirección de Obras Públicas
-class dir_obras_publicas(models.Model):
-    pass
+class CrrDirObrasPublicas(models.Model):
+    nombre_unidad = models.CharField(max_length=200)
+    codigo = models.CharField(max_length=20, default='S/C', null=True, blank=True)
+    usuario_rtte = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usuario_rtte')
+    numero_fojas = models.IntegerField(null=True, blank=True)
+    tipo_derivado = models.CharField(choices=options_tipo,max_length=200)
+    unidad_destino = models.ForeignKey(Unidad, on_delete=models.CASCADE, related_name='unidad_destino')
+    usuario_destino = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usuario_destino')
+    derivado = models.BooleanField(default=True, null=True, blank=True)
+    recibido = models.BooleanField(default=True, null=True, blank=True)
+    devuelto = models.BooleanField(default=False, null=True, blank=True)
+    cancelado = models.BooleanField(default=False, null=True, blank=True)
+    archivado = models.BooleanField(default=False, null=True, blank=True)
+    fecha_derivado = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    fecha_recibido = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    fecha_devuelto = models.DateTimeField(null=True, blank=True)
+    fecha_cancelado = models.DateTimeField(null=True, blank=True)
+    fecha_archivado = models.DateTimeField(null=True, blank=True)
+    asunto_derivado = models.CharField(max_length=300, null=True, blank=True)
+    asunto_devuelto = models.CharField(max_length=200, null=True, blank=True)
+    asunto_archivado = models.CharField(max_length=200, null=True, blank=True)
+    asunto_cancelado = models.CharField(max_length=200, null=True, blank=True)
+
+    class Meta:
+        verbose_name = 'correspondencia'
+        verbose_name_plural = 'correspondencia'
+
+    def __str__(self):
+        return self.usuario_remitente
+
+    def get_absolute_url(self):
+        return reverse('codigo', kwargs={'pk': self.pk})
 
 
 # Modelo Dirección de Planificación
-class dir_planificacion(models.Model):
-    pass
+class CrrDireccionPlanificacion(models.Model):
+    nombre_unidad = models.CharField(max_length=200)
+    codigo = models.CharField(max_length=20, default='S/C', null=True, blank=True)
+    usuario_rtte = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usuario_rtte')
+    numero_fojas = models.IntegerField(null=True, blank=True)
+    tipo_derivado = models.CharField(choices=options_tipo,max_length=200)
+    unidad_destino = models.ForeignKey(Unidad, on_delete=models.CASCADE, related_name='unidad_destino')
+    usuario_destino = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usuario_destino')
+    derivado = models.BooleanField(default=True, null=True, blank=True)
+    recibido = models.BooleanField(default=True, null=True, blank=True)
+    devuelto = models.BooleanField(default=False, null=True, blank=True)
+    cancelado = models.BooleanField(default=False, null=True, blank=True)
+    archivado = models.BooleanField(default=False, null=True, blank=True)
+    fecha_derivado = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    fecha_recibido = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    fecha_devuelto = models.DateTimeField(null=True, blank=True)
+    fecha_cancelado = models.DateTimeField(null=True, blank=True)
+    fecha_archivado = models.DateTimeField(null=True, blank=True)
+    asunto_derivado = models.CharField(max_length=300, null=True, blank=True)
+    asunto_devuelto = models.CharField(max_length=200, null=True, blank=True)
+    asunto_archivado = models.CharField(max_length=200, null=True, blank=True)
+    asunto_cancelado = models.CharField(max_length=200, null=True, blank=True)
+
+    class Meta:
+        verbose_name = 'correspondencia'
+        verbose_name_plural = 'correspondencia'
+
+    def __str__(self):
+        return self.usuario_remitente
+
+    def get_absolute_url(self):
+        return reverse('codigo', kwargs={'pk': self.pk})
 
 
 # Modelo Dirección de Saneamiento Básico
-class dir_saneamiento_basico(models.Model):
-    pass
+class CrrDirSaneamientoBasico(models.Model):
+    nombre_unidad = models.CharField(max_length=200)
+    codigo = models.CharField(max_length=20, default='S/C', null=True, blank=True)
+    usuario_rtte = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usuario_rtte')
+    numero_fojas = models.IntegerField(null=True, blank=True)
+    tipo_derivado = models.CharField(choices=options_tipo,max_length=200)
+    unidad_destino = models.ForeignKey(Unidad, on_delete=models.CASCADE, related_name='unidad_destino')
+    usuario_destino = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usuario_destino')
+    derivado = models.BooleanField(default=True, null=True, blank=True)
+    recibido = models.BooleanField(default=True, null=True, blank=True)
+    devuelto = models.BooleanField(default=False, null=True, blank=True)
+    cancelado = models.BooleanField(default=False, null=True, blank=True)
+    archivado = models.BooleanField(default=False, null=True, blank=True)
+    fecha_derivado = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    fecha_recibido = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    fecha_devuelto = models.DateTimeField(null=True, blank=True)
+    fecha_cancelado = models.DateTimeField(null=True, blank=True)
+    fecha_archivado = models.DateTimeField(null=True, blank=True)
+    asunto_derivado = models.CharField(max_length=300, null=True, blank=True)
+    asunto_devuelto = models.CharField(max_length=200, null=True, blank=True)
+    asunto_archivado = models.CharField(max_length=200, null=True, blank=True)
+    asunto_cancelado = models.CharField(max_length=200, null=True, blank=True)
+
+    class Meta:
+        verbose_name = 'correspondencia'
+        verbose_name_plural = 'correspondencia'
+
+    def __str__(self):
+        return self.usuario_remitente
+
+    def get_absolute_url(self):
+        return reverse('codigo', kwargs={'pk': self.pk})
 
 
 # Modelo Dirección de Administración de Salud
-class dir_adm_salud(models.Model):
-    pass
+class CrrDirAdministracionSalud(models.Model):
+    nombre_unidad = models.CharField(max_length=200)
+    codigo = models.CharField(max_length=20, default='S/C', null=True, blank=True)
+    usuario_rtte = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usuario_rtte')
+    numero_fojas = models.IntegerField(null=True, blank=True)
+    tipo_derivado = models.CharField(choices=options_tipo,max_length=200)
+    unidad_destino = models.ForeignKey(Unidad, on_delete=models.CASCADE, related_name='unidad_destino')
+    usuario_destino = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usuario_destino')
+    derivado = models.BooleanField(default=True, null=True, blank=True)
+    recibido = models.BooleanField(default=True, null=True, blank=True)
+    devuelto = models.BooleanField(default=False, null=True, blank=True)
+    cancelado = models.BooleanField(default=False, null=True, blank=True)
+    archivado = models.BooleanField(default=False, null=True, blank=True)
+    fecha_derivado = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    fecha_recibido = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    fecha_devuelto = models.DateTimeField(null=True, blank=True)
+    fecha_cancelado = models.DateTimeField(null=True, blank=True)
+    fecha_archivado = models.DateTimeField(null=True, blank=True)
+    asunto_derivado = models.CharField(max_length=300, null=True, blank=True)
+    asunto_devuelto = models.CharField(max_length=200, null=True, blank=True)
+    asunto_archivado = models.CharField(max_length=200, null=True, blank=True)
+    asunto_cancelado = models.CharField(max_length=200, null=True, blank=True)
+
+    class Meta:
+        verbose_name = 'correspondencia'
+        verbose_name_plural = 'correspondencia'
+
+    def __str__(self):
+        return self.usuario_remitente
+
+    def get_absolute_url(self):
+        return reverse('codigo', kwargs={'pk': self.pk})
 
 
 # Modelo Dirección de Educación y Gestión Social
-class dir_edu_gestion_social(models.Model):
-    pass
+class CrrDirEduGestionSocial(models.Model):
+    nombre_unidad = models.CharField(max_length=200)
+    codigo = models.CharField(max_length=20, default='S/C', null=True, blank=True)
+    usuario_rtte = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usuario_rtte')
+    numero_fojas = models.IntegerField(null=True, blank=True)
+    tipo_derivado = models.CharField(choices=options_tipo,max_length=200)
+    unidad_destino = models.ForeignKey(Unidad, on_delete=models.CASCADE, related_name='unidad_destino')
+    usuario_destino = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usuario_destino')
+    derivado = models.BooleanField(default=True, null=True, blank=True)
+    recibido = models.BooleanField(default=True, null=True, blank=True)
+    devuelto = models.BooleanField(default=False, null=True, blank=True)
+    cancelado = models.BooleanField(default=False, null=True, blank=True)
+    archivado = models.BooleanField(default=False, null=True, blank=True)
+    fecha_derivado = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    fecha_recibido = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    fecha_devuelto = models.DateTimeField(null=True, blank=True)
+    fecha_cancelado = models.DateTimeField(null=True, blank=True)
+    fecha_archivado = models.DateTimeField(null=True, blank=True)
+    asunto_derivado = models.CharField(max_length=300, null=True, blank=True)
+    asunto_devuelto = models.CharField(max_length=200, null=True, blank=True)
+    asunto_archivado = models.CharField(max_length=200, null=True, blank=True)
+    asunto_cancelado = models.CharField(max_length=200, null=True, blank=True)
+
+    class Meta:
+        verbose_name = 'correspondencia'
+        verbose_name_plural = 'correspondencia'
+
+    def __str__(self):
+        return self.usuario_remitente
+
+    def get_absolute_url(self):
+        return reverse('codigo', kwargs={'pk': self.pk})
 
 
 # Modelo Asesores
-class AsesoresC(models.Model):
-    pass
+class CrrAsesores(models.Model):
+    nombre_unidad = models.CharField(max_length=200)
+    codigo = models.CharField(max_length=20, default='S/C', null=True, blank=True)
+    usuario_rtte = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usuario_rtte')
+    numero_fojas = models.IntegerField(null=True, blank=True)
+    tipo_derivado = models.CharField(choices=options_tipo,max_length=200)
+    unidad_destino = models.ForeignKey(Unidad, on_delete=models.CASCADE, related_name='unidad_destino')
+    usuario_destino = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usuario_destino')
+    derivado = models.BooleanField(default=True, null=True, blank=True)
+    recibido = models.BooleanField(default=True, null=True, blank=True)
+    devuelto = models.BooleanField(default=False, null=True, blank=True)
+    cancelado = models.BooleanField(default=False, null=True, blank=True)
+    archivado = models.BooleanField(default=False, null=True, blank=True)
+    fecha_derivado = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    fecha_recibido = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    fecha_devuelto = models.DateTimeField(null=True, blank=True)
+    fecha_cancelado = models.DateTimeField(null=True, blank=True)
+    fecha_archivado = models.DateTimeField(null=True, blank=True)
+    asunto_derivado = models.CharField(max_length=300, null=True, blank=True)
+    asunto_devuelto = models.CharField(max_length=200, null=True, blank=True)
+    asunto_archivado = models.CharField(max_length=200, null=True, blank=True)
+    asunto_cancelado = models.CharField(max_length=200, null=True, blank=True)
+
+    class Meta:
+        verbose_name = 'correspondencia'
+        verbose_name_plural = 'correspondencia'
+
+    def __str__(self):
+        return self.usuario_remitente
+
+    def get_absolute_url(self):
+        return reverse('codigo', kwargs={'pk': self.pk})
