@@ -29,6 +29,16 @@ class Unidad(models.Model):
     def get_absolute_url(self):
         return reverse('Unidad', kwargs={'pk': self.pk})
 
+# Cargo
+class Cargo(models.Model):
+    nombre_cargo = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.nombre_cargo
+
+    def get_absolute_url(self):
+        return reverse('Unidad', kwargs={'pk': self.pk})
+
 
 # Unidad Consejo Municipal
 class TbConsejoMunicipal(models.Model):
