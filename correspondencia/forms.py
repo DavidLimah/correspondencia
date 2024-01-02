@@ -1,7 +1,7 @@
 from django.forms import ModelForm
 from accounts.models import Profile
 
-from correspondencia.models import Correspondencia, Unidad, TbConsejoMunicipal, TbDespachoAlcalde, TbSecretariaGeneral, TbSecAdmFinanciera, TbSecretariaTecnica, TbSecretariaPlanificacion, TbSecFortalecimientoInSocial, TbDirAsesoriaLegal, TbDireccionFinanzas, TbDirAuditoriaInterna, TbDirDesarrolloHumano, TbDireccionIngresos, TbDirDesProdMedAmbiente, TbDirUrbanismoCatastro, TbDirObrasPublicas, TbDireccionPlanificacion, TbDirSaneamientoBasico, TbDirAdministracionSalud, TbDirEduGestionSocial, TbAsesores
+from correspondencia.models import Correspondencia, Unidad, TbConsejoMunicipal, TbDespachoAlcalde, TbSecretariaGeneral, TbSecAdmFinanciera, TbSecretariaTecnica, TbSecretariaPlanificacion, TbSecFortalecimientoInSocial, TbDirAsesoriaLegal, TbDireccionFinanzas, TbDirAuditoriaInterna, TbDirDesarrolloHumano, TbDireccionIngresos, TbDirDesProdMedAmbiente, TbDirUrbanismoCatastro, TbDirObrasPublicas, TbDireccionPlanificacion, TbDirSaneamientoBasico, TbDirAdministracionSalud, TbDirEduGestionSocial, TbAsesores, CrrConsejoMunicipal, CrrDespachoAlcalde, CrrSecretariaGeneral, CrrSecAdmFinanciera, CrrSecretariaTecnica, CrrSecretariaPlanificacion, CrrSecFortalecimientoInSocial, CrrDirAsesoriaLegal, CrrDireccionFinanzas, CrrDirAuditoriaInterna, CrrDirDesarrolloHumano, CrrDireccionIngresos, CrrDirDesProdMedAmbiente, CrrDirUrbanismoCatastro, CrrDirObrasPublicas, CrrDireccionPlanificacion, CrrDirSaneamientoBasico, CrrDirAdministracionSalud, CrrDirEduGestionSocial, CrrAsesores
 
 from django.contrib.auth.models import User
 
@@ -55,3 +55,139 @@ class CancelarForm(ModelForm):
         model = Correspondencia
         fields = '__all__'
 
+# Correspondencia Consejo municipal
+class CrrConsejoMunicipalForm(ModelForm):
+    class Meta:
+        model = CrrConsejoMunicipal
+        fields = '__all__'
+
+# Correspondencia Despacho Alcalde
+class CrrDespachoAlcaldeForm(ModelForm):
+    class Meta:
+        model = CrrDespachoAlcalde
+        fields = '__all__'
+
+# Correspondencia Secretaria General
+class CrrSecretariaGeneralForm(ModelForm):
+    class Meta:
+        model = CrrSecretariaGeneral
+        fields = '__all__'
+
+
+# Correspondencia Administración Financiera
+class CrrSecAdmFinancieraForm(ModelForm):
+    class Meta:
+        model = CrrSecAdmFinanciera
+        fields = '__all__'
+
+
+# Correspondencia Secretaria Técnica
+class CrrSecretariaTecnicaForm(ModelForm):
+    class Meta:
+        model = CrrSecretariaTecnica
+        fields = '__all__'
+
+
+# Correspondencia Secretaría Planificación
+class CrrSecretariaPlanificacionForm(ModelForm):
+    class Meta:
+        model = CrrSecretariaPlanificacion
+        fields = '__all__'
+
+
+# Correspondencia Secretaría Fortalecimiento Institucional Social
+class CrrSecFortalecimientoInSocial(ModelForm):
+    class Meta:
+        model = CrrSecFortalecimientoInSocial
+        fields = '__all__'
+
+
+# Correspondencia Asesoria Legal
+class CrrDirAsesoriaLegalForm(ModelForm):
+    class Meta:
+        model = CrrDirAsesoriaLegal
+        fields = '__all__'
+
+
+# Correspondencia Dirección Finanzas
+class CrrDireccionFinanzasForm(ModelForm):
+    class Meta:
+        model = CrrDireccionFinanzas
+        fields = '__all__'
+
+
+# Correspondencia Auditoria Interna
+class CrrDirAuditoriaInternaForm(ModelForm):
+    class Meta:
+        model = CrrDirAuditoriaInterna
+        fields = '__all__'
+
+
+# Correspondencia Dirección Desarrollo Humano
+class CrrDirDesarrolloHumanoForm(ModelForm):
+    class Model:
+        model = CrrDirDesarrolloHumano
+        fields = '__all__'
+
+
+# Correspondencia Cirección Ingresos
+class CrrDireccionIngresosForm(ModelForm):
+    class Meta:
+        model = CrrDireccionIngresos
+        fields = '__all__'
+
+
+# Correspondencia Dirección Productiva y Medio Ambiente
+class CrrDirDesProdMedAmbienteForm(ModelForm):
+    class Meta:
+        model = CrrDirDesProdMedAmbiente
+        fields = '__all__'
+
+
+# Correspondencia Dirección Urbanismo y Catastro
+class CrrDirUrbanismoCatastroForm(ModelForm):
+    class Meta:
+        model = CrrDirUrbanismoCatastro
+        fields = '__all__'
+
+
+# Correspondencia Dirección Obras Públicas
+class CrrDirObrasPublicasForm(ModelForm):
+    class Meta:
+        model = CrrDirObrasPublicas
+        fields = '__all__'
+
+
+# Correspondencia Dirección Planificación
+class CrrDireccionPlanificacionForm(ModelForm):
+    class Meta:
+        model = CrrDireccionPlanificacion
+        fields = '__all__'
+
+
+# Correspondencia Dirección Saneamiento Básico
+class CrrDirSaneamientoBasicoForm(ModelForm):
+    class Meta:
+        model = CrrDirSaneamientoBasico
+        fields = '__all__'
+
+
+# Correspondencia Dirección Administración Salud
+class CrrDirAdministracionSaludForm(ModelForm):
+    class Meta:
+        model = CrrDirAdministracionSalud
+        fields = '__all__'
+
+
+# Correspondencia Dirección Educación Gestión Social
+class CrrDirEduGestionSocialForm(ModelForm):
+    class Meta:
+        model = CrrDirEduGestionSocial
+        fields = '__all__'
+
+
+# Correspondencia Asesores
+class CrrAsesoresForm(ModelForm):
+    class Meta:
+        model = CrrAsesores
+        fields = '__all__'

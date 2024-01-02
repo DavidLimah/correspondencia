@@ -5,7 +5,7 @@ from django.contrib.auth import logout
 from django.contrib.auth.models import User
 from correspondencia.models import Correspondencia
 from accounts.models import Profile
-from correspondencia.forms import CorrespondenciaForm, ArchivarForm, DevolverForm, CancelarForm
+
 
 from django.contrib import messages
 from django.http import HttpResponseRedirect
@@ -18,6 +18,7 @@ from django import db
 
 #from django.contrib.messages.views import SuccessMessageMixin
 
+from correspondencia.forms import CorrespondenciaForm, ArchivarForm, DevolverForm, CancelarForm, CrrConsejoMunicipalForm, CrrDespachoAlcaldeForm, CrrSecretariaGeneralForm, CrrSecAdmFinancieraForm, CrrSecretariaTecnicaForm, CrrSecretariaPlanificacionForm, CrrSecFortalecimientoInSocialForm, CrrDirAsesoriaLegalForm, CrrDireccionFinanzasForm, CrrDirAuditoriaInternaForm, CrrDirDesarrolloHumanoForm, CrrDireccionIngresosForm, CrrDirDesProdMedAmbienteForm, CrrDirUrbanismoCatastroForm, CrrDirObrasPublicasForm, CrrDireccionPlanificacionForm, CrrDirSaneamientoBasicoForm, CrrDirAdministracionSaludForm, CrrDirEduGestionSocialForm, CrrAsesoresForm
 
 # HOME
 def home(request):
