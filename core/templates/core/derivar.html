@@ -9,14 +9,16 @@
 {% block content %}
 
 <div class="row">
-    <div class="col-12">
-        <h3>Hoja de ruta</h3>
+    <div class="card">
+        <div class="card-header">Hoja de ruta</div >
+        
+        {% if user.pk and user.profile.unidad.sigla_unidad == "CM" %}
         <form action="" method="POST" class="form-control">
             {% csrf_token %}
             {{ form|crispy }}
             <input type="submit" name="" value="Enviar">
-            
         </form>
+        {% endif %}
     </div>
 </div>
 

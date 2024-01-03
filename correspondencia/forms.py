@@ -26,7 +26,7 @@ class SuccessMessageMixin:
 class CorrespondenciaForm(ModelForm):
     class Meta:
         model = Correspondencia
-        fields = ['codigo', 'usuario_rtte', 'numero_fojas', 'tipo_derivado', 'usuario_destino', 'asunto_derivado', ]
+        fields = '__all__'
 
 
 class EnviadoForm(ModelForm):
@@ -55,7 +55,7 @@ class CancelarForm(ModelForm):
         model = Correspondencia
         fields = '__all__'
 
-# Correspondencia Consejo municipal
+# Correspondencia Consejo Municipal
 class CrrConsejoMunicipalForm(ModelForm):
     class Meta:
         model = CrrConsejoMunicipal
@@ -96,7 +96,7 @@ class CrrSecretariaPlanificacionForm(ModelForm):
 
 
 # Correspondencia Secretaría Fortalecimiento Institucional Social
-class CrrSecFortalecimientoInSocial(ModelForm):
+class CrrSecFortalecimientoInSocialForm(ModelForm):
     class Meta:
         model = CrrSecFortalecimientoInSocial
         fields = '__all__'

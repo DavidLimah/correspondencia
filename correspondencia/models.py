@@ -343,7 +343,7 @@ class TbAsesores(models.Model):
 # Modelo Correspondencia
 class Correspondencia(models.Model):
     nombre_unidad = models.CharField(max_length=200)
-    codigo = models.CharField(max_length=20, default='S/C', null=True, blank=True)
+    codigo = models.CharField(max_length=20, null=True, blank=True)
     usuario_rtte = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usuario_rtte_crr')
     numero_fojas = models.IntegerField(null=True, blank=True)
     tipo_derivado = models.CharField(choices=options_tipo,max_length=200)
@@ -377,8 +377,9 @@ class Correspondencia(models.Model):
 
 # Modelo Concejo Municipal 
 class CrrConsejoMunicipal(models.Model):
-    nombre_unidad = models.CharField(max_length=200)
-    codigo = models.CharField(max_length=20, default='S/C', null=True, blank=True)
+    nombre_unidad = models.CharField(max_length=200, default="CONSEJO MUNICIPAL")
+    cargo_unidad = models.ForeignKey(Cargo, on_delete=models.CASCADE, related_name='cargo_unidad')
+    codigo = models.CharField(max_length=20, null=True, blank=True)
     usuario_rtte = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usuario_rtte_cm')
     numero_fojas = models.IntegerField(null=True, blank=True)
     tipo_derivado = models.CharField(choices=options_tipo,max_length=200)
