@@ -8,6 +8,7 @@
 <table class="table">
     <thead>
         <tr>
+            <th scope="col" class="text-center">ID</th>
             <th scope="col" class="text-center">Destinatario</th>
             <th scope="col" class="text-center">Número fojas</th>
             <th scope="col" class="text-center">Tipo</th>
@@ -21,6 +22,7 @@
         {% if user.pk == d.usuario_rtte.pk and not d.cancelado %}
     
     <tr>
+        <td class="text-center">{{ d.codigo }}</td>
         <td class="text-center">{{ d.usuario_destino }}</td>
         <td class="text-center">{{ d.numero_fojas }}</td>
         <td class="text-center">{{ d.tipo_hoja_ruta }}</td>

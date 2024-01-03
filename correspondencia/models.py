@@ -343,7 +343,7 @@ class TbAsesores(models.Model):
 # Modelo Correspondencia
 class Correspondencia(models.Model):
     nombre_unidad = models.CharField(max_length=200)
-    codigo = models.CharField(max_length=20, null=True, blank=True)
+    codigo = models.CharField(max_length=200, blank=True, null=True)
     usuario_rtte = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usuario_rtte_crr')
     numero_fojas = models.IntegerField(null=True, blank=True)
     tipo_derivado = models.CharField(choices=options_tipo,max_length=200)
@@ -363,6 +363,17 @@ class Correspondencia(models.Model):
     asunto_devuelto = models.CharField(max_length=200, null=True, blank=True)
     asunto_archivado = models.CharField(max_length=200, null=True, blank=True)
     asunto_cancelado = models.CharField(max_length=200, null=True, blank=True)
+
+    # Para crear ID Hoja de Ruta
+    def save(self):
+        if not self.codigo and self.pk is None:
+            last_codigo = Correspondencia.objects.all().order_by("-pk").first()
+            last_pk = 0
+            if last_codigo:
+                last_pk = last_codigo.pk
+            self.codigo = "HR-" + str(last_pk+1).zfill(3)
+
+        super(Correspondencia, self).save()
 
     class Meta:
         verbose_name = 'correspondencia'
