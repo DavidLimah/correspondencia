@@ -1,5 +1,5 @@
 from django.contrib import admin
-from correspondencia.models import Correspondencia, Unidad
+from correspondencia.models import Correspondencia, Unidad, Cargo
 
 
 import autocomplete_all as admin
@@ -14,7 +14,11 @@ class Correspondencia(admin.ModelAdmin):
 
 @admin.register(Unidad)
 class Unidad(admin.ModelAdmin):
-	search_fields = ('nombre_unidad',)
+	search_fields = ('nombre_unidad','sigla_unidad',)
+
+@admin.register(Cargo)
+class Cargo(admin.ModelAdmin):
+	search_fields = ('nombre_cargo',)
 
 
 
