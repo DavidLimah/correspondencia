@@ -26,7 +26,7 @@ class SuccessMessageMixin:
 class CorrespondenciaForm(ModelForm):
     class Meta:
         model = Correspondencia
-        fields = '__all__'
+        fields = ["usuario_rtte","unidad_rtte","cargo_rtte","asunto_derivado","usuario_destino","unidad_destino","cargo_destino","tipo_derivado","numero_fojas","archivo",]
 
 
 class EnviadoForm(ModelForm):
@@ -39,21 +39,24 @@ class EnviadoForm(ModelForm):
 class ArchivarForm(ModelForm):
     class Meta:
         model = Correspondencia
-        fields = '__all__'
+        fields = ["usuario_rtte","unidad_rtte","cargo_rtte","asunto_archivado",]
+        labels = {"usuario_rtte":"Usuario remitente","unidad_rtte":"Unidad","cargo_rtte":"Cargo","asunto_archivado":"Asunto archivado",}
 
 
 # Devolver
 class DevolverForm(ModelForm):
     class Meta:
         model = Correspondencia
-        fields = '__all__'
+        fields = ["usuario_rtte","unidad_rtte","cargo_rtte","asunto_devuelto",]
+        labels = {"usuario_rtte":"Usuario remitente","unidad_rtte":"Unidad","cargo_rtte":"Cargo","asunto_devuelto":"Asunto devuelto",}
 
 
 # Cancelar
 class CancelarForm(ModelForm):
     class Meta:
         model = Correspondencia
-        fields = '__all__'
+        fields = ["usuario_rtte","unidad_rtte","cargo_rtte","asunto_cancelado",]
+        labels = {"usuario_rtte":"Usuario remitente","unidad_rtte":"Unidad","cargo_rtte":"Cargo","asunto_cancelado":"Asunto cancelado",}
 
 # Correspondencia Consejo Municipal
 class CrrConsejoMunicipalForm(ModelForm):

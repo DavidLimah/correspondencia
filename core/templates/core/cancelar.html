@@ -6,13 +6,21 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-
-
-    <form action="" method="POST">
-        {% csrf_token %}
-        {{  form_cancelar|crispy }}
-        <button type="submit" class="btn btn-primary">Guardar</button>
-    </form>
+<br>
+<div class="row justify-content-center">
+    <div class="card shadow-lg col-sm-9" style="padding: 10px; border-radius: 3%;box-shadow: 10cm;">
+        <h3 class="shadow-sm p-2 rounded" style="background-color: gold; text-align: center;">Cancelar</h3>
+        <form action="" method="POST" class="">
+            {% csrf_token %}
+            {{  form_cancelar|crispy }}
+            <div class="row justify-content-center">
+                <div class="form-group col-sm-4">
+                    <button type="submit" class="btn btn-primary col-sm-9">Guardar cambios</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
 
 
 {% endblock %}

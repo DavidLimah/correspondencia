@@ -342,7 +342,6 @@ class TbAsesores(models.Model):
 
 # Modelo Correspondencia
 class Correspondencia(models.Model):
-    nombre_unidad = models.CharField(max_length=200)
     codigo = models.CharField(max_length=200, blank=True, null=True)
     usuario_rtte = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usuario_rtte_crr')
     unidad_rtte = models.ForeignKey(Unidad, on_delete=models.CASCADE, related_name='unidad_rtte_crr')
@@ -352,6 +351,7 @@ class Correspondencia(models.Model):
     usuario_destino = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usuario_destino_crr')
     unidad_destino = models.ForeignKey(Unidad, on_delete=models.CASCADE, related_name='unidad_destino_crr')
     cargo_destino = models.ForeignKey(Cargo, on_delete=models.CASCADE, related_name='cargo_destino_crr')
+    archivo = models.FileField(upload_to='media', null=True, blank=True)
     derivado = models.BooleanField(default=True, null=True, blank=True)
     recibido = models.BooleanField(default=True, null=True, blank=True)
     devuelto = models.BooleanField(default=False, null=True, blank=True)

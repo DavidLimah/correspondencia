@@ -7,51 +7,77 @@
 
 
 {% block content %}
-
-
-<div class="container-fluid px-1 py-5 mx-auto">
-    <div class="row d-flex justify-content-center">
-        <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
-            <h3 class="card shadow-lg p-3 rounded" style="background-color: gold;">Hoja de ruta</h3>
-            <div class="card shadow-lg p-3 mb-5 bg-body rounded" style="padding: 10px; border-radius: 3%;box-shadow: 5cm;">
-                <h5 class="text-center mb-4" padding: 10px;">Datos remitente</h5>
-                <form action="" class="form-card" method="POST">
-                    {% csrf_token %}
-                    <div class="row justify-content-between text-left">
-                        <div class="form-group col-sm-6 flex-column d-flex"> <label
-                                class="form-control-label px-3">Usuario remitente <span class="text-danger"> *</span></label> {{ form.usuario_rtte }} </div>
-                        <div class="form-group col-sm-6 flex-column d-flex"> <label
-                                class="form-control-label px-3">Unidad<span class="text-danger"> *</span></label> {{ form.unidad_rtte }}</div>
+<br>
+<div class="row d-flex justify-content-center">
+    <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+        <h3 class="card shadow-lg p-2 rounded" style="background-color: gold;">Hoja de ruta</h3>
+        <div class="card shadow-lg p-3 mb-5 bg-body rounded" style="padding: 5px; border-radius: 3%;box-shadow: 5cm;">
+            <h5 class="text-center mb-4">Datos remitente</h5>
+            <form action="" class="form-card" method="POST">
+                {% csrf_token %}
+                <div class="row justify-content-between text-left">
+                    <div class="form-group col-sm-6 flex-column d-flex">
+                        <label class="form-control-label px-3">Usuario remitente <span class="text-danger"> *</span></label>
+                        {{ form.usuario_rtte }} 
                     </div>
-                    <div class="row justify-content-between text-left">
-                        <div class="form-group col-sm-6 flex-column d-flex"> <label
-                                class="form-control-label px-3">Cargo<span class="text-danger"> *</span></label> {{ form.cargo_rtte }}</div>
-                        <div class="form-group col-sm-6 flex-column d-flex"> <label
-                                class="form-control-label px-3">Asunto<span class="text-danger"> *</span></label>
-                            {{form.asunto_derivado }}</div>
+                    <div class="form-group col-sm-6 flex-column d-flex">
+                        <label class="form-control-label px-3">Unidad<span class="text-danger"> *</span></label>
+                        {{ form.unidad_rtte }}
                     </div>
-                    <br>
-                    <h5 class="text-center mb-4" style="padding: 10px;">Datos destinatario</h5>
-                    <div class="row justify-content-between text-left">
-                        <div class="form-group col-sm-6 flex-column d-flex"> <label
-                                class="form-control-label px-3">Usuario destinatario<span class="text-danger"> *</span></label> {{ form.usuario_rtte }} </div>
-                        <div class="form-group col-sm-6 flex-column d-flex"> <label
-                                class="form-control-label px-3">Unidad<span class="text-danger"> *</span></label> {{ form.unidad_rtte }}</div>
+                </div>
+                <div class="row justify-content-between text-left">
+                    <div class="form-group col-sm-6 flex-column d-flex">
+                        <label class="form-control-label px-3">Cargo<span class="text-danger"> *</span></label>
+                        {{ form.cargo_rtte }}
                     </div>
-                    <div class="row justify-content-between text-left">
-                        <div class="form-group col-sm-6 flex-column d-flex"> <label
-                                class="form-control-label px-3">Cargo<span class="text-danger"> *</span></label> {{ form.cargo_rtte }}</div>
+                    <div class="form-group col-sm-6 flex-column d-flex">
+                        <label class="form-control-label px-3">Tipo<span class="text-danger"> *</span></label>
+                        {{ form.tipo_derivado }}
                     </div>
-                    <br>
-                    <div class="row justify-content-center">
-                        
-                        <div class="form-group col-sm-4 btn btn-primary"> <button>Derivar</button>
+                </div>
+                <div class="row justify-content-between text-left">
+                    <div class="form-group col-sm-6 flex-column d-flex">
+                        <label class="form-control-label px-3">Número fojas<span class="text-danger"> *</span></label>
+                        {{ form.numero_fojas }}
                     </div>
-                </form>
-            </div>
+                    <div class="form-group col-sm-6 flex-column d-flex">
+                        <label class="form-control-label px-3">Asunto<span class="text-danger"> *</span></label>
+                        {{form.asunto_derivado }}
+                    </div>
+                </div>
+                <div class="row justify-content-between text-left">
+                    <div class="form-group col-sm-6 flex-column d-flex">
+                        <label class="form-control-label px-3">Adjuntar archivo<span class="text-danger"> *</span></label>
+                        {{ form.archivo }}
+                    </div>
+                </div>
+                <br>
+                <h5 class="text-center mb-4" style="padding: 5px;">Datos destinatario</h5>
+                <div class="row justify-content-between text-left">
+                    <div class="form-group col-sm-6 flex-column d-flex">
+                        <label class="form-control-label px-3">Usuario destinatario<span class="text-danger"> *</span></label>
+                        {{ form.usuario_destino }}
+                    </div>
+                    <div class="form-group col-sm-6 flex-column d-flex">
+                        <label class="form-control-label px-3">Unidad<span class="text-danger"> *</span></label>
+                        {{ form.unidad_destino }}
+                    </div>
+                </div>
+                <div class="row justify-content-between text-left">
+                    <div class="form-group col-sm-6 flex-column d-flex">
+                        <label class="form-control-label px-3">Cargo<span class="text-danger"> *</span></label>
+                        {{ form.cargo_destino }}
+                    </div>
+                </div>
+                <br>
+                <div class="row justify-content-center">
+                    <div class="form-group col-sm-4">
+                        <button type="submit" class="btn btn-primary col-sm-9">Derivar</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 </div>
-
 
 {% endblock %}

@@ -7,24 +7,33 @@
 	<thead>
 		<tr>
 			<th scope="col" class="text-center">Código</th>
-			<th scope="col" class="text-center">Remitente</th>
+			<th scope="col" class="text-center">Usuario remitente</th>
+			<th scope="col" class="text-center">Unidad remitente</th>
 			<th scope="col" class="text-center">Número fojas</th>
 			<th scope="col" class="text-center">Tipo hoja ruta</th>
+			<th scope="col" class="text-center">Unidad destinatario</th>
+			<th scope="col" class="text-center">Cargo destinatario</th>
+			<th scope="col" class="text-center">Fecha recibido</th>
 			<th scope="col" class="text-center">Asunto</th>
 			<th scope="col" class="text-center">Acciones</th>
 		</tr>
 	</thead>
 	{% for d in obj_recibido %}
-		{% if user.pk == d.usuario_destino.pk and not d.devuelto and not d.archivado and not d.devuelto and not cancelado %}
+		{% if user.profile.unidad == d.unidad_destino  and not d.devuelto and not d.archivado and not d.devuelto and not d.cancelado %}
 		<tr>
 			<td class="text-center">{{ d.codigo }}</td>
 			<td class="text-center">{{ d.usuario_rtte }}</td>
+			<td class="text-center">{{ d.unidad_rtte }}</td>
 			<td class="text-center">{{ d.numero_fojas }}</td>
-			<td class="text-center">{{ d.tipo_hoja_ruta }}</td>
-			<td class="text-center">{{ d.asunto_hoja_ruta}}</td>
+			<td class="text-center">{{ d.tipo_derivado }}</td>
+			<td class="text-center">{{ d.unidad_destino }}</td>
+			<td class="text-center">{{ d.cargo_destino }}</td>
+			<td class="text-center">{{ d.fecha_recibido }}</td>
+			<td class="text-center">{{ d.asunto_derivado }}</td>
 			<td class="text-center">
-				<a href="{% url 'archivar' d.id %}" class="btn btn-primary">Archivar</a>
-				<a href="{% url 'devolver' d.id %}" class="btn btn-info">Devolver</a><br>
+				<a href="#" class="btn btn-warning">Derivar</a>
+				<a href="{% url 'archivar' d.id %}" class="btn btn-primary">Archivar</a><br>
+				<a href="{% url 'devolver' d.id %}" class="btn btn-info">Devolver</a>
 				<a href="{% url 'cancelar' d.id %}" class="btn btn-danger">Cancelar</a>
 			</td>
 		</tr>

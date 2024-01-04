@@ -18,7 +18,7 @@ from django import db
 
 #from django.contrib.messages.views import SuccessMessageMixin
 
-from correspondencia.forms import CorrespondenciaForm, ArchivarForm, DevolverForm, CancelarForm, CrrConsejoMunicipalForm, CrrDespachoAlcaldeForm, CrrSecretariaGeneralForm, CrrSecAdmFinancieraForm, CrrSecretariaTecnicaForm, CrrSecretariaPlanificacionForm, CrrSecFortalecimientoInSocialForm, CrrDirAsesoriaLegalForm, CrrDireccionFinanzasForm, CrrDirAuditoriaInternaForm, CrrDirDesarrolloHumanoForm, CrrDireccionIngresosForm, CrrDirDesProdMedAmbienteForm, CrrDirUrbanismoCatastroForm, CrrDirObrasPublicasForm, CrrDireccionPlanificacionForm, CrrDirSaneamientoBasicoForm, CrrDirAdministracionSaludForm, CrrDirEduGestionSocialForm, CrrAsesoresForm
+from correspondencia.forms import CorrespondenciaForm, ArchivarForm, DevolverForm, CancelarForm
 
 # HOME
 def home(request):
@@ -28,21 +28,14 @@ def home(request):
 # HOJA DE RUTA
 @login_required
 def derivar(request):
-	count_hr = 1
-	
 	if request.method == "POST":
-		
-		count_tx = str(count_hr)
-		codigo_initial = 'HR-' + count_tx
-		initial_data = {'codigo':codigo_initial}
-		form = CorrespondenciaForm(request.POST or None, initial={'codigo':initial_data}) 
+		form = CorrespondenciaForm(request.POST, request.FILES) 
 		if form.is_valid():
 			form.save()
             # messages.add_message(request, CRITITAL, "Mensaje")
 		return HttpResponseRedirect("/enviado/")
 	else:
 		form = CorrespondenciaForm()
-	count_hr += 1
 	context_derivar = {'form':form}
 	return render(request, 'core/derivar.html', context_derivar)
 

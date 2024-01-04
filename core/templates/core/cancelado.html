@@ -10,7 +10,9 @@
 			<th scope="col" class="text-center">Remitente</th>
 			<th scope="col" class="text-center">Número fojas</th>
 			<th scope="col" class="text-center">Tipo hoja ruta</th>
+			<th scope="col" class="text-center">Fecha</th>
 			<th scope="col" class="text-center">Asunto</th>
+			<th scope="col" class="text-center">Acciones</th>
 		</tr>
 	</thead>
 	{% for d in obj_cancelado %}
@@ -19,8 +21,12 @@
 			<td class="text-center">{{ d.codigo }}</td>
 			<td class="text-center">{{ d.usuario_rtte }}</td>
 			<td class="text-center">{{ d.numero_fojas }}</td>
-			<td class="text-center">{{ d.tipo_hoja_ruta }}</td>
-			<td class="text-center">{{ d.asunto_hoja_ruta}}</td>
+			<td class="text-center">{{ d.tipo_derivado }}</td>
+			<td class="text-center">{{ d.fecha_cancelado }}</td>
+			<td class="text-center">{{ d.asunto_cancelado }}</td>
+			<td class="text-center">
+				<a href="#" class="btn btn-primary">Ver</a>
+			</td>
 		</tr>
 		{% endif %}
 	{% endfor %}
